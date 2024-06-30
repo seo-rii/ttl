@@ -51,7 +51,7 @@ async function main() {
     }).then(res => res.arrayBuffer()).then(ab => xlsx.read(ab, {type: 'array'}))
     const sheet = xl.Sheets[xl.SheetNames[0]]
     const json = xlsx.utils.sheet_to_json(sheet)
-    const res = json.slice(1).map(row => {
+    const data = json.slice(1).map(row => {
         const dept = row.__EMPTY_19;
         const type = row.__EMPTY_2;
         const code = row.__EMPTY_3;
@@ -63,7 +63,12 @@ async function main() {
         const exam = parseTime(row.__EMPTY_17);
 
         return {dept, type, code, title, group, prof, where, time, exam};
-    })
+    });
+
+    const res = {
+        data,
+        version: Date.now(),
+    }
 
     writeFileSync('result.json', JSON.stringify(res, null, 2))
 }
