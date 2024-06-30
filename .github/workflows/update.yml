@@ -1,0 +1,31 @@
+name: Daily Updater
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Crawl Google
+      run: node crawler.js
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: crawl
+        path: result.json
