@@ -30,6 +30,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: result.json
           asset_name: result.json
-          tag: ${{ github.ref }}
+          tag: main
           overwrite: true
           body: "Daily update"
