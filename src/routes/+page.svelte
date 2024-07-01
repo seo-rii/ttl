@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import {onMount} from "svelte";
+    import {browser} from "$app/environment";
+
+    let data: any = {};
+
+    if (browser) onMount(async () => {
+        data = await fetch('/result.json').then(r => r.json());
+    })
+</script>
+
+{data?.version}

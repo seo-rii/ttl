@@ -70,7 +70,7 @@ async function main() {
         version: Date.now(),
     }
 
-    writeFileSync('result.json', JSON.stringify(res, null, 2))
+    writeFileSync('static/result.json', JSON.stringify(res, null, 2))
 }
 
 main().then(() => console.log('done'))
