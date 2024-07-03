@@ -43,7 +43,7 @@
     {@const height = bot - top}
     <div style:background="{color}11"
          class:hover style:top="{top + 0.2}%"
-         style:height="{height - 0.4}%" style:left="{time.date * 20 + 0.5}%"
+         style:height="{height - 0.4}%" style:left="{time.date * 20 + 0.4}%"
          on:click={() => dispatch('remove')}>
         <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 8px;font-size: 0.82em">
             <p>{data.title}</p>
@@ -63,7 +63,7 @@
 <style lang="scss">
   div {
     position: absolute;
-    width: 19%;
+    width: 19.2%;
     border-radius: 4px;
     cursor: pointer;
   }
