@@ -6,7 +6,7 @@
     import {Icon} from "nunui";
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
-    let data: any = {}, selected = [], hover, innerWidth;
+    let data: any = {}, selected = [], hover, innerWidth, loaded = false;
     const st = new Set();
 
     if (browser) onMount(async () => {
@@ -17,6 +17,8 @@
             st.add(i.eh * 100 + i.em);
             st.add(i.date)
         });
+        selected = JSON.parse(localStorage.data || '[]')
+        loaded = true
     })
 
     function toggle(e) {
@@ -26,6 +28,7 @@
     }
 
     $: mobile = innerWidth < 1100;
+    $: if (loaded) localStorage.data = JSON.stringify(selected);
 </script>
 
 <svelte:window bind:innerWidth></svelte:window>
