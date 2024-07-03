@@ -1,10 +1,9 @@
 <script lang="ts">
-    import {Hoverable} from "nunui";
     import {createEventDispatcher} from "svelte";
 
     const dispatch = createEventDispatcher();
 
-    export let hover, data;
+    export let hover, data, background;
 
     function enter() {
         hover = data;
@@ -15,7 +14,7 @@
     }
 </script>
 
-<td on:mouseenter={enter} on:mouseleave={leave} on:click={() => dispatch('choose', data)}>
+<td on:mouseenter={enter} on:mouseleave={leave} on:click={() => dispatch('choose', data)} style:background>
     <slot/>
 </td>
 

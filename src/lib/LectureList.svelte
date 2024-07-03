@@ -4,7 +4,7 @@
     import otlMap from "$lib/otlMap";
     import TableTd from "$lib/TableTd.svelte";
 
-    export let list = [], deptMap = {}, hover;
+    export let list = [], deptMap = {}, hover, selected;
 
     const itemPerPage = 20;
     let page = 1, search = '', dept, deptList = [];
@@ -52,26 +52,27 @@
         <Th width="1">OTL</Th>
     </tr>
     {#each _list.slice((page - 1) * itemPerPage, page * itemPerPage) as lect}
+        {@const background = selected.includes(lect) ? 'var(--secondary-light3)' : ''}
         <tr>
-            <TableTd data={lect} bind:hover on:choose>
+            <TableTd data={lect} bind:hover on:choose {background}>
                 {deptMap[lect.dept]}
             </TableTd>
-            <TableTd data={lect} bind:hover on:choose>
+            <TableTd data={lect} bind:hover on:choose {background}>
                 <span>{lect.code}</span>
                 {#if lect.group}
                     <span style="font-size: 0.8em">{lect.group}</span>
                 {/if}
             </TableTd>
 
-            <TableTd data={lect} bind:hover on:choose>
+            <TableTd data={lect} bind:hover on:choose {background}>
                 {lect.prof}
             </TableTd>
 
-            <TableTd data={lect} bind:hover on:choose>
+            <TableTd data={lect} bind:hover on:choose {background}>
                 {lect.title}
             </TableTd>
 
-            <TableTd data={lect} bind:hover on:choose>
+            <TableTd data={lect} bind:hover on:choose {background}>
                 {#each lect.time as time}
                     <p>
                         {['월', '화', '수', '목', '금', '토', '일'][time.date]}
@@ -80,11 +81,11 @@
                 {/each}
             </TableTd>
 
-            <TableTd data={lect} bind:hover on:choose>
+            <TableTd data={lect} bind:hover on:choose {background}>
                 {lect.where}
             </TableTd>
 
-            <TableTd data={lect} bind:hover on:choose>
+            <TableTd data={lect} bind:hover on:choose {background}>
                 {#if otlMap(lect.code)}
                     <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(lect.code)}" target="_blank">
                         <IconButton open_in_new size="18"/>

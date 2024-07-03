@@ -47,7 +47,7 @@
             </div>
             <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
                 <section style="position: relative;padding: 0 12px 12px 12px">
-                    <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover/>
+                    <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover bind:selected/>
                 </section>
             </div>
         </article>
