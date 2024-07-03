@@ -1,0 +1,44 @@
+<script lang="ts">
+    import TableItem from "$lib/TableItem.svelte";
+
+    export let selected, hover;
+</script>
+
+<main>
+    <div style="padding: 12px 12px 12px 72px;width: calc(100% - 84px);display: flex;align-items: center;justify-content: space-around">
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+    </div>
+    <div style="flex: 1;display: flex;align-items: center;padding: 12px 6px 24px 0">
+        <div style="width: 60px;height: calc(100% + 9px);margin: -3px 0 -6px 0;display: flex;align-items: center;justify-content: space-between;flex-direction: column;font-weight: 300;font-size: 0.6em">
+            {#each [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24] as h}
+                <span>{h}</span>
+            {/each}
+        </div>
+        <div style="display: flex;position: relative;flex: 1;height: 100%">
+            {#each selected as data}
+                <TableItem {data} on:remove={() => selected = selected.filter(x => x !== data)}/>
+            {/each}
+            {#if hover}
+                <TableItem data={hover} hover/>
+            {/if}
+        </div>
+    </div>
+</main>
+
+<style lang="scss">
+  main {
+    width: 100%;
+    height: 100%;
+    background: var(--surface);
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+</style>
