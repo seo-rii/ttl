@@ -45,7 +45,7 @@
          class:hover style:top="{top + 0.2}%"
          style:height="{height - 0.4}%" style:left="{time.date * 20 + 0.4}%"
          on:click={() => dispatch('remove')}>
-        <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 8px;font-size: 0.82em">
+        <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 8px;font-size: 0.78em">
             <p>{data.title}</p>
             {#if data.where}
                 <p style="font-size: 0.7em;font-weight: 300" class="one">
@@ -66,6 +66,10 @@
     width: 19.2%;
     border-radius: 4px;
     cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .hover {
@@ -74,9 +78,6 @@
 
   p {
     margin: 0 0 6px 0;
-  }
-
-  .one {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
