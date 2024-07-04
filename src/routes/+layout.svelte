@@ -1,8 +1,9 @@
 <script lang="ts">
     import {ThemeProvider} from "nunui";
     import {writable} from "svelte/store";
+    import {browser} from "$app/environment";
+    import {darkMode} from "$lib";
 
-    const darkMode = writable(false);
     let primary, secondary, surface, onPrimary, onSurface, onSecondary;
     let loading = true;
 
@@ -12,6 +13,11 @@
         } else {
             [primary, secondary, surface, onSurface, onPrimary, onSecondary] = ["#4e4f78", "#386d92", "#eff2f6", "#13131f", "#eff2f6", "#13131f"];
         }
+    }
+
+    if(browser) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) $darkMode = true;
+        $darkMode=true
     }
 </script>
 

@@ -21,5 +21,9 @@
 <style lang="scss">
   td {
     cursor: pointer;
+
+    &, & :global(*) {
+      color: var(--on-surface) !important;
+    }
   }
 </style>

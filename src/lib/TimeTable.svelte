@@ -1,10 +1,21 @@
 <script lang="ts">
     import TableItem from "$lib/TableItem.svelte";
+    import {Icon} from "nunui";
 
-    export let selected, hover;
+    export let selected, hover, mobile;
 </script>
 
 <main>
+    <div style="padding: 12px;display: flex;align-items: baseline">
+        <span style="font-size: 1.8em;font-weight: 300">
+            <Icon table/>
+            시간표
+        </span>
+        <span style="margin-left: auto;display: block;font-size: 0.8em;font-weight: 300">
+            <span style="font-size: 1.4em;font-weight: 500">{selected.reduce((a, b) => a + b.credit, 0)}</span>학점 /
+            <span style="font-size: 1.4em;font-weight: 500">{selected.length}</span>과목
+        </span>
+    </div>
     <div style="padding: 12px 12px 12px 72px;width: calc(100% - 84px);display: flex;align-items: center;justify-content: space-around;position: sticky;top: 0;background:var(--surface);z-index: 1;border-radius: 12px">
         <div>월</div>
         <div>화</div>
@@ -20,7 +31,7 @@
         </div>
         <div style="display: flex;position: relative;flex: 1;height: 100%">
             {#each selected as data}
-                <TableItem {data} on:remove={() => selected = selected.filter(x => x !== data)} {selected}/>
+                <TableItem {mobile} {data} on:remove={() => selected = selected.filter(x => x !== data)} {selected}/>
             {/each}
             {#if hover}
                 <TableItem data={hover} hover {selected}/>

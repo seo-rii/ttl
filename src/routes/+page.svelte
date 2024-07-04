@@ -3,7 +3,8 @@
     import {browser} from "$app/environment";
     import LectureList from "$lib/LectureList.svelte";
     import TimeTable from "$lib/TimeTable.svelte";
-    import {Button, CircularProgress, Icon} from "nunui";
+    import {Button, CircularProgress, Icon, IconButton} from "nunui";
+    import {darkMode} from "$lib";
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false;
@@ -38,7 +39,6 @@
     <main>
         <header>
             <span style="font-size: 2.4em">
-                <Icon table/>
                 <span style="font-size: 0.7em;">kaist/</span>TTL
                 {#if !mobile}
                     <span style="font-size: 1rem">
@@ -46,7 +46,10 @@
                     </span>
                 {/if}
             </span>
-            <span>made by <a href="https://seorii.page">@seo-rii</a></span>
+            <span>
+                made by <a href="https://seorii.page">@seo-rii</a>
+                <IconButton style="margin-left: 4px" icon={$darkMode ? 'dark_mode' : 'light_mode'} on:click={() => $darkMode = !$darkMode}/>
+            </span>
         </header>
         <article class:mobile>
             {#if !mobile || menu === 0}
@@ -58,14 +61,14 @@
                 <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
                     <section style="position: relative;padding: 0 12px 12px 12px">
                         <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
-                                     bind:selected/>
+                                     bind:selected {mobile}/>
                     </section>
                 </div>
             {/if}
             {#if mobile}
                 <section style="display: flex;align-items: center;justify-content: space-around;padding-bottom: 12px">
-                    <Button small on:click={() => menu = 0} outlined={menu !== 0}>시간표</Button>
-                    <Button small on:click={() => menu = 1} outlined={menu !== 1}>과목 목록</Button>
+                    <Button icon="table" small on:click={() => menu = 0} outlined={menu !== 0}>시간표</Button>
+                    <Button icon="list" small on:click={() => menu = 1} outlined={menu !== 1} style="margin-left: 4px">과목 목록</Button>
                 </section>
             {/if}
         </article>
@@ -80,10 +83,14 @@
   header {
     width: 90%;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     padding: 12px 0;
     height: 46px;
+
+    a {
+      color: var(--on-surface);
+    }
   }
 
   main {

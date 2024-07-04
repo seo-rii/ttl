@@ -9,7 +9,7 @@
     let showPrev = false, showNext = false;
 
     $: beginPage = Math.floor((page - 1) / maxPageShow) * maxPageShow + 1;
-    $: showPrev = true;
+    $: showPrev = page > maxPageShow;
     $: showNext = beginPage + maxPageShow <= maxPage;
     $: pages = [...(showPrev ? ['<<', '<'] : []), ...Array.from({length: maxPageShow}, (_, i) => beginPage + i).filter(i => i <= maxPage), ...(showNext ? ['>', '>>'] : [])];
 </script>

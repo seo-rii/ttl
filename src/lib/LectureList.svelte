@@ -3,8 +3,9 @@
     import Paginator from "$lib/Paginator.svelte";
     import otlMap from "$lib/otlMap";
     import TableTd from "$lib/TableTd.svelte";
+    import {sort} from "fast-sort";
 
-    export let list = [], deptMap = {}, hover, selected;
+    export let list = [], deptMap = {}, hover, selected, mobile;
 
     const itemPerPage = 20;
     let page = 1, search = '', dept, deptList = [];
@@ -22,8 +23,7 @@
         page = 1;
     }
     $: {
-        deptList = Object.keys(deptMap);
-        deptList.sort((x, y) => deptMap[x] < deptMap[y] ? 1 : 0)
+        deptList = sort(Object.keys(deptMap)).asc(i => deptMap[i]);
     }
 </script>
 
@@ -45,6 +45,7 @@
 <Table minWidth="900">
     <tr>
         <Th width="2">학과</Th>
+        <Th width="1.2">학점</Th>
         <Th width="2">코드</Th>
         <Th width="1.6">교수</Th>
         <Th width="6">과목 이름</Th>
@@ -58,6 +59,11 @@
             <TableTd data={lect} bind:hover on:choose {background}>
                 {deptMap[lect.dept]}
             </TableTd>
+
+            <TableTd data={lect} bind:hover on:choose {background}>
+                {lect.credit}
+            </TableTd>
+
             <TableTd data={lect} bind:hover on:choose {background}>
                 <span>{lect.code}</span>
                 {#if lect.group}

@@ -1,9 +1,9 @@
 <script lang="ts">
     import {createEventDispatcher} from "svelte";
-    import {Button, Tooltip} from "nunui";
+    import {Button, Icon, Paper, Tooltip} from "nunui";
     import otlMap from "$lib/otlMap";
 
-    export let data, hover, list;
+    export let data, hover, list, mobile;
 
     const dispatch = createEventDispatcher();
     const start = 8 * 60;
@@ -46,9 +46,9 @@
     <div style:background="{color}11"
          class:hover style:top="{top + 0.2}%"
          style:height="{height - 0.4}%" style:left="{time.date * 20 + 0.4}%"
-         on:click={() => dispatch('remove')}>
+         on:click={() => !mobile && dispatch('remove')}>
         {#key selected}
-            <Tooltip left xstack bottom>
+            <svelte:component this={mobile ? Paper : Tooltip} left xstack bottom {mobile}>
                 <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 8px;font-size: 0.78em;top: 0;"
                      slot="target">
                     <p>{data.title}</p>
@@ -61,25 +61,33 @@
                         {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
                     </p>
                 </div>
-                <p style="font-weight: 500;font-size: 1.2em">{data.title}</p>
-                <p style="font-weight: 300;font-size: 0.8em">{data.where}</p>
-                <p style="font-weight: 300;font-size: 0.8em">{data.prof}</p>
-                <p style="font-weight: 300;font-size: 0.8em">
-                    {#each data.time as time}
-                        <p>
-                            {['월', '화', '수', '목', '금', '토', '일'][time.date]}
-                            {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
-                        </p>
-                    {/each}
-                </p>
+                <main style="padding: 12px">
+                    <p style="font-weight: 500;font-size: 1.2em">{data.title}</p>
+                    <p style="font-weight: 300;font-size: 0.8em">
+                        <Icon apartment/>{data.where}</p>
+                    <p style="font-weight: 300;font-size: 0.8em">
+                        <Icon person/>{data.prof}</p>
+                    <p style="font-weight: 300;font-size: 0.8em">
+                        <span><Icon timer/>시간</span><br>
+                        {#each data.time as time}
+                            <p>
+                                {['월', '화', '수', '목', '금', '토', '일'][time.date]}
+                                {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
+                            </p>
+                        {/each}
+                    </p>
 
-                {#if otlMap(data.code)}
-                    <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}" target="_blank"
-                       on:click|stopPropagation>
-                        <Button small size="18">OTL 평가</Button>
-                    </a>
-                {/if}
-            </Tooltip>
+                    {#if otlMap(data.code)}
+                        <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}" target="_blank"
+                           on:click|stopPropagation>
+                            <Button small icon="open_in_new">OTL 평가</Button>
+                        </a>
+                    {/if}
+                    {#if mobile}
+                        <Button small icon="close" on:click={() => dispatch('remove')}>삭제</Button>
+                    {/if}
+                </main>
+            </svelte:component>
         {/key}
         <div style="background:{color};position: absolute;left: 3px;width: 2px;top: 4px;bottom: 4px;border-radius: 4px"></div>
     </div>

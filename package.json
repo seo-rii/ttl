@@ -23,6 +23,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"fast-sort": "^3.4.0",
 		"node-fetch": "^3.3.2",
 		"nunui": "^0.0.121",
 		"xlsx": "^0.18.5"
