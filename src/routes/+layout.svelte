@@ -17,7 +17,6 @@
 
     if(browser) {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) $darkMode = true;
-        $darkMode=true
     }
 </script>
 
