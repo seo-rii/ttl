@@ -7,19 +7,28 @@
 
     export let list = [], deptMap = {}, hover, selected, mobile;
 
-    const itemPerPage = 20;
-    let page = 1, search = '', dept, deptList = [];
+    const itemPerPage = 20, types = [
+        "기초필수",
+        "기초선택",
+        "전공필수",
+        "전공선택",
+        "교양필수",
+        "인문사회선택",
+        "공통필수",
+        "자유선택",
+    ];
+    let page = 1, search = '', dept, deptList = [], type = null;
 
     $: _list = list.filter(i => {
         const l = (search || '').toLowerCase();
         return [i.title, i.code, ...i.prof, deptMap[i.dept]].map(i => (i || '').toLowerCase()).some(x => x.includes(l))
             && (i.dept === +dept || !dept)
+            && (!type || (i.type || '').startsWith(type))
     })
 
     $: maxPage = Math.ceil(_list.length / itemPerPage);
     $: {
-        void search;
-        void dept;
+        let _ = [search, dept, type];
         page = 1;
     }
     $: {
@@ -38,6 +47,12 @@
                 <Option title={deptMap[dept]} data={dept}/>
             {/each}
         </Select>
+        <Select bind:selected={type} placeholder="유형">
+            <Option title="전체" data={null}/>
+            {#each types as type}
+                <Option title={type} data={type}/>
+            {/each}
+        </Select>
     </header>
 
     <Paginator {maxPage} bind:page/>
@@ -52,6 +67,7 @@
         <Th width="6">과목 이름</Th>
         <Th width="4">수업 시간</Th>
         <Th width="4">강의실</Th>
+        <Th width="2.8">유형</Th>
         <Th width="1">OTL</Th>
     </tr>
     {#each _list.slice((page - 1) * itemPerPage, page * itemPerPage) as lect}
@@ -91,6 +107,10 @@
 
             <TableTd data={lect} bind:hover on:choose {background}>
                 {lect.where}
+            </TableTd>
+
+            <TableTd data={lect} bind:hover on:choose {background}>
+                {lect.type || ''}
             </TableTd>
 
             <TableTd data={lect} bind:hover on:choose {background}>

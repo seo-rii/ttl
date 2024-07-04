@@ -48,7 +48,8 @@
             </span>
             <span>
                 made by <a href="https://seorii.page">@seo-rii</a>
-                <IconButton style="margin-left: 4px" icon={$darkMode ? 'dark_mode' : 'light_mode'} on:click={() => $darkMode = !$darkMode}/>
+                <IconButton style="margin-left: 4px" icon={$darkMode ? 'dark_mode' : 'light_mode'}
+                            on:click={() => $darkMode = !$darkMode}/>
             </span>
         </header>
         <article class:mobile>
@@ -68,7 +69,9 @@
             {#if mobile}
                 <section style="display: flex;align-items: center;justify-content: space-around;padding-bottom: 12px">
                     <Button icon="table" small on:click={() => menu = 0} outlined={menu !== 0}>시간표</Button>
-                    <Button icon="list" small on:click={() => menu = 1} outlined={menu !== 1} style="margin-left: 4px">과목 목록</Button>
+                    <Button icon="list" small on:click={() => menu = 1} outlined={menu !== 1} style="margin-left: 4px">
+                        과목 목록
+                    </Button>
                 </section>
             {/if}
         </article>
