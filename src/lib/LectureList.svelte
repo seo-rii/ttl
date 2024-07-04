@@ -33,6 +33,7 @@
             <Input bind:value={search} placeholder="검색"/>
         </div>
         <Select bind:selected={dept} placeholder="학과">
+            <Option title="전체" data={null}/>
             {#each deptList as dept}
                 <Option title={deptMap[dept]} data={dept}/>
             {/each}
