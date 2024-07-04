@@ -35,7 +35,7 @@
         deptList = sort(Object.keys(deptMap)).asc(i => deptMap[i]);
     }
 
-    $: itemPerPage = mobile ? 7 : 10
+    $: itemPerPage = mobile ? 10 : 20
 </script>
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
@@ -61,7 +61,7 @@
         </Select>
     </header>
 
-    <Paginator {maxPage} bind:page _maxPageShow={mobile ? 3 : 8}/>
+    <Paginator {maxPage} bind:page maxPageShow={mobile ? 3 : 8}/>
 </div>
 
 <Table minWidth="900">

@@ -1,10 +1,9 @@
 <script lang="ts">
     import {SegmentButton} from "nunui";
 
-    export let maxPage, page = 1, list, left, full, _maxPageShow;
+    export let maxPage, page = 1, list, left, full, maxPageShow;
     let clientWidth = 0;
 
-    $: maxPageShow = _maxPageShow >= 5 ? Math.floor(_maxPageShow / 5) * 5 : _maxPageShow;
     let showPrev = false, showNext = false;
 
     $: beginPage = Math.floor((page - 1) / maxPageShow) * maxPageShow + 1;
