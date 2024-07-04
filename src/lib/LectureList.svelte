@@ -7,7 +7,7 @@
 
     export let list = [], deptMap = {}, hover, selected, mobile;
 
-    const itemPerPage = 20, types = [
+    const types = [
         "기초필수",
         "기초선택",
         "전공필수",
@@ -34,6 +34,8 @@
     $: {
         deptList = sort(Object.keys(deptMap)).asc(i => deptMap[i]);
     }
+
+    $: itemPerPage = mobile ? 5 : 10
 </script>
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
@@ -41,17 +43,21 @@
         <div>
             <Input bind:value={search} placeholder="검색"/>
         </div>
-        <Select bind:selected={dept} placeholder="학과">
-            <Option title="전체" data={null}/>
-            {#each deptList as dept}
-                <Option title={deptMap[dept]} data={dept}/>
-            {/each}
+        <Select bind:selected={dept} placeholder="학과" {mobile}>
+            <main on:wheel|stopPropagation|passive on:touchmove|stopPropagation|passive on:touchdown|stopPropagation|passive style="max-height: 80vh">
+                <Option title="전체" data={null}/>
+                {#each deptList as dept}
+                    <Option title={deptMap[dept]} data={dept}/>
+                {/each}
+            </main>
         </Select>
-        <Select bind:selected={type} placeholder="유형">
-            <Option title="전체" data={null}/>
-            {#each types as type}
-                <Option title={type} data={type}/>
-            {/each}
+        <Select bind:selected={type} placeholder="유형" {mobile} style="max-height: 80vh">
+            <main on:wheel|stopPropagation|passive>
+                <Option title="전체" data={null}/>
+                {#each types as type}
+                    <Option title={type} data={type}/>
+                {/each}
+            </main>
         </Select>
     </header>
 
