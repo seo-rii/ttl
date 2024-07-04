@@ -35,7 +35,7 @@
         deptList = sort(Object.keys(deptMap)).asc(i => deptMap[i]);
     }
 
-    $: itemPerPage = mobile ? 5 : 10
+    $: itemPerPage = mobile ? 7 : 10
 </script>
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
@@ -61,19 +61,19 @@
         </Select>
     </header>
 
-    <Paginator {maxPage} bind:page/>
+    <Paginator {maxPage} bind:page _maxPageShow={mobile ? 3 : 8}/>
 </div>
 
 <Table minWidth="900">
     <tr>
         <Th width="2">학과</Th>
-        <Th width="1.2">학점</Th>
+        <Th width="1.4">학점</Th>
         <Th width="2">코드</Th>
         <Th width="1.6">교수</Th>
         <Th width="6">과목 이름</Th>
         <Th width="4">수업 시간</Th>
         <Th width="4">강의실</Th>
-        <Th width="2.8">유형</Th>
+        <Th width="2.7">유형</Th>
         <Th width="1">OTL</Th>
     </tr>
     {#each _list.slice((page - 1) * itemPerPage, page * itemPerPage) as lect}
