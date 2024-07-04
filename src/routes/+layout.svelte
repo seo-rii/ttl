@@ -3,6 +3,7 @@
     import {writable} from "svelte/store";
     import {browser} from "$app/environment";
     import {darkMode} from "$lib";
+    import GA from "./GA.svelte";
 
     let primary, secondary, surface, onPrimary, onSurface, onSecondary;
     let loading = true;
@@ -15,7 +16,7 @@
         }
     }
 
-    if(browser) {
+    if (browser) {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) $darkMode = true;
     }
 </script>
@@ -37,6 +38,7 @@
 </svelte:head>
 
 <title>TTL</title>
+<GA/>
 <ThemeProvider {primary} {secondary} {surface} {onSurface} {onSecondary} {onPrimary}>
     <slot/>
 </ThemeProvider>
