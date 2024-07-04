@@ -68,6 +68,7 @@ async function main() {
     const sheet = xl.Sheets[xl.SheetNames[0]]
     const json = xlsx.utils.sheet_to_json(sheet)
     const data = json.slice(1).map(row => {
+        if (row.__EMPTY === '여름학기') return null;
         const dept = row.__EMPTY_21;
         const type = row.__EMPTY_2;
         const code = row.__EMPTY_5;
@@ -79,7 +80,7 @@ async function main() {
         const exam = parseTime(row.__EMPTY_19);
 
         return {dept, type, code, title, group, prof, where, time, exam};
-    });
+    }).filter(x => x)
 
     const deptMap = {};
     json.slice(1).map(row => {
