@@ -40,7 +40,7 @@
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
     <header>
-        <div>
+        <div style="min-width: 160px">
             <Input bind:value={search} placeholder="검색"/>
         </div>
         <Select bind:selected={dept} placeholder="학과" {mobile}>
