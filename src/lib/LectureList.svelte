@@ -11,13 +11,14 @@
 
     $: _list = list.filter(i => {
         const l = (search || '').toLowerCase();
-        return [i.title, i.code, ...i.prof].map(i => (i || '').toLowerCase()).some(x => x.includes(l))
+        return [i.title, i.code, ...i.prof, deptMap[i.dept]].map(i => (i || '').toLowerCase()).some(x => x.includes(l))
             && (i.dept === +dept || !dept)
     })
 
     $: maxPage = Math.ceil(_list.length / itemPerPage);
     $: {
-        void search, dept;
+        void search;
+        void dept;
         page = 1;
     }
     $: {
