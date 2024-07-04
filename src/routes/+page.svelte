@@ -3,7 +3,7 @@
     import {browser} from "$app/environment";
     import LectureList from "$lib/LectureList.svelte";
     import TimeTable from "$lib/TimeTable.svelte";
-    import {Icon} from "nunui";
+    import {Button, CircularProgress, Icon} from "nunui";
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false;
@@ -29,6 +29,8 @@
 
     $: mobile = innerWidth < 1100;
     $: if (loaded) localStorage.data = JSON.stringify(selected);
+
+    let menu = 0;
 </script>
 
 <svelte:window bind:innerWidth></svelte:window>
@@ -38,25 +40,40 @@
             <span style="font-size: 2.4em">
                 <Icon table/>
                 <span style="font-size: 0.7em;">kaist/</span>TTL
-                <span style="font-size: 1rem">
-                    DB 버전 : {new Date(data.version).toLocaleString()}
-                </span>
+                {#if !mobile}
+                    <span style="font-size: 1rem">
+                        DB 버전 : {new Date(data.version).toLocaleString()}
+                    </span>
+                {/if}
             </span>
             <span>made by <a href="https://seorii.page">@seo-rii</a></span>
         </header>
         <article class:mobile>
-            <div style="width: 600px;">
-                <TimeTable {hover} bind:selected/>
-            </div>
-            <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
-                <section style="position: relative;padding: 0 12px 12px 12px">
-                    <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover bind:selected/>
+            {#if !mobile || menu === 0}
+                <div style="width: 600px;border-radius: 12px">
+                    <TimeTable {hover} bind:selected {mobile}/>
+                </div>
+            {/if}
+            {#if !mobile || menu === 1}
+                <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
+                    <section style="position: relative;padding: 0 12px 12px 12px">
+                        <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
+                                     bind:selected/>
+                    </section>
+                </div>
+            {/if}
+            {#if mobile}
+                <section style="display: flex;align-items: center;justify-content: space-around;padding-bottom: 12px">
+                    <Button small on:click={() => menu = 0} outlined={menu !== 0}>시간표</Button>
+                    <Button small on:click={() => menu = 1} outlined={menu !== 1}>과목 목록</Button>
                 </section>
-            </div>
+            {/if}
         </article>
     </main>
 {:else}
-    로드 중...
+    <main>
+        <CircularProgress indeterminate/>
+    </main>
 {/if}
 
 <style lang="scss">
@@ -66,6 +83,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 12px 0;
+    height: 46px;
   }
 
   main {
@@ -83,6 +101,7 @@
 
     &.mobile {
       flex-direction: column;
+      flex: 1;
     }
   }
 

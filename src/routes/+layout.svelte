@@ -31,6 +31,7 @@
     {/if}
 </svelte:head>
 
+<title>TTL</title>
 <ThemeProvider {primary} {secondary} {surface} {onSurface} {onSecondary} {onPrimary}>
     <slot/>
 </ThemeProvider>

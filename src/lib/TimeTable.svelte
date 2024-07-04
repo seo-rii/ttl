@@ -5,7 +5,7 @@
 </script>
 
 <main>
-    <div style="padding: 12px 12px 12px 72px;width: calc(100% - 84px);display: flex;align-items: center;justify-content: space-around">
+    <div style="padding: 12px 12px 12px 72px;width: calc(100% - 84px);display: flex;align-items: center;justify-content: space-around;position: sticky;top: 0;background:var(--surface);z-index: 1;border-radius: 12px">
         <div>월</div>
         <div>화</div>
         <div>수</div>
@@ -20,10 +20,10 @@
         </div>
         <div style="display: flex;position: relative;flex: 1;height: 100%">
             {#each selected as data}
-                <TableItem {data} on:remove={() => selected = selected.filter(x => x !== data)}/>
+                <TableItem {data} on:remove={() => selected = selected.filter(x => x !== data)} {selected}/>
             {/each}
             {#if hover}
-                <TableItem data={hover} hover/>
+                <TableItem data={hover} hover {selected}/>
             {/if}
         </div>
     </div>
@@ -40,5 +40,6 @@
     flex-direction: column;
     font-size: 1.2em;
     font-weight: 500;
+    min-height: 900px;
   }
 </style>
