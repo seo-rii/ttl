@@ -1,4 +1,5 @@
 import xlsx from 'xlsx';
+import * as fs from 'fs';
 import {fetch, Agent} from "undici";
 import {writeFileSync} from 'fs';
 
@@ -79,7 +80,16 @@ async function main(year = 2024, term = 3, file = 'static/result.json') {
         return {dept, type, code, title, group, prof, where, time, exam, credit};
     }).filter(x => x)
 
-    const deptMap = {};
+    try {
+        const addl = `./static/add_${year}_${term}.json`
+        const add = fs.readFileSync(addl)
+        const addJson = JSON.parse(add)
+        data.push(...addJson)
+    } catch (e) {
+        console.error(e)
+    }
+
+    const deptMap = {"151": "수리과학과"};
     json.slice(1).map(row => {
         deptMap[row.__EMPTY_21] = row.__EMPTY_1
     })
