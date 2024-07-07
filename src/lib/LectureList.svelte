@@ -5,7 +5,7 @@
     import TableTd from "$lib/TableTd.svelte";
     import {sort} from "fast-sort";
 
-    export let list = [], deptMap = {}, hover, selected, mobile;
+    export let list = [], deptMap = {}, hover, selected, mobile, year, term;
 
     const types = [
         "기초필수",
@@ -40,11 +40,25 @@
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
     <header>
+        {#if year}
+            <Select bind:selected={year} placeholder="년도" {mobile}>
+                {#each Array.from({length: 7}, (_, i) => 2024 - i) as y}
+                    <Option title={y} data={y}/>
+                {/each}
+            </Select>
+            <Select bind:selected={term} placeholder="학기" {mobile}>
+                <Option title="봄" data={1}/>
+                <Option title="여름" data={2}/>
+                <Option title="가을" data={3}/>
+                <Option title="겨울" data={4}/>
+            </Select>
+        {/if}
         <div style="min-width: 160px">
             <Input bind:value={search} placeholder="검색"/>
         </div>
         <Select bind:selected={dept} placeholder="학과" {mobile}>
-            <main on:wheel|stopPropagation|passive on:touchmove|stopPropagation|passive on:touchdown|stopPropagation|passive style="max-height: 80vh">
+            <main on:wheel|stopPropagation|passive on:touchmove|stopPropagation|passive
+                  on:touchdown|stopPropagation|passive style="max-height: 80vh">
                 <Option title="전체" data={null}/>
                 {#each deptList as dept}
                     <Option title={deptMap[dept]} data={dept}/>

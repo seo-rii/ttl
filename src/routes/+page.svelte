@@ -8,17 +8,12 @@
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false;
-    const st = new Set();
 
     if (browser) onMount(async () => {
         data = await fetch('/result.json').then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
-        for (const item of data.data) item.time.map(i => {
-            st.add(i.sh * 100 + i.sm);
-            st.add(i.eh * 100 + i.em);
-            st.add(i.date)
-        });
         selected = JSON.parse(localStorage.data || '[]')
+        selected = selected.map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
         loaded = true
     })
 
