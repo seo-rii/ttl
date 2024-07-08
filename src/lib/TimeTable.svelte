@@ -1,11 +1,42 @@
 <script lang="ts">
     import TableItem from "$lib/TableItem.svelte";
-    import {Icon} from "nunui";
+    import {Card, Icon} from "nunui";
 
     export let selected, hover, mobile;
+
+    function time(h, m) {
+        return h * 60 + m;
+    }
+
+    function overlap(a, b) {
+        const as = time(a.sh, a.sm), ae = time(a.eh, a.em);
+        const bs = time(b.sh, b.sm), be = time(b.eh, b.em);
+        return a.date === b.date && ((as <= bs && bs < ae) || (as < be && be <= ae) || (bs <= as && ae <= be));
+    }
+
+    function getLevels(selected) {
+        const levels = [], times = selected.map(i => i.time).flat();
+        for (let i = 0; i < times.length; i++) {
+            levels.push([times.slice(0, i).filter(x => overlap(x, times[i])).length, times.filter(x => overlap(x, times[i])).length]);
+        }
+        return levels;
+    }
+
+    $: _hover = selected.some(i => i === hover) ? null : hover;
+    $: levels = getLevels(_hover ? [...selected, _hover] : selected);
+    $: overlapExist = getLevels(selected).some(i => i[1] > 1);
+
+    $: maxHour = Math.max(18, ...selected.map(i => i.time).flat().map(i => i.em ? i.eh + 1 : i.eh));
+    $: hours = Array.from({length: maxHour - 8}, (_, i) => i + 8);
 </script>
 
 <main>
+    {#if overlapExist}
+        <Card flat secondary style="margin: 12px">
+            <Icon error/>
+            <span>시간이 겹치는 과목이 있어요.</span>
+        </Card>
+    {/if}
     <div style="padding: 12px;display: flex;align-items: baseline">
         <span style="font-size: 1.8em;font-weight: 300">
             <Icon table/>
@@ -25,16 +56,17 @@
     </div>
     <div style="flex: 1;display: flex;align-items: center;padding: 12px 6px 24px 0">
         <div style="width: 60px;height: calc(100% + 9px);margin: -3px 0 -6px 0;display: flex;align-items: center;justify-content: space-between;flex-direction: column;font-weight: 300;font-size: 0.6em">
-            {#each [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24] as h}
+            {#each hours as h}
                 <span>{h}</span>
             {/each}
         </div>
         <div style="display: flex;position: relative;flex: 1;height: 100%">
-            {#each selected as data}
-                <TableItem {mobile} {data} on:remove={() => selected = selected.filter(x => x !== data)} {selected}/>
+            {#each selected as data, i}
+                <TableItem {mobile} {data} on:remove={() => selected = selected.filter(x => x !== data)} {selected}
+                           {levels} offset={selected.slice(0, i).map(i => i.time).flat().length}/>
             {/each}
-            {#if hover}
-                <TableItem data={hover} hover {selected}/>
+            {#if _hover}
+                <TableItem data={hover} hover {selected} {levels} offset={selected.map(i => i.time).flat().length}/>
             {/if}
         </div>
     </div>

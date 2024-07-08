@@ -49,7 +49,7 @@
         </header>
         <article class:mobile>
             {#if !mobile || menu === 0}
-                <div style="width: 600px;border-radius: 12px">
+                <div style="width: 720px;border-radius: 12px">
                     <TimeTable {hover} bind:selected {mobile}/>
                 </div>
             {/if}
@@ -62,11 +62,10 @@
                 </div>
             {/if}
             {#if mobile}
-                <section style="display: flex;align-items: center;justify-content: space-around;padding-bottom: 12px">
-                    <Button icon="table" small on:click={() => menu = 0} outlined={menu !== 0}>시간표</Button>
-                    <Button icon="list" small on:click={() => menu = 1} outlined={menu !== 1} style="margin-left: 4px">
-                        과목 목록
-                    </Button>
+                <section style="display: flex;align-items: center;justify-content: center;padding-bottom: 12px;width: 100vw;background: var(--primary-light5);padding-top: 12px">
+                    <IconButton icon="table" flat on:click={() => menu = 0} active={menu === 0} label="시간표"/>
+                    <div style="width: 4px"/>
+                    <IconButton icon="list" flat on:click={() => menu = 1} active={menu === 1} label="과목 목록"/>
                 </section>
             {/if}
         </article>

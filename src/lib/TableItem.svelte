@@ -3,7 +3,7 @@
     import {Button, Icon, Paper, Tooltip} from "nunui";
     import otlMap from "$lib/otlMap";
 
-    export let data, hover, list, mobile;
+    export let data, hover, list, mobile, levels, offset;
 
     const dispatch = createEventDispatcher();
     const start = 8 * 60;
@@ -39,13 +39,15 @@
     $: color = getColorForSubject(data.code);
 </script>
 
-{#each data.time as time}
+{#each data.time as time, i}
     {@const top = perc(time.sh, time.sm)}
     {@const bot = perc(time.eh, time.em)}
     {@const height = bot - top}
+    {@const left = time.date * 20 + 0.4 + levels?.[offset + i]?.[0] * 20 / levels?.[offset + i]?.[1]}
+    {@const width = 20 / levels?.[offset + i]?.[1] - 0.8}
     <div style:background="{color}11"
          class:hover style:top="{top + 0.2}%"
-         style:height="{height - 0.4}%" style:left="{time.date * 20 + 0.4}%"
+         style:height="{height - 0.4}%" style:left="{left}%" style:width="{width}%"
          on:click={() => !mobile && dispatch('remove')}>
         {#key selected}
             <svelte:component this={mobile ? Paper : Tooltip} left xstack bottom {mobile}>
@@ -96,7 +98,6 @@
 <style lang="scss">
   div {
     position: absolute;
-    width: 19.2%;
     border-radius: 4px;
     cursor: pointer;
   }
