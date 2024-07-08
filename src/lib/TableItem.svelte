@@ -1,6 +1,6 @@
 <script lang="ts">
     import {createEventDispatcher} from "svelte";
-    import {Button, Icon, Paper, Tooltip} from "nunui";
+    import {Button, Icon, List, OneLine, Paper, Tooltip} from "nunui";
     import otlMap from "$lib/otlMap";
 
     export let data, hover, list, mobile, levels, offset;
@@ -64,29 +64,43 @@
                     </p>
                 </div>
                 <main style="padding: 12px">
-                    <p style="font-weight: 500;font-size: 1.2em">{data.title}</p>
+                    <p style="font-weight: 500;font-size: 1.2em">
+                        {data.title}
+                        <span style="font-size: 0.76em;opacity: 0.8;font-weight: 300">{data.code}</span>
+                    </p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon apartment/>{data.where}</p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon person/>{data.prof}</p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <span><Icon timer/>시간</span><br>
+                    <ul>
                         {#each data.time as time}
-                            <p>
+                            <li>
                                 {['월', '화', '수', '목', '금', '토', '일'][time.date]}
                                 {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
-                            </p>
+                            </li>
                         {/each}
-                    </p>
+                    </ul>
 
-                    {#if otlMap(data.code)}
+                    <hr>
+                    {#if mobile}
+                        <article style="font-size: 16px;font-weight: 300;margin: 0 -12px">
+                            <List>
+                                <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}"
+                                   target="_blank"
+                                   on:click|stopPropagation>
+                                    <OneLine icon="open_in_new" title="OTL 평가"/>
+                                </a>
+                                <OneLine icon="close" title="삭제" on:click={() => dispatch('remove')}/>
+                            </List>
+                        </article>
+                    {/if}
+                    {#if !mobile && otlMap(data.code)}
                         <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}" target="_blank"
                            on:click|stopPropagation>
                             <Button small icon="open_in_new">OTL 평가</Button>
                         </a>
-                    {/if}
-                    {#if mobile}
-                        <Button small icon="close" on:click={() => dispatch('remove')}>삭제</Button>
                     {/if}
                 </main>
             </svelte:component>
@@ -111,5 +125,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  ul {
+    font-size: 0.7em;
+    margin: 0 0 12px 0;
+  }
+
+  a {
+    display: block;
+    color: initial;
+    text-decoration: none;
   }
 </style>
