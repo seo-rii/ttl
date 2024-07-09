@@ -51,7 +51,7 @@
         else selected = [...selected, lect]
     }
 
-    $: mobile = innerWidth < 1100;
+    $: mobile = innerWidth < (shared ? 1300 : 1100);
     $: if (loaded) localStorage.data = JSON.stringify(selected);
     $: if (loaded) localStorage.fav = JSON.stringify(favorites);
     $: if (selTime) menu = 1;
@@ -80,7 +80,7 @@
             </span>
         </header>
         <article class:mobile>
-            {#if shared}
+            {#if (!mobile || menu === 0) && shared}
                 <div style="width: {width}px;border-radius: 12px">
                     <TimeTable shared selected={shared} {mobile} timeSegments={[]} on:apply={() => {
                         selected = shared;
@@ -88,12 +88,12 @@
                     }}/>
                 </div>
             {/if}
-            {#if !mobile || menu === 0}
+            {#if !mobile || menu === (shared ? 1 : 0)}
                 <div style="width: {width}px;border-radius: 12px">
                     <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime/>
                 </div>
             {/if}
-            {#if !mobile || menu === 1}
+            {#if !mobile || menu === (shared ? 2 : 1)}
                 <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
                     <section style="position: relative;padding: 0 12px 12px 12px">
                         <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
@@ -104,9 +104,15 @@
             {#if mobile}
                 <section
                         style="display: flex;align-items: center;justify-content: center;padding-bottom: 12px;width: 100vw;background: var(--primary-light5);padding-top: 12px">
-                    <IconButton icon="table" flat on:click={() => menu = 0} active={menu === 0} label="시간표"/>
+                    {#if shared}
+                        <IconButton icon="share" flat on:click={() => menu = 0} active={menu === 0} label="공유된 시간표"/>
+                        <div style="width: 4px"/>
+                    {/if}
+                    <IconButton icon="table" flat on:click={() => menu = (shared ? 1 : 0)}
+                                active={menu === (shared ? 1 : 0)} label="시간표"/>
                     <div style="width: 4px"/>
-                    <IconButton icon="list" flat on:click={() => menu = 1} active={menu === 1} label="과목 목록"/>
+                    <IconButton icon="list" flat on:click={() => menu = (shared ? 2 : 1)}
+                                active={menu === (shared ? 2 : 1)} label="과목 목록"/>
                 </section>
             {/if}
         </article>
