@@ -132,10 +132,12 @@
                 {#each [0, 1, 2, 3, 4] as date}
                     {#each timeSegments as [s, e]}
                         {@const key = `${date}-${s}`}
-                        <div class="timeSelect" on:click={() => selTime = (selTime === key ? null : key)}
-                             style="position: absolute;top: {perc(s)}%;height: {perc(e) - perc(s)}%;left: {date * 20 + 0.4}%">
-                            <Ripple active={selTime === key}/>
-                        </div>
+                        {#if e <= maxHour * 60}
+                            <div class="timeSelect" on:click={() => selTime = (selTime === key ? null : key)}
+                                 style="position: absolute;top: {perc(s)}%;height: {perc(e) - perc(s)}%;left: {date * 20 + 0.4}%">
+                                <Ripple active={selTime === key}/>
+                            </div>
+                        {/if}
                     {/each}
                 {/each}
             {/if}
