@@ -70,6 +70,7 @@
                     <p style="font-weight: 500;font-size: 1.2em">
                         {data.title}
                         <span style="font-size: 0.76em;opacity: 0.8;font-weight: 300">{data.code}</span>
+                        <span style="font-size: 0.66em;opacity: 0.8;font-weight: 300">{data.group}</span>
                     </p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon readiness_score/>{data.credit}학점
