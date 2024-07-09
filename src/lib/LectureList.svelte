@@ -37,7 +37,7 @@
         deptList = sort(Object.keys(deptMap)).asc(i => deptMap[i]);
     }
 
-    $: itemPerPage = mobile ? 10 : 20
+    $: itemPerPage = 20
 </script>
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
@@ -96,12 +96,12 @@
 
 <Table minWidth="900">
     <tr>
-        <Th width="3">학과</Th>
+        <Th width="3.2">학과</Th>
         <Th width="1.6">학점</Th>
-        <Th width="2.6">코드</Th>
+        <Th width="2.8">코드</Th>
         <Th width="2">교수</Th>
         <Th width="6">과목 이름</Th>
-        <Th width="4">수업 시간</Th>
+        <Th width="4.4">수업 시간</Th>
         <Th width="4.2">강의실</Th>
         <Th width="2.7">유형</Th>
         <Th width="3.8">실라버스/OTL</Th>
@@ -110,12 +110,14 @@
         {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
         <tr>
             <TableTd data={lect} bind:hover on:choose {background}>
-                <IconButton favorite size="18" on:click={(e) => {
+                <Scrolling>
+                    <IconButton favorite size="18" on:click={(e) => {
                     e.stopPropagation();
                     if(favorites.includes(lect)) favorites = favorites.filter(i => i !== lect)
                     else favorites = [...favorites, lect]
                 }} active={favorites.includes(lect)}/>
-                {deptMap[lect.dept]}
+                    {deptMap[lect.dept]}
+                </Scrolling>
             </TableTd>
 
             <TableTd data={lect} bind:hover on:choose {background}>
@@ -123,9 +125,9 @@
             </TableTd>
 
             <TableTd data={lect} bind:hover on:choose {background}>
-                <span>{lect.code}</span>
+                <span style="display: inline-block">{lect.code}</span>
                 {#if lect.group}
-                    <span style="font-size: 0.8em">{lect.group}</span>
+                    <span style="font-size: 0.8em;display: inline-block">{lect.group}</span>
                 {/if}
             </TableTd>
 
