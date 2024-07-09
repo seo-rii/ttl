@@ -197,8 +197,8 @@
 
   .capturing {
     position: fixed;
-    width: 900px !important;
-    height: 1200px !important;
+    width: 720px !important;
+    height: 1000px !important;
     left: 0 !important;
     top: 0 !important;
     border-radius: 0 !important;
