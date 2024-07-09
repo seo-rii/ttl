@@ -1,11 +1,18 @@
 <script lang="ts">
     import TableItem from "$lib/TableItem.svelte";
-    import {Card, Icon} from "nunui";
+    import {Card, Icon, Ripple} from "nunui";
 
-    export let selected, hover, mobile;
+    export let selected, hover, mobile, timeSegments, selTime;
 
     function time(h, m) {
         return h * 60 + m;
+    }
+
+
+    function perc(time) {
+        const start = 9 * 60;
+        const end = 24 * 60;
+        return (time - start) / (end - start) * 100;
     }
 
     function overlap(a, b) {
@@ -26,8 +33,10 @@
     $: levels = getLevels(_hover ? [...selected, _hover] : selected);
     $: overlapExist = getLevels(selected).some(i => i[1] > 1);
 
-    $: maxHour = Math.max(18, ...selected.map(i => i.time).flat().map(i => i.em ? i.eh + 1 : i.eh));
-    $: hours = Array.from({length: maxHour - 8}, (_, i) => i + 8);
+    $: maxHour = 24 ?? Math.max(18, ...selected.map(i => i.time).flat().map(i => i.em ? i.eh + 1 : i.eh));
+    $: hours = Array.from({length: maxHour - 9 + 1}, (_, i) => i + 9);
+
+    $: console.log(timeSegments)
 </script>
 
 <main>
@@ -61,6 +70,16 @@
             {/each}
         </div>
         <div style="display: flex;position: relative;flex: 1;height: 100%">
+            {#each [0, 1, 2, 3, 4] as date}
+                {#each timeSegments as [s, e]}
+                    {@const key = `${date}-${s}`}
+                    <div class="timeSelect" on:click={() => selTime = (selTime === key ? null : key)}
+                         style="position: absolute;top: {perc(s)}%;height: {perc(e) - perc(s)}%;left: {date * 20 + 0.4}%">
+                        <Ripple active={selTime === key} />
+                    </div>
+                {/each}
+            {/each}
+
             {#each selected as data, i}
                 <TableItem {mobile} {data} on:remove={() => selected = selected.filter(x => x !== data)} {selected}
                            {levels} offset={selected.slice(0, i).map(i => i.time).flat().length}/>
@@ -84,5 +103,15 @@
     font-size: 1.2em;
     font-weight: 500;
     min-height: 900px;
+  }
+
+  .timeSelect {
+    width: 19.2%;
+    background: transparent;
+    border-radius: 12px;
+    transition: background 0.1s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
   }
 </style>

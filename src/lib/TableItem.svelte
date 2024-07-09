@@ -2,11 +2,14 @@
     import {createEventDispatcher} from "svelte";
     import {Button, Icon, List, OneLine, Paper, Tooltip} from "nunui";
     import otlMap from "$lib/otlMap";
+    import {textfit} from 'svelte-textfit';
+
+    let parent;
 
     export let data, hover, list, mobile, levels, offset;
 
     const dispatch = createEventDispatcher();
-    const start = 8 * 60;
+    const start = 9 * 60;
     const end = 24 * 60;
 
     function perc(h, m) {
@@ -52,8 +55,8 @@
         {#key selected}
             <svelte:component this={mobile ? Paper : Tooltip} left xstack bottom {mobile}>
                 <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 8px;font-size: 0.78em;top: 0;"
-                     slot="target">
-                    <p>{data.title}</p>
+                     slot="target" bind:this={parent}>
+                    <p use:textfit={{parent,mode:"single",max: 16, min: 8}}>{data.title}</p>
                     {#if data.where}
                         <p style="font-size: 0.7em;font-weight: 300" class="one">
                             {data.where}

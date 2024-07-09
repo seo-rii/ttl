@@ -5,7 +5,7 @@
     import TableTd from "$lib/TableTd.svelte";
     import {sort} from "fast-sort";
 
-    export let list = [], deptMap = {}, hover, selected, mobile, year, term;
+    export let list = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime;
 
     const types = [
         "기초필수",
@@ -24,6 +24,7 @@
         return [i.title, i.code, ...i.prof, deptMap[i.dept]].map(i => (i || '').toLowerCase()).some(x => x.includes(l))
             && (i.dept === +dept || !dept)
             && (!type || (i.type || '').startsWith(type))
+            && (!selTime || i.time.some(tt => tt.date === +selTime.split('-')[0] && tt.sh * 60 + tt.sm <= +selTime.split('-')[1] && tt.eh * 60 + tt.em > +selTime.split('-')[1]))
     })
 
     $: maxPage = Math.ceil(_list.length / itemPerPage);
@@ -70,6 +71,20 @@
                 <Option title="전체" data={null}/>
                 {#each types as type}
                     <Option title={type} data={type}/>
+                {/each}
+            </main>
+        </Select>
+        <Select bind:selected={selTime} placeholder="시간 포함" {mobile}>
+            <main on:wheel|stopPropagation|passive style="max-height: 80vh">
+                <Option title="전체" data={null}/>
+                {#each [0, 1, 2, 3, 4] as date}
+                    {#each timeSegments as [s, e]}
+                        {@const sh = Math.floor(s / 60)}
+                        {@const sm = (s % 60).toString().padStart(2, '0')}
+                        {@const eh = Math.floor(e / 60)}
+                        {@const em = (e % 60).toString().padStart(2, '0')}
+                        <Option title="{['월', '화', '수', '목', '금'][date]} {sh}:{sm} - {eh}:{em}" data="{date}-{s}"/>
+                    {/each}
                 {/each}
             </main>
         </Select>

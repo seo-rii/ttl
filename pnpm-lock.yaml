@@ -17,6 +17,9 @@ importers:
       nunui:
         specifier: ^0.0.121
         version: 0.0.121(@lezer/common@1.2.1)(svelte@4.2.18)
+      svelte-textfit:
+        specifier: ^1.1.4
+        version: 1.1.4(svelte@4.2.18)
       xlsx:
         specifier: ^0.18.5
         version: 0.18.5
@@ -756,6 +759,11 @@ packages:
       typescript:
         optional: true
 
+  svelte-textfit@1.1.4:
+    resolution: {integrity: sha512-V9M+MVtbMgVUOVL5e+aBfbu+WC9ov6gLXxHB1LRaeUXbCL6LoKEMzCPg1txG7U/1J4exG46eI8HDt3T3bwd22w==}
+    peerDependencies:
+      svelte: ^3.32.3
+
   svelte@4.2.18:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
     engines: {node: '>=16'}
@@ -1483,6 +1491,10 @@ snapshots:
       postcss: 8.4.39
       sass: 1.77.6
       typescript: 5.5.2
+
+  svelte-textfit@1.1.4(svelte@4.2.18):
+    dependencies:
+      svelte: 4.2.18
 
   svelte@4.2.18:
     dependencies:
