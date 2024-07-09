@@ -110,14 +110,12 @@
         {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
         <tr>
             <TableTd data={lect} bind:hover on:choose {background}>
-                <Scrolling>
-                    <IconButton favorite size="18" on:click={(e) => {
+                <IconButton favorite size="18" on:click={(e) => {
                     e.stopPropagation();
                     if(favorites.includes(lect)) favorites = favorites.filter(i => i !== lect)
                     else favorites = [...favorites, lect]
                 }} active={favorites.includes(lect)}/>
-                    {deptMap[lect.dept]}
-                </Scrolling>
+                {deptMap[lect.dept]}
             </TableTd>
 
             <TableTd data={lect} bind:hover on:choose {background}>
@@ -155,9 +153,7 @@
             </TableTd>
 
             <TableTd data={lect} bind:hover on:choose {background} online>
-                <Scrolling>
-                    <div>{lect.type || ''}</div>
-                </Scrolling>
+                {lect.type || ''}
             </TableTd>
 
             <TableTd data={lect} bind:hover on:choose {background}>
