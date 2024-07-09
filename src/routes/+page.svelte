@@ -6,9 +6,19 @@
     import {Button, CircularProgress, Icon, IconButton} from "nunui";
     import {darkMode} from "$lib";
     import {sort} from "fast-sort";
+    import {page} from "$app/stores";
+    import {goto} from "$app/navigation";
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
-    let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [];
+    let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
+        shared = null;
+
+    $: {
+        if ($page.url.hash?.length > 1 && data.data) {
+            shared = JSON.parse(atob($page.url.hash.slice(1)))
+            shared = shared.map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
+        } else shared = null;
+    }
 
     if (browser) onMount(async () => {
         const timeSet = new Set();
@@ -47,6 +57,8 @@
     $: if (selTime) menu = 1;
 
     let menu = 0;
+
+    $: width = shared ? 520 : 720;
 </script>
 
 <svelte:window bind:innerWidth></svelte:window>
@@ -68,8 +80,16 @@
             </span>
         </header>
         <article class:mobile>
+            {#if shared}
+                <div style="width: {width}px;border-radius: 12px">
+                    <TimeTable shared selected={shared} {mobile} timeSegments={[]} on:apply={() => {
+                        selected = shared;
+                        goto('#');
+                    }}/>
+                </div>
+            {/if}
             {#if !mobile || menu === 0}
-                <div style="width: 720px;border-radius: 12px">
+                <div style="width: {width}px;border-radius: 12px">
                     <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime/>
                 </div>
             {/if}

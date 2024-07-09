@@ -13,6 +13,7 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/qrcode": "^1.5.5",
 		"sass": "^1.77.6",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
@@ -24,8 +25,10 @@
 	"type": "module",
 	"dependencies": {
 		"fast-sort": "^3.4.0",
+		"html-to-image": "^1.11.11",
 		"node-fetch": "^3.3.2",
 		"nunui": "^0.0.121",
+		"qrcode": "^1.5.3",
 		"svelte-textfit": "^1.1.4",
 		"xlsx": "^0.18.5"
 	}
