@@ -139,7 +139,7 @@
 
   a {
     display: block;
-    color: initial;
+    color: var(--on-surface);
     text-decoration: none;
   }
 </style>
