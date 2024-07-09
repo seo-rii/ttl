@@ -16,9 +16,9 @@
     }
 
 
-    function perc(time) {
+    $: perc = (time) => {
         const start = 9 * 60;
-        const end = 24 * 60;
+        const end = maxHour * 60;
         return (time - start) / (end - start) * 100;
     }
 
@@ -40,7 +40,7 @@
     $: levels = getLevels(_hover ? [...selected, _hover] : selected);
     $: overlapExist = getLevels(selected).some(i => i[1] > 1);
 
-    $: maxHour = 24 ?? Math.max(18, ...selected.map(i => i.time).flat().map(i => i.em ? i.eh + 1 : i.eh));
+    $: maxHour = Math.max(18, ...selected.map(i => i.time).flat().map(i => i.em ? i.eh + 1 : i.eh));
     $: hours = Array.from({length: maxHour - 9 + 1}, (_, i) => i + 9);
 
     let container;
@@ -142,11 +142,12 @@
 
             {#each selected as data, i}
                 <TableItem {mobile} {data} on:remove={() => !shared && (selected = selected.filter(x => x !== data))}
-                           {selected} {capturing}
+                           {selected} {capturing} {maxHour}
                            {levels} offset={selected.slice(0, i).map(i => i.time).flat().length}/>
             {/each}
             {#if _hover && !capturing}
-                <TableItem data={hover} hover {selected} {levels} offset={selected.map(i => i.time).flat().length}/>
+                <TableItem {maxHour} data={hover} hover {selected} {levels}
+                           offset={selected.map(i => i.time).flat().length}/>
             {/if}
         </div>
     </div>

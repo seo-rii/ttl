@@ -30,7 +30,7 @@
 
     $: maxPage = Math.ceil(_list.length / itemPerPage);
     $: {
-        let _ = [search, dept, type];
+        let _ = [search, dept, type, selTime];
         page = 1;
     }
     $: {

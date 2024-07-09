@@ -6,13 +6,13 @@
 
     let parent;
 
-    export let data, hover, list, mobile, levels, offset, capturing;
+    export let data, hover, list, mobile, levels, offset, capturing, maxHour;
 
     const dispatch = createEventDispatcher();
     const start = 9 * 60;
-    const end = 24 * 60;
+    $: end = maxHour * 60;
 
-    function perc(h, m) {
+    $: perc = (h, m) => {
         const time = h * 60 + m;
         return (time - start) / (end - start) * 100;
     }
