@@ -42,6 +42,7 @@
 
     $: mobile = innerWidth < 1100;
     $: if (loaded) localStorage.data = JSON.stringify(selected);
+    $: if (selTime) menu = 1;
 
     let menu = 0;
 </script>
