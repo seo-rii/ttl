@@ -1,6 +1,5 @@
 <script lang="ts">
     import {ThemeProvider} from "nunui";
-    import {writable} from "svelte/store";
     import {browser} from "$app/environment";
     import {darkMode} from "$lib";
     import GA from "./GA.svelte";

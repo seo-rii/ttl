@@ -72,7 +72,8 @@
                         <span style="font-size: 0.76em;opacity: 0.8;font-weight: 300">{data.code}</span>
                     </p>
                     <p style="font-weight: 300;font-size: 0.8em">
-                        <Icon readiness_score/>{data.credit}학점</p>
+                        <Icon readiness_score/>{data.credit}학점
+                    </p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon apartment/>{data.where}</p>
                     <p style="font-weight: 300;font-size: 0.8em">
@@ -92,14 +93,23 @@
                     {#if mobile}
                         <article style="font-size: 16px;font-weight: 300;margin: 0 -12px">
                             <List>
+                                <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
+                                   target="_blank" on:click|stopPropagation>
+                                    <OneLine icon="description" title="실라버스"/>
+                                </a>
                                 <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}"
-                                   target="_blank"
-                                   on:click|stopPropagation>
+                                   target="_blank" on:click|stopPropagation>
                                     <OneLine icon="open_in_new" title="OTL 평가"/>
                                 </a>
                                 <OneLine icon="close" title="삭제" on:click={() => dispatch('remove')}/>
                             </List>
                         </article>
+                    {/if}
+                    {#if !mobile}
+                        <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
+                           target="_blank" on:click|stopPropagation>
+                            <Button small icon="description">실라버스</Button>
+                        </a>
                     {/if}
                     {#if !mobile && otlMap(data.code)}
                         <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}" target="_blank"

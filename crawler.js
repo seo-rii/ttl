@@ -64,9 +64,9 @@ async function main(year = 2024, term = 3, file = 'static/result.json') {
         },
     }).then(res => res.arrayBuffer()).then(ab => xlsx.read(ab, {type: 'array'}))
     const sheet = xl.Sheets[xl.SheetNames[0]]
-    const json = xlsx.utils.sheet_to_json(sheet)
+    const json = xlsx.utils.sheet_to_json(sheet, {raw: false})
     const data = json.slice(1).map(row => {
-        const dept = row.__EMPTY_21;
+        const dept = +row.__EMPTY_21;
         const type = row.__EMPTY_2 || '';
         const code = row.__EMPTY_5 || '';
         const title = row.__EMPTY_8 || '';
@@ -76,8 +76,9 @@ async function main(year = 2024, term = 3, file = 'static/result.json') {
         const time = parseTime(row.__EMPTY_17);
         const exam = parseTime(row.__EMPTY_19);
         const credit = +row.__EMPTY_11.split(':')[2] || 0;
+        const kcode = row.__EMPTY_6;
 
-        return {dept, type, code, title, group, prof, where, time, exam, credit};
+        return {dept, type, code, title, group, prof, where, time, exam, credit, kcode};
     }).filter(x => x)
 
     try {

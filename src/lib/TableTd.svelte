@@ -21,6 +21,7 @@
 <style lang="scss">
   td {
     cursor: pointer;
+    overflow: hidden;
 
     &, & :global(*) {
       color: var(--on-surface) !important;

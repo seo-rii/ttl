@@ -21,7 +21,7 @@ function parseTime(times) {
 
 const workbook = xlsx.readFile('179_1.xlsx');
 const sheet = workbook.Sheets[workbook.SheetNames[0]];
-const json = xlsx.utils.sheet_to_json(sheet);
+const json = xlsx.utils.sheet_to_json(sheet, {raw: false});
 const data = json.slice(2, 2 + 68).map(row => {
     const dept = 151;
     const type = row.__EMPTY || '';
@@ -33,7 +33,8 @@ const data = json.slice(2, 2 + 68).map(row => {
     const time = parseTime(row.__EMPTY_15);
     const exam = [];
     const credit = +row.__EMPTY_9.split(':')[2] || 0;
-    return {dept, type, code, title, group, prof, where, time, exam, credit};
+    const kcode = row.__EMPTY_2 || '';
+    return {dept, type, code, title, group, prof, where, time, exam, credit, kcode};
 })
 
-fs.writeFileSync('mas.json', JSON.stringify(data, null, 4));
+fs.writeFileSync('add_2024_3.json', JSON.stringify(data, null, 4));
