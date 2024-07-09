@@ -72,6 +72,8 @@
                         <span style="font-size: 0.76em;opacity: 0.8;font-weight: 300">{data.code}</span>
                     </p>
                     <p style="font-weight: 300;font-size: 0.8em">
+                        <Icon readiness_score/>{data.credit}학점</p>
+                    <p style="font-weight: 300;font-size: 0.8em">
                         <Icon apartment/>{data.where}</p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon person/>{data.prof}</p>
