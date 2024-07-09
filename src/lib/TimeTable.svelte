@@ -142,7 +142,7 @@
 
             {#each selected as data, i}
                 <TableItem {mobile} {data} on:remove={() => !shared && (selected = selected.filter(x => x !== data))}
-                           {selected}
+                           {selected} {capturing}
                            {levels} offset={selected.slice(0, i).map(i => i.time).flat().length}/>
             {/each}
             {#if _hover && !capturing}

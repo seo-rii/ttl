@@ -6,7 +6,7 @@
 
     let parent;
 
-    export let data, hover, list, mobile, levels, offset;
+    export let data, hover, list, mobile, levels, offset, capturing;
 
     const dispatch = createEventDispatcher();
     const start = 9 * 60;
@@ -56,7 +56,7 @@
             <svelte:component this={mobile ? Paper : Tooltip} left xstack bottom {mobile}>
                 <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 8px;font-size: 0.78em;top: 0;"
                      slot="target" bind:this={parent}>
-                    <p use:textfit={{parent, update: width,mode:"single",max: 16, min: 8}}>{data.title}</p>
+                    <p use:textfit={{parent, update: `${width}-${capturing}`,mode:"single",max: 16, min: 8}}>{data.title}</p>
                     {#if data.where}
                         <p style="font-size: 0.7em;font-weight: 300" class="one">
                             {data.where}
