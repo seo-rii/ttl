@@ -8,14 +8,16 @@
     import {sort} from "fast-sort";
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
-    let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime;
+    let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [];
 
     if (browser) onMount(async () => {
         const timeSet = new Set();
         data = await fetch('/result.json').then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
         selected = JSON.parse(localStorage.data || '[]')
+        favorites = JSON.parse(localStorage.fav || '[]')
         selected = selected.map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
+        favorites = favorites.map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
 
         for (const i of data.data) {
             for (const t of i.time) {
@@ -25,7 +27,6 @@
             }
         }
         const timeList = sort(Array.from(timeSet)).asc().filter(x => x >= 9 * 60);
-        console.log(timeList)
         timeSegments = [];
         for (let i = 1; i < timeList.length; i++) timeSegments.push([timeList[i - 1], timeList[i]]);
         timeSegments = timeSegments;
@@ -42,6 +43,7 @@
 
     $: mobile = innerWidth < 1100;
     $: if (loaded) localStorage.data = JSON.stringify(selected);
+    $: if (loaded) localStorage.fav = JSON.stringify(favorites);
     $: if (selTime) menu = 1;
 
     let menu = 0;
@@ -75,7 +77,7 @@
                 <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
                     <section style="position: relative;padding: 0 12px 12px 12px">
                         <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
-                                     bind:selected {mobile} {timeSegments} bind:selTime/>
+                                     bind:selected {mobile} {timeSegments} bind:selTime bind:favorites/>
                     </section>
                 </div>
             {/if}

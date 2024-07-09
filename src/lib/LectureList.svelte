@@ -5,7 +5,7 @@
     import TableTd from "$lib/TableTd.svelte";
     import {sort} from "fast-sort";
 
-    export let list = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime;
+    export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime;
 
     const types = [
         "기초필수",
@@ -95,20 +95,25 @@
 
 <Table minWidth="900">
     <tr>
-        <Th width="2">학과</Th>
-        <Th width="1.4">학점</Th>
-        <Th width="2">코드</Th>
-        <Th width="1.6">교수</Th>
+        <Th width="3">학과</Th>
+        <Th width="1.6">학점</Th>
+        <Th width="2.6">코드</Th>
+        <Th width="2">교수</Th>
         <Th width="6">과목 이름</Th>
         <Th width="4">수업 시간</Th>
         <Th width="4">강의실</Th>
         <Th width="2.7">유형</Th>
         <Th width="1">OTL</Th>
     </tr>
-    {#each _list.slice((page - 1) * itemPerPage, page * itemPerPage) as lect}
-        {@const background = selected.includes(lect) ? 'var(--secondary-light3)' : ''}
+    {#each [...favorites, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage)] as lect, i}
+        {@const background = i < favorites.length ? 'var(--primary-light4)' : (selected.includes(lect) ? 'var(--secondary-light3)' : '')}
         <tr>
             <TableTd data={lect} bind:hover on:choose {background}>
+                <IconButton favorite size="18" on:click={(e) => {
+                    e.stopPropagation();
+                    if(favorites.includes(lect)) favorites = favorites.filter(i => i !== lect)
+                    else favorites = [...favorites, lect]
+                }} active={favorites.includes(lect)}/>
                 {deptMap[lect.dept]}
             </TableTd>
 
