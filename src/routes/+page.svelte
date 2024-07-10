@@ -9,7 +9,7 @@
     import {page} from "$app/stores";
     import {goto} from "$app/navigation";
 
-    const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
+    const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null;
 
@@ -22,7 +22,7 @@
 
     if (browser) onMount(async () => {
         const timeSet = new Set();
-        data = await fetch('/result.json').then(r => r.json());
+        data = await fetch('/result_2024_3.json').then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
         selected = JSON.parse(localStorage.data || '[]')
         favorites = JSON.parse(localStorage.fav || '[]')

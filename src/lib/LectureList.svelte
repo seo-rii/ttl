@@ -1,12 +1,14 @@
 <script lang="ts">
-    import {IconButton, Input, Option, Paper, Select, Table, Th, Tooltip} from "nunui";
+    import {Card, IconButton, Input, Option, Paper, Select, Table, Th, Tooltip} from "nunui";
     import Paginator from "$lib/Paginator.svelte";
     import otlMap from "$lib/otlMap";
     import TableTd from "$lib/TableTd.svelte";
     import {sort} from "fast-sort";
     import Scrolling from "$lib/Scrolling.svelte";
+    import Other from "$lib/Other.svelte";
 
-    export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime;
+    export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime,
+        detail;
 
     const types = [
         "기초필수",
@@ -94,90 +96,103 @@
     <Paginator {maxPage} bind:page maxPageShow={mobile ? 3 : 8}/>
 </div>
 
-<Table minWidth="900">
-    <tr>
-        <Th width="3.2">학과</Th>
-        <Th width="1.6">학점</Th>
-        <Th width="2.8">코드</Th>
-        <Th width="2">교수</Th>
-        <Th width="6">과목 이름</Th>
-        <Th width="4.4">수업 시간</Th>
-        <Th width="4.2">강의실</Th>
-        <Th width="2.7">유형</Th>
-        <Th width="3.8">실라버스/OTL</Th>
-    </tr>
-    {#each [...favorites, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage)] as lect, i}
-        {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
+{#if detail}
+    <Other bind:detail/>
+{:else}
+    <Table minWidth="900">
         <tr>
-            <TableTd data={lect} bind:hover on:choose {background}>
-                <IconButton favorite size="18" on:click={(e) => {
+            <Th width="3.2">학과</Th>
+            <Th width="1.8">학점</Th>
+            <Th width="3.6">코드</Th>
+            <Th width="2.4">교수</Th>
+            <Th width="6">과목 이름</Th>
+            <Th width="4.4">수업 시간</Th>
+            <Th width="4.2">강의실</Th>
+            <Th width="2.7">유형</Th>
+            <Th width="3.8">실라버스/OTL</Th>
+        </tr>
+        {#each [...favorites, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage)] as lect, i}
+            {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
+            <tr>
+                <TableTd data={lect} bind:hover on:choose {background}>
+                    <IconButton favorite size="18" on:click={(e) => {
                     e.stopPropagation();
                     if(favorites.includes(lect)) favorites = favorites.filter(i => i !== lect)
                     else favorites = [...favorites, lect]
                 }} active={favorites.includes(lect)}/>
-                {deptMap[lect.dept]}
-            </TableTd>
+                    {deptMap[lect.dept]}
+                </TableTd>
 
-            <TableTd data={lect} bind:hover on:choose {background}>
-                {lect.credit}
-            </TableTd>
+                <TableTd data={lect} bind:hover on:choose {background}>
+                    {lect.credit}
+                </TableTd>
 
-            <TableTd data={lect} bind:hover on:choose {background}>
-                <span style="display: inline-block">{lect.code}</span>
-                {#if lect.group}
-                    <span style="font-size: 0.8em;display: inline-block">{lect.group}</span>
-                {/if}
-            </TableTd>
-
-            <TableTd data={lect} bind:hover on:choose {background}>
-                {lect.prof}
-            </TableTd>
-
-            <TableTd data={lect} bind:hover on:choose {background}>
-                {lect.title}
-            </TableTd>
-
-            <TableTd data={lect} bind:hover on:choose {background}>
-                {#each lect.time as time}
-                    <p>
-                        {['월', '화', '수', '목', '금', '토', '일'][time.date]}
-                        {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
-                    </p>
-                {/each}
-            </TableTd>
-
-            <TableTd data={lect} bind:hover on:choose {background} oneline>
-                <Scrolling>
-                    <div>{lect.where}</div>
-                </Scrolling>
-            </TableTd>
-
-            <TableTd data={lect} bind:hover on:choose {background} online>
-                {lect.type || ''}
-            </TableTd>
-
-            <TableTd data={lect} bind:hover on:choose {background}>
-                <div style="display: flex">
-                    {#if lect.kcode}
-                        <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={lect.kcode}&dept_id={lect.dept}&lecture_class={lect.group}"
-                           target="_blank">
-                            <IconButton description size="18" tooltip="실라버스" right xstack bottom/>
-                        </a>
+                <TableTd data={lect} bind:hover on:choose {background}>
+                    <IconButton list size="18" on:click={(e) => {
+                    detail = lect;
+                    e.stopPropagation();
+                }}/>
+                    <span style="display: inline-block">{lect.code}</span>
+                    {#if lect.group}
+                        <span style="font-size: 0.8em;display: inline-block">{lect.group}</span>
                     {/if}
-                    {#if otlMap(lect.code)}
-                        <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(lect.code)}" target="_blank">
-                            <IconButton open_in_new size="18" tooltip="OTL" right xstack bottom/>
-                        </a>
-                    {/if}
-                </div>
-            </TableTd>
-        </tr>
-    {/each}
-</Table>
+                </TableTd>
+
+                <TableTd data={lect} bind:hover on:choose {background}>
+                    {lect.prof}
+                </TableTd>
+
+                <TableTd data={lect} bind:hover on:choose {background}>
+                    {lect.title}
+                </TableTd>
+
+                <TableTd data={lect} bind:hover on:choose {background}>
+                    {#each lect.time as time}
+                        <p>
+                            {['월', '화', '수', '목', '금', '토', '일'][time.date]}
+                            {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
+                        </p>
+                    {/each}
+                </TableTd>
+
+                <TableTd data={lect} bind:hover on:choose {background} oneline>
+                    <Scrolling>
+                        <div>{lect.where}</div>
+                    </Scrolling>
+                </TableTd>
+
+                <TableTd data={lect} bind:hover on:choose {background} online>
+                    {lect.type || ''}
+                </TableTd>
+
+                <TableTd data={lect} bind:hover on:choose {background}>
+                    <div style="display: flex">
+                        {#if lect.kcode}
+                            <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={lect.kcode}&dept_id={lect.dept}&lecture_class={lect.group}"
+                               target="_blank">
+                                <IconButton description size="18" tooltip="실라버스" right xstack bottom/>
+                            </a>
+                        {/if}
+                        {#if otlMap(lect.code)}
+                            <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(lect.code)}"
+                               target="_blank">
+                                <IconButton open_in_new size="18" tooltip="OTL" right xstack bottom/>
+                            </a>
+                        {/if}
+                    </div>
+                </TableTd>
+            </tr>
+        {/each}
+    </Table>
+{/if}
 
 <style lang="scss">
   tr {
-    font-size: 0.9em;
+    font-size: 0.92em;
+
+    :global(td) {
+      padding: 10px 4px !important;
+    }
   }
 
   tr :global(td span) {
