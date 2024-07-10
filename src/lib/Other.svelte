@@ -32,7 +32,7 @@
                 <div style="display: flex;flex-wrap: wrap;flex: 1">
                     {#each history as h}
                         {@const syllabus = `https://cais.kaist.ac.kr/syllabusInfo?year=${year}&term=${term}&subject_no=${detail.kcode}&dept_id=${detail.dept}&lecture_class=${h[0]}`}
-                        <a href={syllabus}>
+                        <a href={syllabus} target="_blank">
                             <Card outlined style="margin-right: 4px" ripple>
                                 {#if h[0]}
                                     {h[0]} -
