@@ -11,7 +11,7 @@
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
-        shared = null;
+        shared = null, detail = null;
 
     $: {
         if ($page.url.hash?.length > 1 && data.data) {
@@ -54,7 +54,8 @@
     $: mobile = innerWidth < (shared ? 1300 : 1100);
     $: if (loaded) localStorage.data = JSON.stringify(selected);
     $: if (loaded) localStorage.fav = JSON.stringify(favorites);
-    $: if (selTime) menu = 1;
+    $: if (selTime) menu = (shared ? 2 : 1);
+    $: if (detail) menu = (shared ? 2 : 1);
 
     let menu = 0;
 
@@ -90,14 +91,14 @@
             {/if}
             {#if !mobile || menu === (shared ? 1 : 0)}
                 <div style="width: {width}px;border-radius: 12px">
-                    <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime/>
+                    <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime bind:detail/>
                 </div>
             {/if}
             {#if !mobile || menu === (shared ? 2 : 1)}
                 <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
                     <section style="position: relative;padding: 0 12px 12px 12px">
                         <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
-                                     bind:selected {mobile} {timeSegments} bind:selTime bind:favorites/>
+                                     bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail/>
                     </section>
                 </div>
             {/if}
