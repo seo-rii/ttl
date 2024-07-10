@@ -21,14 +21,36 @@
         "#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5", "#2196F3",
         "#03A9F4", "#00BCD4", "#009688", "#4CAF50", "#8BC34A", "#CDDC39",
         "#FFEB3B", "#FFC107", "#FF9800", "#FF5722", "#795548", "#9E9E9E",
-        "#607D8B"
+        "#607D8B",
+
+        "#D32F2F",
+        "#C62828",
+        "#B71C1C",
+        "#FF7043",
+        "#F4511E",
+        "#E64A19",
+        "#FFEE58",
+        "#FFEB3B",
+        "#FDD835",
+        "#66BB6A",
+        "#4CAF50",
+        "#388E3C",
+        "#42A5F5",
+        "#2196F3",
+        "#1E88E5",
+        "#AB47BC",
+        "#8E24AA",
+        "#7B1FA2",
+        "#EC407A",
+        "#D81B60",
+        "#C2185B",
     ];
 
     function hashString(str) {
         let hash = 0;
         for (let i = 0; i < str.length; i++) {
             hash = (hash << 5) - hash + str.charCodeAt(i);
-            hash |= 0; // Convert to 32bit integer
+            hash |= 0;
         }
         return Math.abs(hash);
     }
@@ -39,7 +61,7 @@
         return materialColors[colorIndex];
     }
 
-    $: color = getColorForSubject(data.code);
+    $: color = getColorForSubject(data.code + data.group);
 </script>
 
 {#each data.time as time, i}
@@ -54,15 +76,18 @@
          on:click={() => !mobile && dispatch('remove')}>
         {#key selected}
             <svelte:component this={mobile ? Paper : Tooltip} left xstack bottom {mobile}>
-                <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 8px;font-size: 0.78em;top: 0;"
+                <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 2px 6px 2px 8px;font-size: 0.78em;top: 0;"
                      slot="target" bind:this={parent}>
-                    <p use:textfit={{parent, update: `${width}-${capturing}`,mode:"single",max: 16, min: 8}}>{data.title}</p>
+                    <p use:textfit={{height: 36, update: `${width}-${capturing}`,mode:"multi",max: 16, min: 11}} style="margin-bottom: 4px;margin-top: 0;white-space: normal">
+                        <span style="font-size: max(0.8em, 8px);opacity: 0.6;">{data.code}</span><br>
+                        {data.title}
+                    </p>
                     {#if data.where}
-                        <p style="font-size: 0.7em;font-weight: 300" class="one">
+                        <p style="font-size: 0.7em;font-weight: 300;opacity: 0.6;margin-bottom: 2px" use:textfit={{parent, update: `${width}-${capturing}`,mode:"single",max: 11, min: 7}}>
                             {data.where}
                         </p>
                     {/if}
-                    <p style="font-size: 0.6em;font-weight: 300;" class="one">
+                    <p style="font-size: 0.6em;font-weight: 300;opacity: 0.6;white-space: normal" class="one">
                         {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
                     </p>
                 </div>
@@ -126,7 +151,7 @@
                 </main>
             </svelte:component>
         {/key}
-        <div style="background:{color};position: absolute;left: 3px;width: 2px;top: 4px;bottom: 4px;border-radius: 4px"></div>
+        <div style="background:{color}aa;position: absolute;left: 3px;width: 2px;top: 4px;bottom: 4px;border-radius: 4px"></div>
     </div>
 {/each}
 
@@ -157,5 +182,14 @@
     display: block;
     color: var(--on-surface);
     text-decoration: none;
+  }
+
+  .two {
+    word-break: break-word;
+    white-space: initial !important;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical
   }
 </style>
