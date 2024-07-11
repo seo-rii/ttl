@@ -9,8 +9,8 @@ function parseTime(times) {
             let date = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(s.slice(0, 3));
             if (date === -1) date = ['월', '화', '수', '목', '금', '토', '일'].indexOf(s.slice(0, 1))
             const sh = s && +s.split(' ')[1].split(':')[0];
-            const sm = s && +s.split(' ')[1].split(':')[1].split('~')[0];
-            const eh = s && +s.split(' ')[1].split(':')[1].split('~')[1].split(':')[0];
+            const sm = s && +s.split(' ')[1].split(':')[1].split('~').map(i => i.split('-')).flat()[0];
+            const eh = s && +s.split(' ')[1].split(':')[1].split('~').map(i => i.split('-')).flat()[1].split(':')[0];
             const em = s && +s.split(' ')[1].split(':')[2];
             return {date, sh, sm, eh, em}
         } catch (e) {
