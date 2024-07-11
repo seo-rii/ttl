@@ -59,7 +59,7 @@
 
     let menu = 0;
 
-    $: width = shared ? 520 : 720;
+    $: width = shared ? 520 : 620;
 </script>
 
 <svelte:window bind:innerWidth></svelte:window>
