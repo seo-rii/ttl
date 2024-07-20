@@ -78,12 +78,14 @@
             <svelte:component this={mobile ? Paper : Tooltip} left xstack bottom {mobile}>
                 <div style="width: calc(100% - 16px);height:calc(100% - 16px);padding: 2px 6px 2px 8px;font-size: 0.78em;top: 0;"
                      slot="target" bind:this={parent}>
-                    <p use:textfit={{height: 36, update: `${width}-${capturing}`,mode:"multi",max: 16, min: 11}} style="margin-bottom: 4px;margin-top: 0;white-space: normal">
+                    <p use:textfit={{height: 36, update: `${width}-${capturing}`,mode:"multi",max: 16, min: 11}}
+                       style="margin-bottom: 4px;margin-top: 0;white-space: normal">
                         <span style="font-size: max(0.8em, 8px);opacity: 0.6;">{data.code}</span><br>
                         {data.title}
                     </p>
                     {#if data.where}
-                        <p style="font-size: 0.7em;font-weight: 300;opacity: 0.6;margin-bottom: 2px" use:textfit={{parent, update: `${width}-${capturing}`,mode:"single",max: 11, min: 7}}>
+                        <p style="font-size: 0.7em;font-weight: 300;opacity: 0.6;margin-bottom: 2px"
+                           use:textfit={{parent, update: `${width}-${capturing}`,mode:"single",max: 11, min: 7}}>
                             {data.where}
                         </p>
                     {/if}
@@ -99,6 +101,9 @@
                     </p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon readiness_score/>{data.credit}학점
+                        {#if data.au}
+                            / {data.au} AU
+                        {/if}
                     </p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon apartment/>{data.where}</p>
@@ -136,7 +141,8 @@
                         <Button small icon="list" on:click={(e) => {
                             e.stopPropagation()
                             detail = data
-                        }}>과목 개설 내역</Button>
+                        }}>과목 개설 내역
+                        </Button>
                         <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
                            target="_blank" on:click|stopPropagation>
                             <Button small icon="description">실라버스</Button>

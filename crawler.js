@@ -72,8 +72,9 @@ async function main(year = 2024, term = 3, file = `static/result_${year}_${term}
         const exam = parseTime(row.__EMPTY_19);
         const credit = +row.__EMPTY_11.split(':')[2] || 0;
         const kcode = row.__EMPTY_6;
+        const au = +row.__EMPTY_10 || 0;
 
-        return {dept, type, code, title, group, prof, where, time, exam, credit, kcode};
+        return {dept, type, code, title, group, prof, where, time, exam, credit, kcode, au};
     }).filter(x => x)
 
     try {

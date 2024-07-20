@@ -5,6 +5,8 @@
     import {toPng} from 'html-to-image';
     import qrcode from 'qrcode';
     import {goto} from "$app/navigation";
+    import {darkMode} from "$lib/index";
+    import {scale, fade} from "svelte/transition";
 
     const dispatch = createEventDispatcher();
 
@@ -64,11 +66,14 @@
             code: i.code,
             group: i.group
         }))));
-        qrcode.toDataURL(shareUrl, function (err, url) {
+        qrcode.toDataURL(shareUrl, {color: {dark: $darkMode ? '#fff' : '#000', light: '#00000000'}}, (err, url) => {
             shareQr = url;
         })
         share = true;
     }
+
+    $: credit = selected.reduce((a, b) => a + b.credit, 0)
+    $: au = selected.reduce((a, b) => a + b.au, 0)
 </script>
 
 <main class:capturing bind:this={container}>
@@ -88,24 +93,43 @@
             시간표
         </span>
         <span style="margin-left: auto;display: block;font-size: 0.8em;font-weight: 300">
-            <span style="font-size: 1.4em;font-weight: 500">{selected.reduce((a, b) => a + b.credit, 0)}</span>학점 /
+            <span style="font-size: 1.4em;font-weight: 500">{credit}</span>학점 /
+            {#if au}
+                <span style="font-size: 1.4em;font-weight: 500">{au}</span>AU /
+            {/if}
             <span style="font-size: 1.4em;font-weight: 500">{selected.length}</span>과목
 
             {#if !capturing}
-                <Paper right xstack bottom>
+                <Paper right xstack bottom mobile={mobile}>
                     <IconButton download slot="target"/>
-                    <div class="padding: 12px !important;position: relative">
-                        <p>이름이 뭐에요?</p>
+                    <div style="padding: 12px !important;position: relative">
+                        <p style="margin-top: 0">이름이 뭐에요?</p>
                         <div>
-                            <Input bind:value={name} placeholder="이름" autofocus/>
+                            <Input bind:value={name} placeholder="이름" autofocus fullWidth on:submit={capture}/>
                         </div>
-                        <div style="display: flex;justify-content: flex-end">
+                        <div style="display: flex;justify-content: flex-end;margin-top: 12px">
                             <Button small transparent on:click={capture}>저장</Button>
                         </div>
                     </div>
                 </Paper>
                 {#if !shared}
-                    <IconButton share on:click={openShare}/>
+                    <Paper left xstack bottom width="300px" mobile={mobile}>
+                        <IconButton share on:click={openShare} slot="target"/>
+                        <div style="padding: 12px">
+                            <h2 style="margin: 4px 0">
+                                공유
+                            </h2>
+                            <p style="margin: 12px 0 4px 0">아래 QR코드를 공유하세요.</p>
+                            <div style="display: flex;justify-content: center">
+                                <img src={shareQr} alt="QR"/>
+                            </div>
+                            <p>또는, 아래 링크를 복사해서 공유하세요.</p>
+                            <Input readonly placeholder="URL" value={shareUrl} trailingIcon="content_copy" trailingHandler={() => {
+                                navigator.clipboard.writeText(shareUrl);
+                                alert('복사되었습니다.');
+                            }} fullWidth/>
+                        </div>
+                    </Paper>
                 {:else}
                     <IconButton edit on:click={() => dispatch('apply')}/>
                     <IconButton close on:click={() => goto('#')}/>
@@ -155,22 +179,9 @@
     </div>
 </main>
 {#if capturing}
-    <div class="full">
+    <div class="full" style="flex-direction: column">
+        <p>캡쳐 중... 잠시만 기다리세요.</p>
         <CircularProgress indeterminate/>
-    </div>
-{/if}
-{#if share}
-    <div class="full" style="background: #00000033" on:click={() => share = false}>
-        <Card primary on:click={(e) => e.stopPropagation()}>
-            <h2>공유</h2>
-            <p>아래 QR코드를 공유하세요.</p>
-            <img src={shareQr} alt="QR"/>
-            <p>또는, 아래 링크를 복사해서 공유하세요.</p>
-            <Input readonly placeholder="URL" value={shareUrl} trailingIcon="content_copy" trailingHandler={() => {
-                navigator.clipboard.writeText(shareUrl);
-                alert('복사되었습니다.');
-            }}/>
-        </Card>
     </div>
 {/if}
 
