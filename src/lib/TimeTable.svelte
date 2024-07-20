@@ -6,12 +6,11 @@
     import qrcode from 'qrcode';
     import {goto} from "$app/navigation";
     import {darkMode} from "$lib/index";
-    import {scale, fade} from "svelte/transition";
 
     const dispatch = createEventDispatcher();
 
     export let selected, hover, mobile, timeSegments, selTime, shared, detail;
-    let name = '', capturing = false, share = false, shareUrl = '', shareQr = '';
+    let name = '', capturing = false, shareUrl = '', shareQr = '';
 
     function time(h, m) {
         return h * 60 + m;
@@ -66,10 +65,9 @@
             code: i.code,
             group: i.group
         }))));
-        qrcode.toDataURL(shareUrl, {color: {dark: $darkMode ? '#fff' : '#000', light: '#00000000'}}, (err, url) => {
+        qrcode.toDataURL(shareUrl, {color: {dark: $darkMode ? '#fff' : '#000', light: '#00000000'}, width: 280}, (err, url) => {
             shareQr = url;
         })
-        share = true;
     }
 
     $: credit = selected.reduce((a, b) => a + b.credit, 0)
