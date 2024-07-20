@@ -74,6 +74,7 @@
                         DB 버전 : {new Date(data.version).toLocaleString()}
                     </span>
                 {/if}
+                <a href="/plan" style="font-size: 0.8em;position: relative;top: 6px"><Button small>플래너</Button></a>
             </span>
             <span>
                 made by <a href="https://seorii.page">@seo-rii</a>

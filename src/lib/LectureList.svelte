@@ -45,17 +45,21 @@
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
     <header>
         {#if year}
-            <Select bind:selected={year} placeholder="년도" {mobile}>
-                {#each Array.from({length: 7}, (_, i) => 2024 - i) as y}
-                    <Option title={y} data={y}/>
-                {/each}
-            </Select>
-            <Select bind:selected={term} placeholder="학기" {mobile}>
-                <Option title="봄" data={1}/>
-                <Option title="여름" data={2}/>
-                <Option title="가을" data={3}/>
-                <Option title="겨울" data={4}/>
-            </Select>
+            <div class="item">
+                <Select bind:selected={year} placeholder="년도" {mobile}>
+                    {#each Array.from({length: 12}, (_, i) => 2024 - i) as y}
+                        <Option title={y} data={y}/>
+                    {/each}
+                </Select>
+            </div>
+            <div class="item">
+                <Select bind:selected={term} placeholder="학기" {mobile}>
+                    <Option title="봄" data={1}/>
+                    <Option title="여름" data={2}/>
+                    <Option title="가을" data={3}/>
+                    <Option title="겨울" data={4}/>
+                </Select>
+            </div>
         {/if}
         <div style="flex: 1;min-width: 160px">
             <Input bind:value={search} placeholder="검색"/>
@@ -97,12 +101,12 @@
                 </main>
             </Select>
         </div>
-<!--        <div style="flex: 0.6">-->
-<!--            <Paper right xstack bottom>-->
-<!--                <Button icon="add" slot="target" style="min-width: 74px">커스텀</Button>-->
-<!--                sdfsdfdsf-->
-<!--            </Paper>-->
-<!--        </div>-->
+        <!--        <div style="flex: 0.6">-->
+        <!--            <Paper right xstack bottom>-->
+        <!--                <Button icon="add" slot="target" style="min-width: 74px">커스텀</Button>-->
+        <!--                sdfsdfdsf-->
+        <!--            </Paper>-->
+        <!--        </div>-->
     </header>
 
     <Paginator {maxPage} bind:page maxPageShow={mobile ? 3 : 8}/>

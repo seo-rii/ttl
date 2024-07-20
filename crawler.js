@@ -147,9 +147,13 @@ function other() {
     writeFileSync('static/other.json', JSON.stringify(subjects))
 }
 
-
+for (let y = 2012; y <= 2024; y++) {
+    for (let t = 1; t <= 4; t++) {
+        main(y, t, `static/result_${y}_${t}.json`)
+    }
+}
 // other()
-main().then(() => {
-    other()
-    console.log('done')
-})
+// main().then(() => {
+//     other()
+//     console.log('done')
+// })
