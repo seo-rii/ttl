@@ -13,10 +13,11 @@
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
 
+    $: filter = (li) => li.map(i => i.custom ? i : data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i);
     $: {
         if ($page.url.hash?.length > 1 && data.data) {
             shared = JSON.parse(atob($page.url.hash.slice(1)))
-            shared = shared.map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
+            shared = filter(shared)
         } else shared = null;
     }
 
@@ -26,8 +27,8 @@
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
         selected = JSON.parse(localStorage.data || '[]')
         favorites = JSON.parse(localStorage.fav || '[]')
-        selected = selected.map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
-        favorites = favorites.map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
+        selected = filter(selected)
+        favorites = filter(favorites)
 
         for (const i of data.data) {
             for (const t of i.time) {

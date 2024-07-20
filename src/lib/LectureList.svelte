@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Card, IconButton, Input, Option, Paper, Select, Table, Th, Tooltip} from "nunui";
+    import {Button, Card, IconButton, Input, Option, Paper, Select, Table, Th, Tooltip} from "nunui";
     import Paginator from "$lib/Paginator.svelte";
     import otlMap from "$lib/otlMap";
     import TableTd from "$lib/TableTd.svelte";
@@ -57,40 +57,52 @@
                 <Option title="겨울" data={4}/>
             </Select>
         {/if}
-        <div style="min-width: 160px">
+        <div style="flex: 1;min-width: 160px">
             <Input bind:value={search} placeholder="검색"/>
         </div>
-        <Select bind:selected={dept} placeholder="학과" {mobile}>
-            <main on:wheel|stopPropagation|passive on:touchmove|stopPropagation|passive
-                  on:touchdown|stopPropagation|passive style="max-height: 80vh">
-                <Option title="전체" data={null}/>
-                {#each deptList as dept}
-                    <Option title={deptMap[dept]} data={dept}/>
-                {/each}
-            </main>
-        </Select>
-        <Select bind:selected={type} placeholder="유형" {mobile} style="max-height: 80vh">
-            <main on:wheel|stopPropagation|passive>
-                <Option title="전체" data={null}/>
-                {#each types as type}
-                    <Option title={type} data={type}/>
-                {/each}
-            </main>
-        </Select>
-        <Select bind:selected={selTime} placeholder="시간 포함" {mobile}>
-            <main on:wheel|stopPropagation|passive style="max-height: 80vh">
-                <Option title="전체" data={null}/>
-                {#each [0, 1, 2, 3, 4] as date}
-                    {#each timeSegments as [s, e]}
-                        {@const sh = Math.floor(s / 60)}
-                        {@const sm = (s % 60).toString().padStart(2, '0')}
-                        {@const eh = Math.floor(e / 60)}
-                        {@const em = (e % 60).toString().padStart(2, '0')}
-                        <Option title="{['월', '화', '수', '목', '금'][date]} {sh}:{sm} - {eh}:{em}" data="{date}-{s}"/>
+        <div class="item">
+            <Select bind:selected={dept} placeholder="학과" {mobile}>
+                <main on:wheel|stopPropagation|passive on:touchmove|stopPropagation|passive
+                      on:touchdown|stopPropagation|passive style="max-height: 80vh">
+                    <Option title="전체" data={null}/>
+                    {#each deptList as dept}
+                        <Option title={deptMap[dept]} data={dept}/>
                     {/each}
-                {/each}
-            </main>
-        </Select>
+                </main>
+            </Select>
+        </div>
+        <div class="item" style="flex: 0.6">
+            <Select bind:selected={type} placeholder="유형" {mobile} style="max-height: 80vh;min-width: 100px">
+                <main on:wheel|stopPropagation|passive>
+                    <Option title="전체" data={null}/>
+                    {#each types as type}
+                        <Option title={type} data={type}/>
+                    {/each}
+                </main>
+            </Select>
+        </div>
+        <div class="item" style="flex: 0.8">
+            <Select bind:selected={selTime} placeholder="시간 포함" {mobile} style="min-width: 100px">
+                <main on:wheel|stopPropagation|passive style="max-height: 80vh">
+                    <Option title="전체" data={null}/>
+                    {#each [0, 1, 2, 3, 4] as date}
+                        {#each timeSegments as [s, e]}
+                            {@const sh = Math.floor(s / 60)}
+                            {@const sm = (s % 60).toString().padStart(2, '0')}
+                            {@const eh = Math.floor(e / 60)}
+                            {@const em = (e % 60).toString().padStart(2, '0')}
+                            <Option title="{['월', '화', '수', '목', '금'][date]} {sh}:{sm} - {eh}:{em}" data="{date}-{s}"/>
+                        {/each}
+                    {/each}
+                </main>
+            </Select>
+        </div>
+<!--        <div style="flex: 0.6">-->
+<!--            <Paper right xstack bottom>-->
+<!--                <Button icon="add" slot="target" style="min-width: 74px">커스텀</Button>-->
+<!--                sdfsdfdsf-->
+<!--            </Paper>-->
+<!--        </div>-->
     </header>
 
     <Paginator {maxPage} bind:page maxPageShow={mobile ? 3 : 8}/>
@@ -201,14 +213,22 @@
   header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     > :global(*) {
       width: 240px;
-      margin: 0 12px 0 0 !important;
+      margin: 0 12px 4px 0 !important;
     }
   }
 
   p {
     margin: 0;
+  }
+
+  .item {
+    min-width: 100px;
+    flex: 1;
+    margin-top: -16px !important;
+    margin-bottom: 4px !important;
   }
 </style>
