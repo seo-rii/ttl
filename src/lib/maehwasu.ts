@@ -541,7 +541,7 @@ export default class Maehwasu {
         }
 
         const required_major_credits = this.requiredMajorCredits()
-        const total_major = required_major_credits[this.department.major][1]
+        const total_major = required_major_credits[this.department.major]?.[1]
         let total_other_major = 0
         for (let key in required_major_credits) {
             if (key != this.department.major)

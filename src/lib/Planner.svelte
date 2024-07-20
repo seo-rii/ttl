@@ -74,6 +74,7 @@
             {/each}
         </Select>
         <Select bind:selected={dept} placeholder="학과" {mobile}>
+            <Option title="없음" data={null}/>
             {#each majors as item}
                 <Option title={item[1]} data={item[0]}/>
             {/each}
