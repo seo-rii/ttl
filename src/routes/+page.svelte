@@ -11,7 +11,7 @@
 
     let year = 2024, term = 3;
 
-    const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구'];
+    const ignoreSets = [];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
 
@@ -103,7 +103,7 @@
                     <section style="position: relative;padding: 0 12px 12px 12px">
                         <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
                                      bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail
-                                     {year} {term}/>
+                                     bind:year bind:term/>
                     </section>
                 </div>
             {/if}

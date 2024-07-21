@@ -6,7 +6,7 @@
     import {darkMode} from "$lib";
     import Planner from "$lib/Planner.svelte";
 
-    const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
+    const ignoreSets = [];
     let year = 2024, term = 3, menu = 0;
     let data: any = {}, hover, innerWidth, loaded = false, list = [], plan = {}, deptMap = {};
 
