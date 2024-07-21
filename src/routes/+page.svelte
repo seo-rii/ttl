@@ -9,6 +9,8 @@
     import {page} from "$app/stores";
     import {goto} from "$app/navigation";
 
+    let year = 2024, term = 3;
+
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
@@ -23,7 +25,7 @@
 
     if (browser) onMount(async () => {
         const timeSet = new Set();
-        data = await fetch('/result_2024_3.json').then(r => r.json());
+        data = await fetch(`/result_${year}_${term}.json`).then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
         selected = JSON.parse(localStorage.data || '[]')
         favorites = JSON.parse(localStorage.fav || '[]')
@@ -88,19 +90,20 @@
                     <TimeTable shared selected={shared} {mobile} timeSegments={[]} on:apply={() => {
                         selected = shared;
                         goto('#');
-                    }}/>
+                    }} {year} {term}/>
                 </div>
             {/if}
             {#if !mobile || menu === (shared ? 1 : 0)}
                 <div style="width: {width}px;border-radius: 12px">
-                    <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime bind:detail/>
+                    <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime bind:detail {year} {term}/>
                 </div>
             {/if}
             {#if !mobile || menu === (shared ? 2 : 1)}
                 <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
                     <section style="position: relative;padding: 0 12px 12px 12px">
                         <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
-                                     bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail/>
+                                     bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail
+                                     {year} {term}/>
                     </section>
                 </div>
             {/if}

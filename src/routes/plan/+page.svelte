@@ -5,7 +5,6 @@
     import {Button, Option, IconButton, Select} from "nunui";
     import {darkMode} from "$lib";
     import Planner from "$lib/Planner.svelte";
-    import TimeTable from "$lib/TimeTable.svelte";
 
     const ignoreSets = ['졸업연구', '개별연구', 'URP', '논문연구', '석사', '박사'];
     let year = 2024, term = 3, menu = 0;

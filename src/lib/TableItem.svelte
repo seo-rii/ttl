@@ -6,7 +6,7 @@
 
     let parent;
 
-    export let data, hover, list, mobile, levels, offset, capturing, maxHour, detail;
+    export let data, hover, list, mobile, levels, offset, capturing, maxHour, detail, year, term;
 
     const dispatch = createEventDispatcher();
     const start = 9 * 60;
@@ -125,7 +125,7 @@
                         <article style="font-size: 16px;font-weight: 300;margin: 0 -12px">
                             <List>
                                 <OneLine icon="list" title="과목 개설 내역" on:click={() => detail = data}/>
-                                <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
+                                <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
                                    target="_blank" on:click|stopPropagation>
                                     <OneLine icon="description" title="실라버스"/>
                                 </a>
@@ -143,7 +143,7 @@
                             detail = data
                         }}>과목 개설 내역
                         </Button>
-                        <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
+                        <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
                            target="_blank" on:click|stopPropagation>
                             <Button small icon="description">실라버스</Button>
                         </a>

@@ -184,7 +184,7 @@
                 <TableTd data={lect} bind:hover on:choose {background}>
                     <div style="display: flex">
                         {#if lect.kcode}
-                            <a href="https://cais.kaist.ac.kr/syllabusInfo?year=2024&term=3&subject_no={lect.kcode}&dept_id={lect.dept}&lecture_class={lect.group}"
+                            <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={lect.kcode}&dept_id={lect.dept}&lecture_class={lect.group}"
                                target="_blank">
                                 <IconButton description size="18" tooltip="실라버스" right xstack bottom/>
                             </a>

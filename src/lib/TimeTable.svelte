@@ -9,7 +9,7 @@
 
     const dispatch = createEventDispatcher();
 
-    export let selected, hover, mobile, timeSegments, selTime, shared, detail;
+    export let selected, hover, mobile, timeSegments, selTime, shared, detail, year, term;
     let name = '', capturing = false, shareUrl = '', shareQr = '';
 
     function time(h, m) {
@@ -166,11 +166,11 @@
 
             {#each selected as data, i}
                 <TableItem {mobile} {data} on:remove={() => !shared && (selected = selected.filter(x => x !== data))}
-                           {selected} {capturing} {maxHour} bind:detail
+                           {selected} {capturing} {maxHour} bind:detail {year} {term}
                            {levels} offset={selected.slice(0, i).map(i => i.time).flat().length}/>
             {/each}
             {#if _hover && !capturing}
-                <TableItem {maxHour} data={hover} hover {selected} {levels}
+                <TableItem {maxHour} data={hover} hover {selected} {levels} {year} {term}
                            offset={selected.map(i => i.time).flat().length}/>
             {/if}
         </div>
