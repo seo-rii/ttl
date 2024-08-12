@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Button, Card, IconButton, Input, Option, Paper, Select, Table, Th, Tooltip} from "nunui";
+    import {Button, Card, IconButton, Input, OneLine, Option, Paper, Select, Table, Th, List} from "nunui";
     import Paginator from "$lib/Paginator.svelte";
     import otlMap from "$lib/otlMap";
     import TableTd from "$lib/TableTd.svelte";
@@ -22,13 +22,15 @@
     ];
     let page = 1, search = '', dept, deptList = [], type = null;
 
-    $: _list = list.filter(i => {
+    $: _list = sort(list.map(i => ({
+        ...i, vs: i.cap ? (i.reg / i.cap) : 0
+    })).filter(i => {
         const l = (search || '').toLowerCase();
         return [i.title, i.code, ...i.prof, deptMap[i.dept]].map(i => (i || '').toLowerCase()).some(x => x.includes(l))
             && (i.dept === +dept || !dept)
             && (!type || (i.type || '').startsWith(type))
             && (!selTime || i.time.some(tt => tt.date === +selTime.split('-')[0] && tt.sh * 60 + tt.sm <= +selTime.split('-')[1] && tt.eh * 60 + tt.em > +selTime.split('-')[1]))
-    })
+    }))[way % 2 ? 'desc' : 'asc'](i => i[['code', 'code', 'vs', 'vs'][way % 4] || 'code']);
 
     $: maxPage = Math.ceil(_list.length / itemPerPage);
     $: {
@@ -52,6 +54,16 @@
         }
         return `color-mix(in srgb, ${inter[inter.length - 1][1]}, var(--on-surface) 20%)`;
     }
+
+    $: [sTime, eTime] = timeSegments.find(i => i[0] === +selTime?.slice?.(2)) || []
+    $: sHour = Math.floor(sTime / 60)
+    $: sMin = (sTime % 60).toString().padStart(2, '0')
+    $: eHour = Math.floor(eTime / 60)
+    $: eMin = (eTime % 60).toString().padStart(2, '0')
+    $: tForm = `${sHour}:${sMin} - ${eHour}:${eMin}`
+
+    let way = 0
+    $: if (way >= 4) way = 0
 </script>
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
@@ -74,10 +86,10 @@
             </div>
         {/if}
         <div style="flex: 1;min-width: 160px">
-            <Input bind:value={search} placeholder="검색"/>
+            <Input bind:value={search} placeholder="검색" fullWidth/>
         </div>
-        <div class="item">
-            <Select bind:selected={dept} placeholder="학과" {mobile}>
+        <div class="item" style="flex: 1">
+            <Select bind:selected={dept} placeholder="학과" {mobile} fullWidth>
                 <main on:wheel|stopPropagation|passive on:touchmove|stopPropagation|passive
                       on:touchdown|stopPropagation|passive style="max-height: 80vh">
                     <Option title="전체" data={null}/>
@@ -88,27 +100,11 @@
             </Select>
         </div>
         <div class="item" style="flex: 0.6">
-            <Select bind:selected={type} placeholder="유형" {mobile} style="max-height: 80vh;min-width: 100px">
+            <Select bind:selected={type} placeholder="유형" {mobile} style="max-height: 80vh;min-width: 100px" fullWidth>
                 <main on:wheel|stopPropagation|passive>
                     <Option title="전체" data={null}/>
                     {#each types as type}
                         <Option title={type} data={type}/>
-                    {/each}
-                </main>
-            </Select>
-        </div>
-        <div class="item" style="flex: 0.8">
-            <Select bind:selected={selTime} placeholder="시간 포함" {mobile} style="min-width: 100px">
-                <main on:wheel|stopPropagation|passive style="max-height: 80vh">
-                    <Option title="전체" data={null}/>
-                    {#each [0, 1, 2, 3, 4] as date}
-                        {#each timeSegments as [s, e]}
-                            {@const sh = Math.floor(s / 60)}
-                            {@const sm = (s % 60).toString().padStart(2, '0')}
-                            {@const eh = Math.floor(e / 60)}
-                            {@const em = (e % 60).toString().padStart(2, '0')}
-                            <Option title="{['월', '화', '수', '목', '금'][date]} {sh}:{sm} - {eh}:{em}" data="{date}-{s}"/>
-                        {/each}
                     {/each}
                 </main>
             </Select>
@@ -121,7 +117,30 @@
         <!--        </div>-->
     </header>
 
-    <Paginator {maxPage} bind:page maxPageShow={mobile ? 3 : 8}/>
+    <Paginator {maxPage} bind:page maxPageShow={mobile ? 3 : 8}>
+        <div style="margin: -8px 0 6px 0;display: flex;align-items: center">
+            <Paper left xstack bottom>
+                <Button small outlined icon="timer" slot="target"
+                        round>{!selTime ? '전체' : ['월', '화', '수', '목', '금'][+selTime[0]] + tForm}</Button>
+                <List>
+                    {#each [0, 1, 2, 3, 4] as date}
+                        {#each timeSegments as [s, e]}
+                            {@const sh = Math.floor(s / 60)}
+                            {@const sm = (s % 60).toString().padStart(2, '0')}
+                            {@const eh = Math.floor(e / 60)}
+                            {@const em = (e % 60).toString().padStart(2, '0')}
+                            {@const key = `${date}-${s}`}
+                            <OneLine title="{['월', '화', '수', '목', '금'][date]} {sh}:{sm} - {eh}:{em}"
+                                     on:click={() => selTime = (selTime === key ? null : key)}
+                                     active={selTime === key}/>
+                        {/each}
+                    {/each}
+                </List>
+            </Paper>
+            <Button outlined round icon={way %2 ? "arrow_downward" : "arrow_upward"} small style="margin-left: 4px"
+                    on:click={() => way++}>{['과목코드', '과목코드', '경쟁률', '경쟁률'][way]}</Button>
+        </div>
+    </Paginator>
 </div>
 
 {#if detail}
@@ -141,7 +160,7 @@
         </tr>
         {#each [...favorites, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage)] as lect, i}
             {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
-            {@const vsRaw = (lect.reg / lect.cap)}
+            {@const vsRaw = lect.cap ? (lect.reg / lect.cap) : 0}
             {@const vs = lect.cap && lect.reg ? (vsRaw < 0.1 ? '<0.1' : vsRaw.toFixed(1)) : ' - '}
             {@const color = vscolor(vsRaw || 0)}
             <tr>

@@ -62,19 +62,19 @@
     }
 
     $: color = getColorForSubject(data.code + data.group);
-    $: vsRaw = data.reg / data.cap;
+    $: vsRaw = data.cap ? data.reg / data.cap : 0;
     $: vs = data.cap && data.reg ? (vsRaw < 0.1 ? '<0.1' : vsRaw.toFixed(1)) : ' - '
 
     function vscolor(vs) {
-        if (!vs) return 'var(--on-surface)';
+        if (!vs) return 'var(--surface)';
         const inter = [[0, '#8ae7f3'], [0.6, '#adee5d'], [1, '#f9f871'], [2, '#f97171']];
-        if (vs < 0.1) return `color-mix(in srgb, ${inter[0][1]}, var(--on-surface) ${vs * 10}%)`;
+        if (vs < 0.1) return `color-mix(in srgb, ${inter[0][1]}, var(--surface) ${vs * 10}%)`;
         for (let i = 1; i < inter.length; i++) {
             if (vs < inter[i][0]) {
-                return `color-mix(in srgb, color-mix(in srgb, ${inter[i - 1][1]}, ${inter[i][1]} ${((vs - inter[i - 1][0]) / (inter[i][0] - inter[i - 1][0]) * 100)}%), var(--on-surface) 20%)`;
+                return `color-mix(in srgb, color-mix(in srgb, ${inter[i - 1][1]}, ${inter[i][1]} ${((vs - inter[i - 1][0]) / (inter[i][0] - inter[i - 1][0]) * 100)}%), var(--surface) 50%)`;
             }
         }
-        return `color-mix(in srgb, ${inter[inter.length - 1][1]}, var(--on-surface) 20%)`;
+        return `color-mix(in srgb, ${inter[inter.length - 1][1]}, var(--surface) 50%)`;
     }
 </script>
 
