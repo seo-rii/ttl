@@ -65,7 +65,10 @@
             code: i.code,
             group: i.group
         }))));
-        qrcode.toDataURL(shareUrl, {color: {dark: $darkMode ? '#fff' : '#000', light: '#00000000'}, width: 280}, (err, url) => {
+        qrcode.toDataURL(shareUrl, {
+            color: {dark: $darkMode ? '#fff' : '#000', light: '#00000000'},
+            width: 280
+        }, (err, url) => {
             shareQr = url;
         })
     }
@@ -122,7 +125,8 @@
                                 <img src={shareQr} alt="QR"/>
                             </div>
                             <p>또는, 아래 링크를 복사해서 공유하세요.</p>
-                            <Input readonly placeholder="URL" value={shareUrl} trailingIcon="content_copy" trailingHandler={() => {
+                            <Input readonly placeholder="URL" value={shareUrl} trailingIcon="content_copy"
+                                   trailingHandler={() => {
                                 navigator.clipboard.writeText(shareUrl);
                                 alert('복사되었습니다.');
                             }} fullWidth/>

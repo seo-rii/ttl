@@ -103,7 +103,7 @@
                     <section style="position: relative;padding: 0 12px 12px 12px">
                         <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
                                      bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail
-                                     bind:year bind:term/>
+                                     bind:year bind:term hideTerm/>
                     </section>
                 </div>
             {/if}

@@ -8,7 +8,7 @@
     import Other from "$lib/Other.svelte";
 
     export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime,
-        detail;
+        detail, hideTerm;
 
     const types = [
         "기초필수",
@@ -40,11 +40,23 @@
     }
 
     $: itemPerPage = 20
+
+    function vscolor(vs) {
+        if (!vs) return 'var(--on-surface)';
+        const inter = [[0, '#8ae7f3'], [0.6, '#adee5d'], [1, '#f9f871'], [2, '#f97171']];
+        if (vs < 0.1) return `color-mix(in srgb, ${inter[0][1]}, var(--on-surface) ${vs * 10}%)`;
+        for (let i = 1; i < inter.length; i++) {
+            if (vs < inter[i][0]) {
+                return `color-mix(in srgb, color-mix(in srgb, ${inter[i - 1][1]}, ${inter[i][1]} ${((vs - inter[i - 1][0]) / (inter[i][0] - inter[i - 1][0]) * 100)}%), var(--on-surface) 20%)`;
+            }
+        }
+        return `color-mix(in srgb, ${inter[inter.length - 1][1]}, var(--on-surface) 20%)`;
+    }
 </script>
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
     <header>
-        {#if year}
+        {#if year && !hideTerm}
             <div class="item">
                 <Select bind:selected={year} placeholder="년도" {mobile}>
                     {#each Array.from({length: 12}, (_, i) => 2024 - i) as y}
@@ -123,12 +135,15 @@
             <Th width="2.4">교수</Th>
             <Th width="6">과목 이름</Th>
             <Th width="4.4">수업 시간</Th>
-            <Th width="4.2">강의실</Th>
+            <Th width="4.2">경쟁률</Th>
             <Th width="2.7">유형</Th>
             <Th width="3.8">실라버스/OTL</Th>
         </tr>
         {#each [...favorites, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage)] as lect, i}
             {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
+            {@const vsRaw = (lect.reg / lect.cap)}
+            {@const vs = lect.cap && lect.reg ? (vsRaw < 0.1 ? '<0.1' : vsRaw.toFixed(1)) : ' - '}
+            {@const color = vscolor(vsRaw || 0)}
             <tr>
                 <TableTd data={lect} bind:hover on:choose {background}>
                     <IconButton favorite size="18" on:click={(e) => {
@@ -173,7 +188,7 @@
 
                 <TableTd data={lect} bind:hover on:choose {background} oneline>
                     <Scrolling>
-                        <div>{lect.where}</div>
+                        <div style="color: {color} !important">{vs} ({lect.reg}/{lect.cap})</div>
                     </Scrolling>
                 </TableTd>
 

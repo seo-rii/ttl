@@ -62,6 +62,20 @@
     }
 
     $: color = getColorForSubject(data.code + data.group);
+    $: vsRaw = data.reg / data.cap;
+    $: vs = data.cap && data.reg ? (vsRaw < 0.1 ? '<0.1' : vsRaw.toFixed(1)) : ' - '
+
+    function vscolor(vs) {
+        if (!vs) return 'var(--on-surface)';
+        const inter = [[0, '#8ae7f3'], [0.6, '#adee5d'], [1, '#f9f871'], [2, '#f97171']];
+        if (vs < 0.1) return `color-mix(in srgb, ${inter[0][1]}, var(--on-surface) ${vs * 10}%)`;
+        for (let i = 1; i < inter.length; i++) {
+            if (vs < inter[i][0]) {
+                return `color-mix(in srgb, color-mix(in srgb, ${inter[i - 1][1]}, ${inter[i][1]} ${((vs - inter[i - 1][0]) / (inter[i][0] - inter[i - 1][0]) * 100)}%), var(--on-surface) 20%)`;
+            }
+        }
+        return `color-mix(in srgb, ${inter[inter.length - 1][1]}, var(--on-surface) 20%)`;
+    }
 </script>
 
 {#each data.time as time, i}
@@ -92,6 +106,9 @@
                     <p style="font-size: 0.6em;font-weight: 300;opacity: 0.6;white-space: normal" class="one">
                         {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
                     </p>
+                    {#if true}
+                        <p style="font-size: 0.6em;font-weight: 300;opacity: 0.6;white-space: normal;background:{vscolor(vsRaw || 0)};border-radius: 2px;display:inline-block;padding: 2px">경쟁률 {vs}</p>
+                    {/if}
                 </div>
                 <main style="padding: 12px">
                     <p style="font-weight: 500;font-size: 1.2em">
@@ -109,6 +126,8 @@
                         <Icon apartment/>{data.where}</p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon person/>{data.prof}</p>
+                    <p style="font-weight: 300;font-size: 0.8em">
+                        <Icon account_circle/>{data.reg}/{data.cap}명 신청</p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <span><Icon timer/>시간</span><br>
                     <ul>
