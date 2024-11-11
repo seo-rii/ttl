@@ -161,7 +161,7 @@
             <Th width="2.7">유형</Th>
             <Th width="3.8">실라버스/OTL</Th>
         </tr>
-        {#each [...favorites, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage)] as lect, i}
+        {#each [...favorites, ...selected, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage).filter(i => !selected.includes(i))] as lect, i}
             {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
             {@const vsRaw = lect.cap ? (lect.reg / lect.cap) : 0}
             {@const vs = lect.cap && lect.reg ? (vsRaw < 0.1 ? '<0.1' : vsRaw.toFixed(1)) : ' - '}
