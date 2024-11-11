@@ -3,6 +3,7 @@
     import {Button, Icon, List, OneLine, Paper, Tooltip} from "nunui";
     import otlMap from "$lib/otlMap";
     import {textfit} from 'svelte-textfit';
+    import {compete} from "$lib/config";
 
     let parent;
 
@@ -106,7 +107,7 @@
                     <p style="font-size: 0.6em;font-weight: 300;opacity: 0.6;white-space: normal" class="one">
                         {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
                     </p>
-                    {#if true}
+                    {#if compete}
                         <p style="font-size: 0.6em;font-weight: 300;opacity: 0.6;white-space: normal;background:{vscolor(vsRaw || 0)};border-radius: 2px;display:inline-block;padding: 2px">경쟁률 {vs}</p>
                     {/if}
                 </div>

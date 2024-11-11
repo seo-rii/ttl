@@ -8,9 +8,11 @@
     import {sort} from "fast-sort";
     import {page} from "$app/stores";
     import {goto} from "$app/navigation";
+    import {year as _year, term as _term} from "$lib/config";
 
-    let year = 2024, term = 3;
 
+    let year = _year, term = _term;
+    const key = `${year}_${term}_`
     const ignoreSets = [];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
@@ -27,8 +29,8 @@
         const timeSet = new Set();
         data = await fetch(`/result_${year}_${term}.json`).then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
-        selected = JSON.parse(localStorage.data || '[]')
-        favorites = JSON.parse(localStorage.fav || '[]')
+        selected = JSON.parse(localStorage[key + 'data'] || '[]')
+        favorites = JSON.parse(localStorage[key + 'fav'] || '[]')
         selected = filter(selected)
         favorites = filter(favorites)
 
@@ -55,8 +57,8 @@
     }
 
     $: mobile = innerWidth < (shared ? 1300 : 1100);
-    $: if (loaded) localStorage.data = JSON.stringify(selected);
-    $: if (loaded) localStorage.fav = JSON.stringify(favorites);
+    $: if (loaded) localStorage[key + 'data'] = JSON.stringify(selected);
+    $: if (loaded) localStorage[key + 'fav'] = JSON.stringify(favorites);
     $: if (selTime) menu = (shared ? 2 : 1);
     $: if (detail) menu = (shared ? 2 : 1);
 

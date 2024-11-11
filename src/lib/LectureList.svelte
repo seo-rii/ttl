@@ -6,6 +6,7 @@
     import {sort} from "fast-sort";
     import Scrolling from "$lib/Scrolling.svelte";
     import Other from "$lib/Other.svelte";
+    import {compete} from "$lib/config";
 
     export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime,
         detail, hideTerm;
@@ -154,7 +155,9 @@
             <Th width="2.4">교수</Th>
             <Th width="6">과목 이름</Th>
             <Th width="4.4">수업 시간</Th>
-            <Th width="4.2">경쟁률</Th>
+            {#if compete}
+                <Th width="4.2">경쟁률</Th>
+            {/if}
             <Th width="2.7">유형</Th>
             <Th width="3.8">실라버스/OTL</Th>
         </tr>
@@ -205,11 +208,13 @@
                     {/each}
                 </TableTd>
 
-                <TableTd data={lect} bind:hover on:choose {background} oneline>
-                    <Scrolling>
-                        <div style="color: {color} !important">{vs} ({lect.reg}/{lect.cap})</div>
-                    </Scrolling>
-                </TableTd>
+                {#if compete}
+                    <TableTd data={lect} bind:hover on:choose {background} oneline>
+                        <Scrolling>
+                            <div style="color: {color} !important">{vs} ({lect.reg}/{lect.cap})</div>
+                        </Scrolling>
+                    </TableTd>
+                {/if}
 
                 <TableTd data={lect} bind:hover on:choose {background} online>
                     {lect.type || ''}
