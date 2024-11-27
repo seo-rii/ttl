@@ -59,7 +59,7 @@ for(let i=0;i<res.length;i++) {
         const type = '';
         const code = 'MAS' + r[0].slice(0, 3);
         const divs = r[0].slice(3).split('');
-        const title = other[code]?.[0] || '';
+        const title = r[3] || other[code]?.[0] || '';
         const prof = [r[1]];
         const where = r[2];
         const time = times[i];
@@ -80,4 +80,5 @@ for(let i=0;i<res.length;i++) {
 }
 
 fs.writeFileSync('add_2025_1.json', JSON.stringify(dump, null, 4));
+fs.writeFileSync('static/add_2025_1.json', JSON.stringify(dump, null, 4));
 //return {dept, type, code, title, group, prof, where, time, exam, credit, kcode};
