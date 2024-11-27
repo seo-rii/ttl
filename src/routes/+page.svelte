@@ -8,12 +8,12 @@
     import {sort} from "fast-sort";
     import {page} from "$app/stores";
     import {goto} from "$app/navigation";
-    import {year as _year, term as _term} from "$lib/config";
+    import {year as _year, term as _term, selectable} from "$lib/config";
 
 
     let year = _year, term = _term;
-    const key = `${year}_${term}_`
-    const ignoreSets = [];
+    $: key = `${year}_${term}`
+    const ignoreSets = ['개별연구'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
 
@@ -25,9 +25,10 @@
         } else shared = null;
     }
 
-    if (browser) onMount(async () => {
+    async function update(key: string) {
+        loaded = false;
         const timeSet = new Set();
-        data = await fetch(`/result_${year}_${term}.json`).then(r => r.json());
+        data = await fetch(`/result_${key}.json`).then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
         selected = JSON.parse(localStorage[key + 'data'] || '[]')
         favorites = JSON.parse(localStorage[key + 'fav'] || '[]')
@@ -47,7 +48,14 @@
         timeSegments = timeSegments;
 
         loaded = true
+    }
+
+    let mounted = false;
+    if (browser) onMount(async () => {
+        mounted = true
     })
+
+    $: if (mounted) update(key);
 
     function toggle(e) {
         selTime = null;
@@ -103,9 +111,23 @@
             {#if !mobile || menu === (shared ? 2 : 1)}
                 <div style="flex: 1;min-height: 400px;background: var(--surface);border-radius: 12px">
                     <section style="position: relative;padding: 0 12px 12px 12px">
-                        <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
-                                     bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail
-                                     bind:year bind:term hideTerm/>
+                        <div style="margin: 6px 0 -6px 0">
+                            {#each selectable as time}
+                                {@const syear = +time.slice(0, 4)}
+                                {@const sterm = +time.slice(5)}
+                                <Button small flat style="margin: 4px" on:click={() => {
+                                    year = syear;
+                                    term = sterm;
+                                }} outlined={year !== syear || term !== sterm}>
+                                    {syear}년 {['', '봄', '여름', '가을', '겨울'][sterm]}학기
+                                </Button>
+                            {/each}
+                        </div>
+                        {#key key}
+                            <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
+                                        bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail
+                                        bind:year bind:term hideTerm/>
+                        {/key}
                     </section>
                 </div>
             {/if}

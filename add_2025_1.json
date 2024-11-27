@@ -1,0 +1,1989 @@
+[
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS311",
+        "title": "현대대수학 I",
+        "group": "B",
+        "prof": [
+            "임보해"
+        ],
+        "where": "자연 3438",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS440",
+        "title": "편미분방정식개론",
+        "group": "",
+        "prof": [
+            "이창옥"
+        ],
+        "where": "산경 1225",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "E",
+        "prof": [
+            "백형렬"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "F",
+        "prof": [
+            "백형렬"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "G",
+        "prof": [
+            ""
+        ],
+        "where": "창의 401",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "H",
+        "prof": [
+            ""
+        ],
+        "where": "창의 401",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "C",
+        "prof": [
+            "진교택"
+        ],
+        "where": "창의 301",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "D",
+        "prof": [
+            "진교택"
+        ],
+        "where": "창의 301",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS350",
+        "title": "기초확률론",
+        "group": "",
+        "prof": [
+            "김동한"
+        ],
+        "where": "자연 3438",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS420",
+        "title": "다양체해석학",
+        "group": "",
+        "prof": [
+            "최서영"
+        ],
+        "where": "산경 1225",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS531",
+        "title": "대수적위상수학 1",
+        "group": "",
+        "prof": [
+            "김우진"
+        ],
+        "where": "산경 1227",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "A",
+        "prof": [
+            "박진형"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "B",
+        "prof": [
+            "박진형"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "C",
+        "prof": [
+            "서동엽"
+        ],
+        "where": "창의 401",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "선형대수학개론",
+        "group": "D",
+        "prof": [
+            "서동엽"
+        ],
+        "where": "창의 401",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "A",
+        "prof": [
+            "이지운"
+        ],
+        "where": "창의 304",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "B",
+        "prof": [
+            "이지운"
+        ],
+        "where": "창의 304",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS250",
+        "title": "확률및통계",
+        "group": "A",
+        "prof": [
+            "남경식"
+        ],
+        "where": "창의 309",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS511",
+        "title": "대수학 I",
+        "group": "",
+        "prof": [
+            "김완수"
+        ],
+        "where": "자연 3438",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS210",
+        "title": "정수론 개론",
+        "group": "",
+        "prof": [
+            "김완수"
+        ],
+        "where": "창의 401",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS341",
+        "title": "복소변수함수론",
+        "group": "",
+        "prof": [
+            "배명진"
+        ],
+        "where": "창의 303",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS412",
+        "title": "가환대수학 입문",
+        "group": "",
+        "prof": [
+            "박진형"
+        ],
+        "where": "산경 1225",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS555",
+        "title": "고급통계학",
+        "group": "",
+        "prof": [
+            "전현호"
+        ],
+        "where": "창의 302",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS241",
+        "title": "해석학 I",
+        "group": "A",
+        "prof": [
+            "배명진"
+        ],
+        "where": "창의 303",
+        "time": [
+            {
+                "date": 0,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS621",
+        "title": "리만기하학",
+        "group": "",
+        "prof": [
+            "박지원"
+        ],
+        "where": "자연 3438",
+        "time": [
+            {
+                "date": 0,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "E",
+        "prof": [
+            "홈슨"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "F",
+        "prof": [
+            "홈슨"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "I",
+        "prof": [
+            "이승훈"
+        ],
+        "where": "창의 403",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "J",
+        "prof": [
+            "이승훈"
+        ],
+        "where": "창의 403",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "M",
+        "prof": [
+            ""
+        ],
+        "where": "창의 401",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "N",
+        "prof": [
+            ""
+        ],
+        "where": "창의 401",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "G",
+        "prof": [
+            ""
+        ],
+        "where": "창의 303",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "H",
+        "prof": [
+            ""
+        ],
+        "where": "창의 303",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS212",
+        "title": "선형대수학",
+        "group": "",
+        "prof": [
+            "이용남"
+        ],
+        "where": "창의 301",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS565",
+        "title": "수치해석학",
+        "group": "",
+        "prof": [
+            "이창옥"
+        ],
+        "where": "산경 1225",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS250",
+        "title": "확률및통계",
+        "group": "B",
+        "prof": [
+            "하우석"
+        ],
+        "where": "창의 304",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS260",
+        "title": "응용수학과모델링",
+        "group": "",
+        "prof": [
+            "김용정"
+        ],
+        "where": "창의 301",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS440",
+        "title": "편미분방정식개론",
+        "group": "",
+        "prof": [
+            "이창옥"
+        ],
+        "where": "산경 1225",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS557",
+        "title": "기계학습이론및응용",
+        "group": "",
+        "prof": [
+            "홍영준"
+        ],
+        "where": "산경 1223",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS540",
+        "title": "실변수함수론",
+        "group": "",
+        "prof": [
+            "변재형"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "A",
+        "prof": [
+            "김용정"
+        ],
+        "where": "창의 304",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "B",
+        "prof": [
+            "김용정"
+        ],
+        "where": "창의 304",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "C",
+        "prof": [
+            "박정환"
+        ],
+        "where": "창의 309",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "D",
+        "prof": [
+            "박정환"
+        ],
+        "where": "창의 309",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "G",
+        "prof": [
+            "한상근"
+        ],
+        "where": "상의 410",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "H",
+        "prof": [
+            "한상근"
+        ],
+        "where": "상의 410",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "K",
+        "prof": [
+            "임민규"
+        ],
+        "where": "창의 403",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "미적분학 I",
+        "group": "L",
+        "prof": [
+            "임민규"
+        ],
+        "where": "창의 403",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "미적분학Ⅱ",
+        "group": "A",
+        "prof": [
+            "김재훈"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "미적분학Ⅱ",
+        "group": "B",
+        "prof": [
+            "김재훈"
+        ],
+        "where": "창의 412",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS241",
+        "title": "해석학 I",
+        "group": "B",
+        "prof": [
+            "임미경"
+        ],
+        "where": "창의 301",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS311",
+        "title": "현대대수학 I",
+        "group": "A",
+        "prof": [
+            "박진현"
+        ],
+        "where": "창의 303",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS455",
+        "title": "선형모형",
+        "group": "",
+        "prof": [
+            "박철우"
+        ],
+        "where": "산경 1225",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS645",
+        "title": "편미분방정식론",
+        "group": "",
+        "prof": [
+            "권순식"
+        ],
+        "where": "자연 3438",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "E",
+        "prof": [
+            "이재훈"
+        ],
+        "where": "창의 403",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "응용미분방정식",
+        "group": "F",
+        "prof": [
+            "이재훈"
+        ],
+        "where": "창의 403",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS275",
+        "title": "이산수학",
+        "group": "",
+        "prof": [
+            "김동수"
+        ],
+        "where": "산경 1225",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS331",
+        "title": "위상수학",
+        "group": "",
+        "prof": [
+            "박정환"
+        ],
+        "where": "창의 303",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS583",
+        "title": "수학특론<금융상품의 설계와 평가>",
+        "group": "",
+        "prof": [
+            "김재훈"
+        ],
+        "where": "자연 3438",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    }
+]

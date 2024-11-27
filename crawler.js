@@ -4,6 +4,8 @@ import {fetch, Agent} from "undici";
 import {writeFileSync} from 'fs';
 import {sort} from "fast-sort";
 
+const work = ['2024_4', '2025_1']
+
 const defaultHeaders = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
     'Accept': '*/*',
@@ -155,7 +157,12 @@ function other() {
 //     }
 // }
 // other()
-main().then(() => {
+
+
+Promise.all(work.map(w => {
+    const li = w.split('_')
+    return main(+li[0], +li[1], `static/result_${w}.json`)
+})).then(() => {
     other()
     console.log('done')
 })
