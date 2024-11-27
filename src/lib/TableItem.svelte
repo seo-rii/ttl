@@ -127,8 +127,10 @@
                         <Icon apartment/>{data.where}</p>
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon person/>{data.prof}</p>
+                    {#if compete}
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon account_circle/>{data.reg}/{data.cap}명 신청</p>
+                    {/if}
                     <p style="font-weight: 300;font-size: 0.8em">
                         <span><Icon timer/>시간</span><br>
                     <ul>
