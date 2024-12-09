@@ -94,6 +94,7 @@
             {/if}
             시간표
         </span>
+        <span style="margin-left: 6px;opacity: 0.7;font-size: 0.7em;font-weight: 300">{year}년 {['', '봄', '여름', '가을', '겨울'][term]}학기</span>
         <span style="margin-left: auto;display: block;font-size: 0.8em;font-weight: 300">
             <span style="font-size: 1.4em;font-weight: 500">{credit}</span>학점 /
             {#if au}
