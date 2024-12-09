@@ -27,7 +27,7 @@
         ...i, vs: i.cap ? (i.reg / i.cap) : 0
     })).filter(i => {
         const l = (search || '').toLowerCase();
-        return [i.title, i.code, ...i.prof, deptMap[i.dept]].map(i => (i || '').toLowerCase()).some(x => x.includes(l))
+        return (!l || [i.title, i.code, ...i.prof, deptMap[i.dept]].map(i => (i || '').toLowerCase()).some(x => l.split('').every(i => x.includes(i))))
             && (i.dept === +dept || !dept)
             && (!type || (i.type || '').startsWith(type))
             && (!selTime || i.time.some(tt => tt.date === +selTime.split('-')[0] && tt.sh * 60 + tt.sm <= +selTime.split('-')[1] && tt.eh * 60 + tt.em > +selTime.split('-')[1]))

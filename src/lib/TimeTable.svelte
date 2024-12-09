@@ -220,8 +220,8 @@
 
   .capturing {
     position: fixed;
-    width: 620px !important;
-    height: 1200px !important;
+    width: 540px !important;
+    height: 960px !important;
     left: 0 !important;
     top: 0 !important;
     border-radius: 0 !important;
