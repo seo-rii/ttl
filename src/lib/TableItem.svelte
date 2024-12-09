@@ -95,7 +95,11 @@
                      slot="target" bind:this={parent}>
                     <p use:textfit={{height: 36, update: `${width}-${capturing}`,mode:"multi",max: 16, min: 11}}
                        style="margin-bottom: 4px;margin-top: 0;white-space: normal">
-                        <span style="font-size: max(0.8em, 8px);opacity: 0.6;">{data.code}</span><br>
+                        {#if data.code}
+                            <span style="font-size: max(0.8em, 8px);opacity: 0.6;">{data.code}</span><br>
+                        {:else}
+                            <div style="margin: 4px 0;position: relative"></div>
+                        {/if}
                         {data.title}
                     </p>
                     {#if data.where}
@@ -114,19 +118,29 @@
                 <main style="padding: 12px">
                     <p style="font-weight: 500;font-size: 1.2em">
                         {data.title}
-                        <span style="font-size: 0.76em;opacity: 0.8;font-weight: 300">{data.code}</span>
-                        <span style="font-size: 0.66em;opacity: 0.8;font-weight: 300">{data.group}</span>
-                    </p>
-                    <p style="font-weight: 300;font-size: 0.8em">
-                        <Icon readiness_score/>{data.credit}학점
-                        {#if data.au}
-                            / {data.au} AU
+                        {#if data.code}
+                            <span style="font-size: 0.76em;opacity: 0.8;font-weight: 300">{data.code}</span>
+                        {/if}
+                        {#if data.group}
+                            <span style="font-size: 0.66em;opacity: 0.8;font-weight: 300">{data.group}</span>
                         {/if}
                     </p>
+                    {#if data.credit || data.au}
+                        <p style="font-weight: 300;font-size: 0.8em">
+                            <Icon readiness_score/>{data.credit}학점
+                            {#if data.au}
+                                / {data.au} AU
+                            {/if}
+                        </p>
+                    {/if}
+                    {#if data.where}
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon apartment/>{data.where}</p>
+                    {/if}
+                    {#if data.prof}
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon person/>{data.prof}</p>
+                    {/if}
                     {#if compete}
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon account_circle/>{data.reg}/{data.cap}명 신청</p>
@@ -146,6 +160,7 @@
                     {#if mobile}
                         <article style="font-size: 16px;font-weight: 300;margin: 0 -12px">
                             <List>
+                                {#if data.code}
                                 <OneLine icon="list" title="과목 개설 내역" on:click={() => detail = data}/>
                                 <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
                                    target="_blank" on:click|stopPropagation>
@@ -155,11 +170,11 @@
                                    target="_blank" on:click|stopPropagation>
                                     <OneLine icon="open_in_new" title="OTL 평가"/>
                                 </a>
+                                {/if}
                                 <OneLine icon="close" title="삭제" on:click={() => dispatch('remove')}/>
                             </List>
                         </article>
-                    {/if}
-                    {#if !mobile}
+                    {:else if data.code}
                         <Button small icon="list" on:click={(e) => {
                             e.stopPropagation()
                             detail = data

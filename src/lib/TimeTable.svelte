@@ -6,6 +6,7 @@
     import qrcode from 'qrcode';
     import {goto} from "$app/navigation";
     import {darkMode} from "$lib/index";
+  import AddCustom from "./AddCustom.svelte";
 
     const dispatch = createEventDispatcher();
 
@@ -98,13 +99,13 @@
             {#if au}
                 <span style="font-size: 1.4em;font-weight: 500">{au}</span>AU /
             {/if}
-            <span style="font-size: 1.4em;font-weight: 500">{selected.length}</span>과목
+            <span style="font-size: 1.4em;font-weight: 500">{selected.filter(i => !i.custom).length}</span>과목
 
             {#if !capturing}
                 <Paper right xstack bottom mobile={mobile}>
                     <IconButton download slot="target"/>
                     <div style="padding: 12px !important;position: relative">
-                        <p style="margin-top: 0">이름이 뭐에요?</p>
+                        <p style="margin-top: 0">이름이 뭐에요? (선택)</p>
                         <div>
                             <Input bind:value={name} placeholder="이름" autofocus fullWidth on:submit={capture}/>
                         </div>
@@ -136,6 +137,12 @@
                     <IconButton edit on:click={() => dispatch('apply')}/>
                     <IconButton close on:click={() => goto('#')}/>
                 {/if}
+                <Paper right xstack bottom {mobile}>
+                    <IconButton add slot="target"/>
+                    <div style="padding: 12px !important;position: relative">
+                        <AddCustom {year} {term} {mobile} bind:selected />
+                    </div>
+                </Paper>
                 <span/>
             {/if}
         </span>
@@ -213,8 +220,8 @@
 
   .capturing {
     position: fixed;
-    width: 720px !important;
-    height: 1000px !important;
+    width: 620px !important;
+    height: 1200px !important;
     left: 0 !important;
     top: 0 !important;
     border-radius: 0 !important;
