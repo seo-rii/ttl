@@ -224,13 +224,13 @@
                     <div style="display: flex">
                         {#if lect.kcode}
                             <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={lect.kcode}&dept_id={lect.dept}&lecture_class={lect.group}"
-                               target="_blank">
+                               target="_blank" on:click|stopPropagation>
                                 <IconButton description size="18" tooltip="실라버스" right xstack bottom/>
                             </a>
                         {/if}
                         {#if otlMap(lect.code)}
                             <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(lect.code)}"
-                               target="_blank">
+                               target="_blank" on:click|stopPropagation>
                                 <IconButton open_in_new size="18" tooltip="OTL" right xstack bottom/>
                             </a>
                         {/if}
