@@ -17,7 +17,7 @@
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
 
-    $: filter = (li) => li.map(i => i.custom ? i : data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i);
+    $: filter = (li) => li.map(i => i.custom ? i : data.data.find(x => (x.code === i.code || x.old === i.code) && x.group === i.group)).filter(i => i);
     $: {
         if ($page.url.hash?.length > 1 && data.data) {
             shared = JSON.parse(atob($page.url.hash.slice(1)))
