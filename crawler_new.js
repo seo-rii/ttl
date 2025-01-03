@@ -4,7 +4,7 @@ import {sort} from "fast-sort";
 
 let work = ['2024_4', '2025_1']
 
-if(true) {
+if(false) {
     work = []
     for(let year = 2012;year<=2024;year++) {
         for(let term = 1;term<=4;term++) {
