@@ -48,7 +48,7 @@ async function main(year = 2024, term = 4, file = `static/result_${year}_${term}
         const code = r.subjtCd
         const old = r.subjtNo
         const title = r.subjtNm
-        const group = (r.corseDvclsNo || '').trim() || null
+        const group = (r.corseDvclsNo || '').trim() || ''
         const prof = (r.chrgInstrNmLisup || '').split(',').map(p => p.trim())
         const where = r.lecrmNm
         const credit = r.cdt
