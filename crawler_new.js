@@ -40,8 +40,6 @@ async function main(year = 2024, term = 4, file = `static/result_${year}_${term}
         }
     }).then(r => r.json()))[0]
 
-    console.log(raw)
-
     const data = raw.map(r => {
         const dept = +r.deprtCd
         const type = r.subjcDivNm
