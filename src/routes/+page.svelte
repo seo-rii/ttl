@@ -3,15 +3,15 @@
     import {browser} from "$app/environment";
     import LectureList from "$lib/LectureList.svelte";
     import TimeTable from "$lib/TimeTable.svelte";
-    import {Button, CircularProgress, Icon, IconButton} from "nunui";
+    import {Button, CircularProgress, IconButton} from "nunui";
     import {darkMode} from "$lib";
     import {sort} from "fast-sort";
     import {page} from "$app/stores";
     import {goto} from "$app/navigation";
-    import {year as _year, term as _term, selectable} from "$lib/config";
+    import {year as _year, term as _term, compete as _compete, selectable} from "$lib/config";
 
 
-    let year = _year, term = _term;
+    let year = _year, term = _term, compete = _compete;
     $: key = `${year}_${term}`
     const ignoreSets = ['개별연구'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
@@ -100,12 +100,12 @@
                     <TimeTable shared selected={shared} {mobile} timeSegments={[]} on:apply={() => {
                         selected = shared;
                         goto('#');
-                    }} {year} {term}/>
+                    }} {year} {term} bind:compete/>
                 </div>
             {/if}
             {#if !mobile || menu === (shared ? 1 : 0)}
                 <div style="width: {width}px;border-radius: 12px">
-                    <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime bind:detail {year} {term}/>
+                    <TimeTable {hover} bind:selected {mobile} {timeSegments} bind:selTime bind:detail {year} {term} bind:compete/>
                 </div>
             {/if}
             {#if !mobile || menu === (shared ? 2 : 1)}
@@ -126,7 +126,7 @@
                         {#key key}
                             <LectureList list={data.data} deptMap={data.deptMap} on:choose={toggle} bind:hover
                                         bind:selected {mobile} {timeSegments} bind:selTime bind:favorites bind:detail
-                                        bind:year bind:term hideTerm/>
+                                        bind:year bind:term hideTerm bind:compete/>
                         {/key}
                     </section>
                 </div>

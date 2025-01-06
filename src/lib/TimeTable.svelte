@@ -1,16 +1,16 @@
 <script lang="ts">
     import TableItem from "$lib/TableItem.svelte";
-    import {Button, Card, CircularProgress, Icon, IconButton, Input, Paper, Ripple} from "nunui";
+    import {Button, Card, CircularProgress, Icon, IconButton, Input, List, OneLine, Paper, Ripple} from "nunui";
     import {createEventDispatcher, tick} from "svelte";
     import {toPng} from 'html-to-image';
     import qrcode from 'qrcode';
     import {goto} from "$app/navigation";
     import {darkMode} from "$lib/index";
-  import AddCustom from "./AddCustom.svelte";
+    import AddCustom from "./AddCustom.svelte";
 
     const dispatch = createEventDispatcher();
 
-    export let selected, hover, mobile, timeSegments, selTime, shared, detail, year, term;
+    export let selected, hover, mobile, timeSegments, selTime, shared, detail, year, term, compete;
     let name = '', capturing = false, shareUrl = '', shareQr = '';
 
     function time(h, m) {
@@ -103,46 +103,53 @@
             <span style="font-size: 1.4em;font-weight: 500">{selected.filter(i => !i.custom).length}</span>과목
 
             {#if !capturing}
-                <Paper right xstack bottom mobile={mobile}>
-                    <IconButton download slot="target"/>
-                    <div style="padding: 12px !important;position: relative">
-                        <p style="margin-top: 0">이름이 뭐에요? (선택)</p>
-                        <div>
-                            <Input bind:value={name} placeholder="이름" autofocus fullWidth on:submit={capture}/>
-                        </div>
-                        <div style="display: flex;justify-content: flex-end;margin-top: 12px">
-                            <Button small transparent on:click={capture}>저장</Button>
-                        </div>
-                    </div>
-                </Paper>
-                {#if !shared}
-                    <Paper left xstack bottom width="300px" mobile={mobile}>
-                        <IconButton share on:click={openShare} slot="target"/>
-                        <div style="padding: 12px">
-                            <h2 style="margin: 4px 0">
-                                공유
-                            </h2>
-                            <p style="margin: 12px 0 4px 0">아래 QR코드를 공유하세요.</p>
-                            <div style="display: flex;justify-content: center">
-                                <img src={shareQr} alt="QR"/>
-                            </div>
-                            <p>또는, 아래 링크를 복사해서 공유하세요.</p>
-                            <Input readonly placeholder="URL" value={shareUrl} trailingIcon="content_copy"
-                                   trailingHandler={() => {
-                                navigator.clipboard.writeText(shareUrl);
-                                alert('복사되었습니다.');
-                            }} fullWidth/>
-                        </div>
-                    </Paper>
-                {:else}
-                    <IconButton edit on:click={() => dispatch('apply')}/>
-                    <IconButton close on:click={() => goto('#')}/>
-                {/if}
                 <Paper right xstack bottom {mobile}>
-                    <IconButton add slot="target"/>
-                    <div style="padding: 12px !important;position: relative">
-                        <AddCustom {year} {term} {mobile} bind:selected />
-                    </div>
+                    <IconButton more_vert slot="target" style="position: relative;top: 4px;margin-left: 4px"/>
+                    <List>
+                        <Paper right xstack bottom mobile={mobile} stacked={1} style="display: block">
+                            <OneLine icon="download" title="이미지 저장" slot="target"/>
+                            <div style="padding: 12px !important;position: relative">
+                                <p style="margin-top: 0">이름이 뭐에요? (선택)</p>
+                                <div>
+                                    <Input bind:value={name} placeholder="이름" autofocus fullWidth on:submit={capture}/>
+                                </div>
+                                <div style="display: flex;justify-content: flex-end;margin-top: 12px">
+                                    <Button small transparent on:click={capture}>저장</Button>
+                                </div>
+                            </div>
+                        </Paper>
+
+
+                        {#if !shared}
+                            <Paper right xstack bottom width="300px" mobile={mobile} stacked={1} style="display: block">
+                                <OneLine icon="share" title="공유" on:click={openShare} slot="target"/>
+                                <div style="padding: 12px">
+                                    <h2 style="margin: 4px 0">
+                                        공유
+                                    </h2>
+                                    <p style="margin: 12px 0 4px 0">아래 QR코드를 공유하세요.</p>
+                                    <div style="display: flex;justify-content: center">
+                                        <img src={shareQr} alt="QR"/>
+                                    </div>
+                                    <p>또는, 아래 링크를 복사해서 공유하세요.</p>
+                                    <Input readonly placeholder="URL" value={shareUrl} trailingIcon="content_copy"
+                                        trailingHandler={() => {
+                                        navigator.clipboard.writeText(shareUrl);
+                                        alert('복사되었습니다.');
+                                    }} fullWidth/>
+                                </div>
+                            </Paper>
+                        {:else}
+                            <List icon="edit" title="이 시간표 수정" on:click={() => dispatch('apply')}/>
+                            <List icon="close" title="닫기" on:click={() => goto('#')}/>
+                        {/if}
+                        <Paper right xstack bottom {mobile} stacked={1} style="display: block">
+                            <OneLine icon="add" title="내 시간표 추가" slot="target"/>
+                            <div style="padding: 12px !important;position: relative">
+                                <AddCustom {year} {term} {mobile} bind:selected />
+                            </div>
+                        </Paper>
+                    </List>
                 </Paper>
                 <span/>
             {/if}
@@ -178,11 +185,11 @@
 
             {#each selected as data, i}
                 <TableItem {mobile} {data} on:remove={() => !shared && (selected = selected.filter(x => x !== data))}
-                           {selected} {capturing} {maxHour} bind:detail {year} {term}
+                           {selected} {capturing} {maxHour} bind:detail {year} {term} {compete}
                            {levels} offset={selected.slice(0, i).map(i => i.time).flat().length}/>
             {/each}
             {#if _hover && !capturing}
-                <TableItem {maxHour} data={hover} hover {selected} {levels} {year} {term}
+                <TableItem {maxHour} data={hover} hover {selected} {levels} {year} {term} {compete}
                            offset={selected.map(i => i.time).flat().length}/>
             {/if}
         </div>

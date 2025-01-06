@@ -3,11 +3,10 @@
     import {Button, Icon, List, OneLine, Paper, Tooltip} from "nunui";
     import otlMap from "$lib/otlMap";
     import {textfit} from 'svelte-textfit';
-    import {compete} from "$lib/config";
 
     let parent;
 
-    export let data, hover, list, mobile, levels, offset, capturing, maxHour, detail, year, term;
+    export let data, hover, list, mobile, levels, offset, capturing, maxHour, detail, year, term, compete;
 
     const dispatch = createEventDispatcher();
     const start = 9 * 60;

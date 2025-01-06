@@ -6,10 +6,9 @@
     import {sort} from "fast-sort";
     import Scrolling from "$lib/Scrolling.svelte";
     import Other from "$lib/Other.svelte";
-    import {compete} from "$lib/config";
 
     export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime,
-        detail, hideTerm;
+        detail, hideTerm, compete;
 
     const types = [
         "기초필수",
