@@ -51,14 +51,28 @@
         capturing = true;
         await tick();
         await new Promise(r => setTimeout(r, 100));
-        toPng(container, {quality: 0.95}).then((dataUrl) => {
-            const link = document.createElement('a');
-            link.download = 'TTL.jpeg';
-            link.href = dataUrl;
-            link.click();
-            name = '';
-            capturing = false;
-        });
+
+        shareUrl = 'https://ttl.seorii.page#' + btoa(JSON.stringify(selected.map(i => ({
+            code: i.code,
+            group: i.group
+        }))));
+
+        qrcode.toDataURL(shareUrl, {
+            color: {dark: $darkMode ? '#fff' : '#000', light: '#00000000'},
+            width: 280
+        }, async (err, url) => {
+            shareQr = url;
+            await new Promise(r => setTimeout(r, 300));
+
+            toPng(container, {quality: 0.95}).then((dataUrl) => {
+                const link = document.createElement('a');
+                link.download = 'TTL.jpeg';
+                link.href = dataUrl;
+                link.click();
+                name = '';
+                capturing = false;
+            });
+        })
     }
 
     async function openShare() {
@@ -196,6 +210,12 @@
             {/if}
         </div>
     </div>
+    {#if capturing}
+    <div style="display: flex;flex-direction:column;align-items: end;margin: 4px 12px 12px 12px;font-weight: 300;position: relative">
+        <img src={shareQr} alt="QR" style="width: 80px;height: 80px;margin-right: -6px;position: absolute;top: -80px"/>
+        <div style="opacity: 0.6">kaist/TTL</div>
+    </div>
+    {/if}
 </main>
 {#if capturing}
     <div class="full" style="flex-direction: column">
