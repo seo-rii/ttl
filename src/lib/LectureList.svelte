@@ -6,11 +6,12 @@
     import {sort} from "fast-sort";
     import Scrolling from "$lib/Scrolling.svelte";
     import Other from "$lib/Other.svelte";
+    import {locale, str} from "$lib";
 
     export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime,
         detail, hideTerm, compete;
 
-    const types = [
+    $: types = $locale === 'ko' ? [
         "기초필수",
         "기초선택",
         "전공필수",
@@ -19,7 +20,16 @@
         "인문사회선택",
         "공통필수",
         "자유선택",
-    ];
+    ] : [
+        "Basic Required",
+        "Basic Elective",
+        "Major Required",
+        "Major Elective",
+        "Mandatory General Courses",
+        "Humanities & Social Elective",
+        "General Required",
+        "Other Elective",
+    ]
     let page = 1, search = '', dept, deptList = [], type = null;
 
     $: _list = sort(list.map(i => ({
@@ -64,35 +74,38 @@
 
     let way = 0
     $: if (way >= 4) way = 0
+
+
+    $: l = str[$locale]
 </script>
 
 <div style="position: sticky;top: 0px;background:var(--surface);z-index: 10;padding-top: 12px">
     <header>
         {#if year && !hideTerm}
             <div class="item">
-                <Select bind:selected={year} placeholder="년도" {mobile}>
+                <Select bind:selected={year} placeholder={l['YEAR']} {mobile}>
                     {#each Array.from({length: 12}, (_, i) => 2024 - i) as y}
                         <Option title={y} data={y}/>
                     {/each}
                 </Select>
             </div>
             <div class="item">
-                <Select bind:selected={term} placeholder="학기" {mobile}>
-                    <Option title="봄" data={1}/>
-                    <Option title="여름" data={2}/>
-                    <Option title="가을" data={3}/>
-                    <Option title="겨울" data={4}/>
+                <Select bind:selected={term} placeholder={l['TERM']} {mobile}>
+                    <Option title={l['SPRING']} data={1}/>
+                    <Option title={l['SUMMER']} data={2}/>
+                    <Option title={l['FALL']} data={3}/>
+                    <Option title={l['WINTER']} data={4}/>
                 </Select>
             </div>
         {/if}
         <div style="flex: 1;min-width: 160px">
-            <Input bind:value={search} placeholder="검색" fullWidth/>
+            <Input bind:value={search} placeholder={l['SEARCH']} fullWidth/>
         </div>
         <div class="item" style="flex: 1">
-            <Select bind:selected={dept} placeholder="학과" {mobile} fullWidth>
+            <Select bind:selected={dept} placeholder={l['DEPT']} {mobile} fullWidth>
                 <main on:wheel|stopPropagation|passive on:touchmove|stopPropagation|passive
                       on:touchdown|stopPropagation|passive style="max-height: 80vh">
-                    <Option title="전체" data={null}/>
+                    <Option title={l['ALL']} data={null}/>
                     {#each deptList as dept}
                         <Option title={deptMap[dept]} data={dept}/>
                     {/each}
@@ -100,9 +113,9 @@
             </Select>
         </div>
         <div class="item" style="flex: 0.6">
-            <Select bind:selected={type} placeholder="유형" {mobile} style="max-height: 80vh;min-width: 100px" fullWidth>
+            <Select bind:selected={type} placeholder={l['TYPE']} {mobile} style="max-height: 80vh;min-width: 100px" fullWidth>
                 <main on:wheel|stopPropagation|passive>
-                    <Option title="전체" data={null}/>
+                    <Option title={l['ALL']} data={null}/>
                     {#each types as type}
                         <Option title={type} data={type}/>
                     {/each}
@@ -121,7 +134,7 @@
         <div style="margin: -8px 0 6px 0;display: flex;align-items: center">
             <Paper left xstack bottom>
                 <Button small outlined icon="timer" slot="target"
-                        round>{!selTime ? '전체' : ['월', '화', '수', '목', '금'][+selTime[0]] + tForm}</Button>
+                        round>{!selTime ? l['ALL'] : [l['MON'], l['TUE'], l['WED'], l['THU'], l['FRI'], l['SAT'], l['SUN']][+selTime[0]] + tForm}</Button>
                 <List>
                     {#each [0, 1, 2, 3, 4] as date}
                         {#each timeSegments as [s, e]}
@@ -130,7 +143,7 @@
                             {@const eh = Math.floor(e / 60)}
                             {@const em = (e % 60).toString().padStart(2, '0')}
                             {@const key = `${date}-${s}`}
-                            <OneLine title="{['월', '화', '수', '목', '금'][date]} {sh}:{sm} - {eh}:{em}"
+                            <OneLine title="{[l['MON'], l['TUE'], l['WED'], l['THU'], l['FRI'], l['SAT'], l['SUN']][date]} {sh}:{sm} - {eh}:{em}"
                                      on:click={() => selTime = (selTime === key ? null : key)}
                                      active={selTime === key}/>
                         {/each}
@@ -138,7 +151,7 @@
                 </List>
             </Paper>
             <Button outlined round icon={way %2 ? "arrow_downward" : "arrow_upward"} small style="margin-left: 4px"
-                    on:click={() => way++}>{['과목코드', '과목코드', '경쟁률', '경쟁률'][way]}</Button>
+                    on:click={() => way++}>{[l['CODE'], l['CODE'], l['COMPETITIVE'], l['COMPETITIVE']][way]}</Button>
         </div>
     </Paginator>
 </div>
@@ -148,17 +161,17 @@
 {:else}
     <Table minWidth="900">
         <tr>
-            <Th width="3.2">학과</Th>
-            <Th width="1.8">학점</Th>
-            <Th width="3.6">코드</Th>
-            <Th width="2.4">교수</Th>
-            <Th width="6">과목 이름</Th>
-            <Th width="4.4">수업 시간</Th>
+            <Th width="3.2">{l['DEPT']}</Th>
+            <Th width="1.8">{l['CREDIT']}</Th>
+            <Th width="3.6">{l['CODE']}</Th>
+            <Th width="2.4">{l['PROF']}</Th>
+            <Th width="6">{l['NAME']}</Th>
+            <Th width="4.4">{l['TIME']}</Th>
             {#if compete}
-                <Th width="4.2">경쟁률</Th>
+                <Th width="4.2">{l['COMPETITIVE']}</Th>
             {/if}
-            <Th width="2.7">유형</Th>
-            <Th width="3.8">실라버스/OTL</Th>
+            <Th width="2.7">{l['TYPE']}</Th>
+            <Th width="3.8">{l['SYLLABUS']}/OTL</Th>
         </tr>
         {#each [...favorites, ...selected, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage).filter(i => !selected.includes(i))] as lect, i}
             {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
@@ -201,7 +214,7 @@
                 <TableTd data={lect} bind:hover on:choose {background}>
                     {#each lect.time as time}
                         <p>
-                            {['월', '화', '수', '목', '금', '토', '일'][time.date]}
+                            {[l['MON'], l['TUE'], l['WED'], l['THU'], l['FRI'], l['SAT'], l['SUN']][time.date]}
                             {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
                         </p>
                     {/each}
@@ -224,7 +237,7 @@
                         {#if lect.kcode}
                             <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={lect.kcode}&dept_id={lect.dept}&lecture_class={lect.group}"
                                target="_blank" on:click|stopPropagation>
-                                <IconButton description size="18" tooltip="실라버스" right xstack bottom/>
+                                <IconButton description size="18" tooltip={l['SYLLABUS']} right xstack bottom/>
                             </a>
                         {/if}
                         {#if otlMap(lect.code)}

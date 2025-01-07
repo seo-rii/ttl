@@ -3,6 +3,7 @@
     import {Button, Icon, List, OneLine, Paper, Tooltip} from "nunui";
     import otlMap from "$lib/otlMap";
     import {textfit} from 'svelte-textfit';
+    import { locale, str } from "$lib";
 
     let parent;
 
@@ -76,6 +77,8 @@
         }
         return `color-mix(in srgb, ${inter[inter.length - 1][1]}, var(--surface) 50%)`;
     }
+
+    $: l = str[$locale]
 </script>
 
 {#each data.time as time, i}
@@ -111,7 +114,7 @@
                         {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
                     </p>
                     {#if compete && !capturing}
-                        <p style="font-size: 0.6em;font-weight: 300;opacity: 0.6;white-space: normal;background:{vscolor(vsRaw || 0)};border-radius: 2px;display:inline-block;padding: 2px">경쟁률 {vs}</p>
+                        <p style="font-size: 0.6em;font-weight: 300;opacity: 0.6;white-space: normal;background:{vscolor(vsRaw || 0)};border-radius: 2px;display:inline-block;padding: 2px">{l['COMPETITIVE']} {vs}</p>
                     {/if}
                 </div>
                 <main style="padding: 12px">
@@ -126,7 +129,7 @@
                     </p>
                     {#if data.credit || data.au}
                         <p style="font-weight: 300;font-size: 0.8em">
-                            <Icon readiness_score/>{data.credit}학점
+                            <Icon readiness_score/>{data.credit}{l['CREDIT']}
                             {#if data.au}
                                 / {data.au} AU
                             {/if}
@@ -142,14 +145,14 @@
                     {/if}
                     {#if compete}
                     <p style="font-weight: 300;font-size: 0.8em">
-                        <Icon account_circle/>{data.reg}/{data.cap}명 신청</p>
+                        <Icon account_circle/>{data.reg}/{data.cap}{l['N_APPLY']}</p>
                     {/if}
                     <p style="font-weight: 300;font-size: 0.8em">
-                        <span><Icon timer/>시간</span><br>
+                        <span><Icon timer/>{l['TIME']}</span><br>
                     <ul>
                         {#each data.time as time}
                             <li>
-                                {['월', '화', '수', '목', '금', '토', '일'][time.date]}
+                                {[l['MON'], l['TUE'], l['WED'], l['THU'], l['FRI'], l['SAT'], l['SUN']][time.date]}
                                 {`${time.sh}:${time.sm.toString().padStart(2, '0')} - ${time.eh}:${time.em.toString().padStart(2, '0')}`}
                             </li>
                         {/each}
@@ -160,34 +163,34 @@
                         <article style="font-size: 16px;font-weight: 300;margin: 0 -12px">
                             <List>
                                 {#if data.code}
-                                <OneLine icon="list" title="과목 개설 내역" on:click={() => detail = data}/>
+                                <OneLine icon="list" title={l['HISTORY']} on:click={() => detail = data}/>
                                 <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
                                    target="_blank" on:click|stopPropagation>
-                                    <OneLine icon="description" title="실라버스"/>
+                                    <OneLine icon="description" title={l['SYLLABUS']}/>
                                 </a>
                                 <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}"
                                    target="_blank" on:click|stopPropagation>
-                                    <OneLine icon="open_in_new" title="OTL 평가"/>
+                                    <OneLine icon="open_in_new" title="OTL"/>
                                 </a>
                                 {/if}
-                                <OneLine icon="close" title="삭제" on:click={() => dispatch('remove')}/>
+                                <OneLine icon="close" title={l['REMOVE']} on:click={() => dispatch('remove')}/>
                             </List>
                         </article>
                     {:else if data.code}
                         <Button small icon="list" on:click={(e) => {
                             e.stopPropagation()
                             detail = data
-                        }}>과목 개설 내역
+                        }}>{l['HISTORY']}
                         </Button>
                         <a href="https://cais.kaist.ac.kr/syllabusInfo?year={year}&term={term}&subject_no={data.kcode}&dept_id={data.dept}&lecture_class={data.group}"
                            target="_blank" on:click|stopPropagation>
-                            <Button small icon="description">실라버스</Button>
+                            <Button small icon="description">{l['SYLLABUS']}</Button>
                         </a>
                     {/if}
                     {#if !mobile && otlMap(data.code)}
                         <a href="https://otl.sparcs.org/dictionary?startCourseId={otlMap(data.code)}" target="_blank"
                            on:click|stopPropagation>
-                            <Button small icon="open_in_new">OTL 평가</Button>
+                            <Button small icon="open_in_new">OTL</Button>
                         </a>
                     {/if}
                 </main>

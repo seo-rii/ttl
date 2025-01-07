@@ -5,7 +5,7 @@
     import {toPng} from 'html-to-image';
     import qrcode from 'qrcode';
     import {goto} from "$app/navigation";
-    import {darkMode} from "$lib/index";
+    import {darkMode, str, locale} from "$lib/index";
     import AddCustom from "./AddCustom.svelte";
 
     const dispatch = createEventDispatcher();
@@ -76,45 +76,49 @@
 
     $: credit = selected.reduce((a, b) => a + b.credit, 0)
     $: au = selected.reduce((a, b) => a + b.au, 0)
+
+
+    $: l = str[$locale]
 </script>
 
 <main class:capturing bind:this={container}>
     {#if overlapExist && !capturing}
         <Card flat secondary style="margin: 12px">
             <Icon error/>
-            <span>시간이 겹치는 과목이 있어요.</span>
+            <span>{l['DUPLICATE_WARN']}</span>
         </Card>
     {/if}
     <div style="padding: 12px;display: flex;align-items: baseline">
         <span style="font-size: 1.6em;font-weight: 300">
             <Icon icon={shared ? 'share' : 'table'}/>
-            {name ? name + '의' : ''}
+            {name ? name + l['OF'] : ''}
             {#if shared && !name}
-                공유된
+                {l['SHARED_TABLE']}
+            {:else}
+                {l['TABLE']}
             {/if}
-            시간표
         </span>
-        <span style="margin-left: 6px;opacity: 0.7;font-size: 0.7em;font-weight: 300">{year}년 {['', '봄', '여름', '가을', '겨울'][term]}학기</span>
+        <span style="margin-left: 6px;opacity: 0.7;font-size: 0.7em;font-weight: 300">{year} {['', l['SPRING'], l['SUMMER'], l['FALL'], l['WINTER']][term]}</span>
         <span style="margin-left: auto;display: block;font-size: 0.8em;font-weight: 300">
-            <span style="font-size: 1.4em;font-weight: 500">{credit}</span>학점 /
+            <span style="font-size: 1.4em;font-weight: 500">{credit}</span>{l['CREDIT']} /
             {#if au}
                 <span style="font-size: 1.4em;font-weight: 500">{au}</span>AU /
             {/if}
-            <span style="font-size: 1.4em;font-weight: 500">{selected.filter(i => !i.custom).length}</span>과목
+            <span style="font-size: 1.4em;font-weight: 500">{selected.filter(i => !i.custom).length}</span>{l['COURSE']}
 
             {#if !capturing}
                 <Paper right xstack bottom {mobile}>
                     <IconButton more_vert slot="target" style="position: relative;top: 4px;margin-left: 4px"/>
                     <List>
                         <Paper right xstack bottom mobile={mobile} stacked={1} style="display: block">
-                            <OneLine icon="download" title="이미지 저장" slot="target"/>
+                            <OneLine icon="download" title={l['SAVE_IMG']} slot="target"/>
                             <div style="padding: 12px !important;position: relative">
-                                <p style="margin-top: 0">이름이 뭐에요? (선택)</p>
+                                <p style="margin-top: 0">{l['ASK_NAME_OPT']}</p>
                                 <div>
-                                    <Input bind:value={name} placeholder="이름" autofocus fullWidth on:submit={capture}/>
+                                    <Input bind:value={name} placeholder={l['NAME']} autofocus fullWidth on:submit={capture}/>
                                 </div>
                                 <div style="display: flex;justify-content: flex-end;margin-top: 12px">
-                                    <Button small transparent on:click={capture}>저장</Button>
+                                    <Button small transparent on:click={capture}>{l['SAVE']}</Button>
                                 </div>
                             </div>
                         </Paper>
@@ -122,29 +126,29 @@
 
                         {#if !shared}
                             <Paper right xstack bottom width="300px" mobile={mobile} stacked={1} style="display: block">
-                                <OneLine icon="share" title="공유" on:click={openShare} slot="target"/>
+                                <OneLine icon="share" title={l['SHARE']} on:click={openShare} slot="target"/>
                                 <div style="padding: 12px">
                                     <h2 style="margin: 4px 0">
-                                        공유
+                                        {l['SHARE']}
                                     </h2>
-                                    <p style="margin: 12px 0 4px 0">아래 QR코드를 공유하세요.</p>
+                                    <p style="margin: 12px 0 4px 0">{l['SHARE_BELOW_QR']}</p>
                                     <div style="display: flex;justify-content: center">
                                         <img src={shareQr} alt="QR"/>
                                     </div>
-                                    <p>또는, 아래 링크를 복사해서 공유하세요.</p>
+                                    <p>{l['OR_USE_LINK']}</p>
                                     <Input readonly placeholder="URL" value={shareUrl} trailingIcon="content_copy"
                                         trailingHandler={() => {
                                         navigator.clipboard.writeText(shareUrl);
-                                        alert('복사되었습니다.');
+                                        alert(l['COPIED']);
                                     }} fullWidth/>
                                 </div>
                             </Paper>
                         {:else}
-                            <List icon="edit" title="이 시간표 수정" on:click={() => dispatch('apply')}/>
-                            <List icon="close" title="닫기" on:click={() => goto('#')}/>
+                            <List icon="edit" title={l['EDIT_THIS_TABLE']} on:click={() => dispatch('apply')}/>
+                            <List icon="close" title={l['CLOSE']} on:click={() => goto('#')}/>
                         {/if}
                         <Paper right xstack bottom {mobile} stacked={1} style="display: block">
-                            <OneLine icon="add" title="내 시간표 추가" slot="target"/>
+                            <OneLine icon="add" title={l['ADD_CUSTOM']} slot="target"/>
                             <div style="padding: 12px !important;position: relative">
                                 <AddCustom {year} {term} {mobile} bind:selected />
                             </div>
@@ -156,11 +160,9 @@
         </span>
     </div>
     <div style="padding: 12px 12px 12px 72px;width: calc(100% - 84px);display: flex;align-items: center;justify-content: space-around;position: sticky;top: 0;background:var(--surface);z-index: 1;border-radius: 12px">
-        <div>월</div>
-        <div>화</div>
-        <div>수</div>
-        <div>목</div>
-        <div>금</div>
+        {#each ['MON', 'TUE', 'WED', 'THU', 'FRI'] as day}
+            <div>{l[day]}</div>
+        {/each}
     </div>
     <div style="flex: 1;display: flex;align-items: center;padding: 12px 6px 24px 0">
         <div style="width: 60px;height: calc(100% + 9px);margin: -3px 0 -6px 0;display: flex;align-items: center;justify-content: space-between;flex-direction: column;font-weight: 300;font-size: 0.6em">
@@ -197,7 +199,7 @@
 </main>
 {#if capturing}
     <div class="full" style="flex-direction: column">
-        <p>캡쳐 중... 잠시만 기다리세요.</p>
+        <p>{l['CAPTURING']}</p>
         <CircularProgress indeterminate/>
     </div>
 {/if}

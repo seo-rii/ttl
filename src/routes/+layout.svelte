@@ -1,7 +1,7 @@
 <script lang="ts">
     import {ThemeProvider} from "nunui";
     import {browser} from "$app/environment";
-    import {darkMode} from "$lib";
+    import {darkMode, locale} from "$lib";
     import GA from "./GA.svelte";
 
     let primary, secondary, surface, onPrimary, onSurface, onSecondary;
@@ -39,7 +39,9 @@
 <title>TTL</title>
 <GA/>
 <ThemeProvider {primary} {secondary} {surface} {onSurface} {onSecondary} {onPrimary}>
-    <slot/>
+    {#key $locale}
+        <slot/>
+    {/key}
 </ThemeProvider>
 
 <style lang="scss">

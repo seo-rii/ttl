@@ -4,7 +4,7 @@ import {sort} from "fast-sort";
 
 let work = ['2024_4', '2025_1']
 
-if(false) {
+if (false) {
     work = []
     for(let year = 2012;year<=2024;year++) {
         for(let term = 1;term<=4;term++) {
@@ -31,12 +31,13 @@ function parseTime(times) {
     }).filter(x => x)
 }
 
-async function main(year = 2024, term = 4, file = `static/result_${year}_${term}.json`) {
+async function main(year = 2024, term = 4, lang = 'ko', file = `static/${lang}/result_${year}_${term}.json`) {
     const raw = Object.values(await fetch('https://erp.kaist.ac.kr/sch/sles/SlesseCtr/findAllEstblSubjtList.do', {
         body: `_menuId=MTI0ODU1MjEwNTgwMTA3ODAwMDA%3D&_menuNm=%EC%A0%84%EC%B2%B4%EA%B0%9C%EC%84%A4%EA%B5%90%EA%B3%BC%EB%AA%A9%EC%A1%B0%ED%9A%8C&_pgmId=NzU0MzkyMTUwMjY%3D&%40d1%23syy=${year}&%40d1%23smtDivCd=${term}&%40d1%23deptCd=806&%40d1%23lwprtInclsYn=1&%40d1%23subjtCrseDivCd=&%40d1%23subjcDivCd=%2C13%2C32%2C12%2C75%2C30%2C31%2C76%2C73%2C74%2C10%2C70%2C71%2C11%2C77%2C34%2C72%2C35%2C36%2C37%2C38%2C39%2C40%2C41%2C42%2C43%2C33%2C78%2C96%2C95%2C93%2C94%2C92%2C90%2C91%2CZM%2CZN%2CZQ%2CZR%2CZW%2CZJ%2CZV%2CZZ%2CZL%2CZS%2CZY%2CZX%2CZO%2CZP%2CZT%2CZU%2CZK&%40d1%23subjtNm=&%40d1%23fromCdt=&%40d1%23toCdt=&%40d1%23englSubjtYn=&%40d1%23subjtCd=&%40d1%23chrgNm=&%40d1%23fromAtnlcPercpCnt=&%40d1%23toAtnlcPercpCnt=&%40d%23=%40d1%23&%40d1%23=dmCond&%40d1%23tp=dm&`,
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'Cookie': `locale=${lang}`
         }
     }).then(r => r.json()))[0]
 
@@ -68,7 +69,7 @@ async function main(year = 2024, term = 4, file = `static/result_${year}_${term}
         } catch (e) {
         }
     
-    const deptMap = {"833": "수리과학과"};
+    const deptMap = {"833": {ko: '수리과학과', en: 'Department of Mathematical Sciences'}[lang]};
     raw.forEach(r => deptMap[r.deprtCd] = r.deprtNm)
 
     const res = {
@@ -78,15 +79,15 @@ async function main(year = 2024, term = 4, file = `static/result_${year}_${term}
     writeFileSync(file, JSON.stringify(res))
 }
 
-function other() {
-    const fileNames = fs.readdirSync('static')
+function other(lang = 'ko') {
+    const fileNames = fs.readdirSync(`static/${lang}`)
     const files = fileNames.filter(name => name.startsWith('result_')).map(name => {
         const li = name.split('_')
         return {year: +li[1], term: +li[2].split('.')[0], name}
     })
     const subjects = {}, titles = {}
     files.forEach(({year, term, name}) => {
-        const data = fs.readFileSync(`static/${name}`)
+        const data = fs.readFileSync(`static/${lang}/${name}`)
         const json = JSON.parse(data)
         json.data.forEach(subject => {
             if (subject.code.includes('URP')) return
@@ -125,13 +126,13 @@ function other() {
         }
         subjects[code][1] = sort(li).desc(['0'])
     }
-    writeFileSync('static/other.json', JSON.stringify(subjects))
+    writeFileSync(`static/${lang}/other.json`, JSON.stringify(subjects))
 }
 
 Promise.all(work.map(w => {
     const li = w.split('_')
-    return main(+li[0], +li[1], `static/result_${w}.json`)
-})).then(() => {
+    return [main(+li[0], +li[1], 'ko'), main(+li[0], +li[1], 'en')]
+}).flat()).then(() => {
     other()
     console.log('done')
 })

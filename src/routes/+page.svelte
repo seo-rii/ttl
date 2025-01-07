@@ -4,7 +4,7 @@
     import LectureList from "$lib/LectureList.svelte";
     import TimeTable from "$lib/TimeTable.svelte";
     import {Button, CircularProgress, IconButton} from "nunui";
-    import {darkMode} from "$lib";
+    import {darkMode, locale, str} from "$lib";
     import {sort} from "fast-sort";
     import {page} from "$app/stores";
     import {goto} from "$app/navigation";
@@ -13,7 +13,7 @@
 
     let year = _year, term = _term, compete = _compete;
     $: key = `${year}_${term}`
-    const ignoreSets = ['개별연구'];
+    const ignoreSets = ['개별연구', 'Thesis Study(Undergraduate)'];
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
 
@@ -28,7 +28,7 @@
     async function update(key: string) {
         loaded = false;
         const timeSet = new Set();
-        data = await fetch(`/result_${key}.json`).then(r => r.json());
+        data = await fetch(`/${$locale}/result_${key}.json`).then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
         selected = JSON.parse(localStorage[key + 'data'] || '[]')
         favorites = JSON.parse(localStorage[key + 'fav'] || '[]')
@@ -73,6 +73,8 @@
     let menu = 0;
 
     $: width = shared ? 520 : 620;
+
+    $: l = str[$locale]
 </script>
 
 <svelte:window bind:innerWidth></svelte:window>
@@ -83,15 +85,16 @@
                 <span style="font-size: 0.7em;">kaist/</span>TTL
                 {#if !mobile}
                     <span style="font-size: 1rem">
-                        DB 버전 : {new Date(data.version).toLocaleString()}
+                        {l['DB_VER']} : {new Date(data.version).toLocaleString()}
                     </span>
                 {/if}
-                <a href="/plan" style="font-size: 0.8em;position: relative;top: 6px"><Button small>플래너</Button></a>
+                <a href="/plan" style="font-size: 0.8em;position: relative;top: 6px"><Button small>{l['PLANNER']}</Button></a>
             </span>
             <span>
                 made by <a href="https://seorii.page">@seo-rii</a>
                 <IconButton style="margin-left: 4px" icon={$darkMode ? 'dark_mode' : 'light_mode'}
                             on:click={() => $darkMode = !$darkMode}/>
+                    <IconButton icon="translate" on:click={() => $locale = $locale === 'ko' ? 'en' : 'ko'}/>
             </span>
         </header>
         <article class:mobile>
@@ -119,7 +122,7 @@
                                     year = syear;
                                     term = sterm;
                                 }} outlined={year !== syear || term !== sterm}>
-                                    {syear}년 {['', '봄', '여름', '가을', '겨울'][sterm]}학기
+                                    {syear} {['', l['SPRING'], l['SUMMER'], l['FALL'], l['WINTER']][sterm]}
                                 </Button>
                             {/each}
                         </div>
@@ -135,14 +138,14 @@
                 <section
                         style="display: flex;align-items: center;justify-content: center;padding-bottom: 12px;width: 100vw;background: var(--primary-light5);padding-top: 12px">
                     {#if shared}
-                        <IconButton icon="share" flat on:click={() => menu = 0} active={menu === 0} label="공유된 시간표"/>
+                        <IconButton icon="share" flat on:click={() => menu = 0} active={menu === 0} label={l['SHARED_TABLE']}/>
                         <div style="width: 4px"/>
                     {/if}
                     <IconButton icon="table" flat on:click={() => menu = (shared ? 1 : 0)}
-                                active={menu === (shared ? 1 : 0)} label="시간표"/>
+                                active={menu === (shared ? 1 : 0)} label={l['TABLE']}/>
                     <div style="width: 4px"/>
                     <IconButton icon="list" flat on:click={() => menu = (shared ? 2 : 1)}
-                                active={menu === (shared ? 2 : 1)} label="과목 목록"/>
+                                active={menu === (shared ? 2 : 1)} label={l['LECTURE_LIST']}/>
                 </section>
             {/if}
         </article>

@@ -2,8 +2,8 @@
     import {onMount} from "svelte";
     import {browser} from "$app/environment";
     import LectureList from "$lib/LectureList.svelte";
-    import {Button, Option, IconButton, Select} from "nunui";
-    import {darkMode} from "$lib";
+    import {Button, IconButton} from "nunui";
+    import {darkMode, locale} from "$lib";
     import Planner from "$lib/Planner.svelte";
 
     const ignoreSets = [];
@@ -12,7 +12,7 @@
 
     async function load(year, month) {
         list = [];
-        const data = await fetch(`/result_${year}_${month}.json`).then(r => r.json());
+        const data = await fetch(`/${$locale}/result_${year}_${month}.json`).then(r => r.json());
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
 
         const key = `${year}-${month}`;

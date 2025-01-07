@@ -5,16 +5,18 @@
 <script lang="ts">
     import {Card, Icon, IconButton} from "nunui";
     import {browser} from "$app/environment";
-    import otlMap from "$lib/otlMap";
+    import {locale, str} from "$lib";
 
     export let detail;
     let otherMap = {};
 
-    if (!pr && browser) pr = fetch('/other.json').then(r => r.json())
+    if (!pr && browser) pr = fetch(`${$locale}/other.json`).then(r => r.json())
 
     $: if (pr) pr.then(r => otherMap = r)
 
     $: defTitle = otherMap[detail.code]?.[0]
+
+    $: l = str[$locale]
 </script>
 
 <Card primary flat>
@@ -22,7 +24,7 @@
         <span style="font-size: 1.2em">{detail.code} {detail.title}</span>
         <IconButton close on:click={() => detail = null}/>
     </div>
-    <p>누르면 실라버스로 이동합니다.</p>
+    <p>{l['CLICK_TO_OPEN_SYLLABUS']}</p>
     {#if defTitle}
         {#each otherMap[detail.code][1] as [key, history]}
             {@const term = key % 10}
