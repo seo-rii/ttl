@@ -167,9 +167,7 @@
             <Th width="2.4">{l['PROF']}</Th>
             <Th width="6">{l['NAME']}</Th>
             <Th width="4.4">{l['TIME']}</Th>
-            {#if compete}
                 <Th width="4.2">{l['COMPETITIVE']}</Th>
-            {/if}
             <Th width="2.7">{l['TYPE']}</Th>
             <Th width="3.8">{l['SYLLABUS']}/OTL</Th>
         </tr>
@@ -220,13 +218,11 @@
                     {/each}
                 </TableTd>
 
-                {#if compete}
                     <TableTd data={lect} bind:hover on:choose {background} oneline>
                         <Scrolling>
                             <div style="color: {color} !important">{vs} ({lect.reg}/{lect.cap})</div>
                         </Scrolling>
                     </TableTd>
-                {/if}
 
                 <TableTd data={lect} bind:hover on:choose {background} online>
                     {lect.type || ''}

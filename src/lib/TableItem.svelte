@@ -143,10 +143,8 @@
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon person/>{data.prof}</p>
                     {/if}
-                    {#if compete}
                     <p style="font-weight: 300;font-size: 0.8em">
                         <Icon account_circle/>{data.reg}/{data.cap}{l['N_APPLY']}</p>
-                    {/if}
                     <p style="font-weight: 300;font-size: 0.8em">
                         <span><Icon timer/>{l['TIME']}</span><br>
                     <ul>
