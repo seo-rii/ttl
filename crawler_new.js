@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import {writeFileSync} from 'fs';
 import {sort} from "fast-sort";
 
-let work = ['2025_1', '2025_2']
+let work = ['2025_1', '2025_2', '2025_3']
 
 if (false) {
     work = []
