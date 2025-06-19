@@ -62,7 +62,7 @@ async function main(year = 2024, term = 4, lang = 'ko', file = `static/${lang}/r
     }).filter(x => x)
 
     try {
-            const addl = `./static/add_${year}_${term}.json`
+            const addl = `./static/${lang}/add_${year}_${term}.json`
             const add = fs.readFileSync(addl)
             const addJson = JSON.parse(add)
             data.push(...addJson)
@@ -85,7 +85,7 @@ function other(lang = 'ko') {
         const li = name.split('_')
         return {year: +li[1], term: +li[2].split('.')[0], name}
     })
-    const subjects = {}, titles = {}
+    const subjects = {}, titles = {}, oldMap = {}
     files.forEach(({year, term, name}) => {
         const data = fs.readFileSync(`static/${lang}/${name}`)
         const json = JSON.parse(data)
@@ -96,6 +96,7 @@ function other(lang = 'ko') {
                 titles[subject.code] = []
             }
             titles[subject.code].push(subject.title)
+            oldMap[subject.old] = subject.code
 
             const key = ((year - 2000) * 10 + term) + ''
             if (!subjects[subject.code][1][key]) subjects[subject.code][1][key] = []
@@ -127,12 +128,14 @@ function other(lang = 'ko') {
         subjects[code][1] = sort(li).desc(['0'])
     }
     writeFileSync(`static/${lang}/other.json`, JSON.stringify(subjects))
+    writeFileSync(`static/${lang}/oldmap.json`, JSON.stringify(oldMap))
 }
 
 Promise.all(work.map(w => {
     const li = w.split('_')
     return [main(+li[0], +li[1], 'ko'), main(+li[0], +li[1], 'en')]
 }).flat()).then(() => {
-    other()
+    other('ko')
+    other('en')
     console.log('done')
 })

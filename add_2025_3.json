@@ -1,0 +1,1809 @@
+[
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS100",
+        "title": "",
+        "group": "",
+        "prof": [
+            "홈슨"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "",
+        "group": "A",
+        "prof": [
+            "백형렬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS101",
+        "title": "",
+        "group": "B",
+        "prof": [
+            "백형렬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "A",
+        "prof": [
+            "김용정"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "B",
+        "prof": [
+            "김용정"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "C",
+        "prof": [
+            "권순식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "D",
+        "prof": [
+            "권순식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "E",
+        "prof": [
+            "남경식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "F",
+        "prof": [
+            "남경식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "",
+        "group": "C",
+        "prof": [
+            "임보해"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "",
+        "group": "D",
+        "prof": [
+            "임보해"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS510",
+        "title": "",
+        "group": "",
+        "prof": [
+            "김완수"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS212",
+        "title": "",
+        "group": "B",
+        "prof": [
+            "홈슨"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS250",
+        "title": "",
+        "group": "A",
+        "prof": [
+            "박철우"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS441",
+        "title": "",
+        "group": "",
+        "prof": [
+            "남경식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS512",
+        "title": "",
+        "group": "",
+        "prof": [
+            "백상훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "G",
+        "prof": [
+            "박지원"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "H",
+        "prof": [
+            "박지원"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "I",
+        "prof": [
+            "이민주"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "J",
+        "prof": [
+            "이민주"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "K",
+        "prof": [
+            "임민규"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "L",
+        "prof": [
+            "임민규"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "M",
+        "prof": [
+            "이재훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 10,
+                "sm": 0,
+                "eh": 11,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS102",
+        "title": "",
+        "group": "N",
+        "prof": [
+            "이재훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS202",
+        "title": "",
+        "group": "A",
+        "prof": [
+            "최건호"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS202",
+        "title": "",
+        "group": "B",
+        "prof": [
+            "최건호"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS270",
+        "title": "",
+        "group": "",
+        "prof": [
+            "최서영"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS365",
+        "title": "",
+        "group": "",
+        "prof": [
+            "김동찬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS532",
+        "title": "",
+        "group": "",
+        "prof": [
+            "김우진"
+        ],
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "",
+        "group": "C",
+        "prof": [
+            "이창욱"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "",
+        "group": "D",
+        "prof": [
+            "이창욱"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS321",
+        "title": "",
+        "group": "",
+        "prof": [
+            "박지원"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS443",
+        "title": "",
+        "group": "",
+        "prof": [
+            "최범준"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "",
+        "group": "A",
+        "prof": [
+            "백상훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "",
+        "group": "B",
+        "prof": [
+            "백상훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS520",
+        "title": "",
+        "group": "",
+        "prof": [
+            "최서영"
+        ],
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS430",
+        "title": "",
+        "group": "",
+        "prof": [
+            "박정환"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS646",
+        "title": "",
+        "group": "",
+        "prof": [
+            "강문진"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS242",
+        "title": "",
+        "group": "",
+        "prof": [
+            "배명진"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS467",
+        "title": "",
+        "group": "",
+        "prof": [
+            "김재경"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS550",
+        "title": "",
+        "group": "",
+        "prof": [
+            "김동한"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "",
+        "group": "A",
+        "prof": [
+            "박진현"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS201",
+        "title": "",
+        "group": "B",
+        "prof": [
+            "박진현"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS250",
+        "title": "",
+        "group": "B",
+        "prof": [
+            "임미경"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS473",
+        "title": "",
+        "group": "",
+        "prof": [
+            "하우석"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS641",
+        "title": "",
+        "group": "",
+        "prof": [
+            "이지운"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "",
+        "group": "E",
+        "prof": [
+            "한상근"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 11,
+                "sm": 0,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS109",
+        "title": "",
+        "group": "F",
+        "prof": [
+            "한상근"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 4,
+                "sh": 14,
+                "sm": 0,
+                "eh": 15,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS312",
+        "title": "",
+        "group": "",
+        "prof": [
+            "박진현"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS477",
+        "title": "",
+        "group": "",
+        "prof": [
+            "김재훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS541",
+        "title": "",
+        "group": "",
+        "prof": [
+            "임미경"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS212",
+        "title": "",
+        "group": "A",
+        "prof": [
+            "박진형"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS355",
+        "title": "",
+        "group": "",
+        "prof": [
+            "김일문"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS581",
+        "title": "",
+        "group": "",
+        "prof": [
+            "라메쉬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": ""
+    }
+]

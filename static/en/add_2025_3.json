@@ -1,0 +1,1836 @@
+[
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10000",
+        "title": "College Mathematics",
+        "group": "",
+        "prof": [
+            "홈슨"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS100"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10001",
+        "title": "Calculus 1",
+        "group": "A",
+        "prof": [
+            "백형렬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS101"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10001",
+        "title": "Calculus 1",
+        "group": "B",
+        "prof": [
+            "백형렬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS101"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "A",
+        "prof": [
+            "김용정"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "B",
+        "prof": [
+            "김용정"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "C",
+        "prof": [
+            "권순식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "D",
+        "prof": [
+            "권순식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "E",
+        "prof": [
+            "남경식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "F",
+        "prof": [
+            "남경식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10009",
+        "title": "Introduction to Linear Algebra",
+        "group": "C",
+        "prof": [
+            "임보해"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS109"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10009",
+        "title": "Introduction to Linear Algebra",
+        "group": "D",
+        "prof": [
+            "임보해"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS109"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.50010",
+        "title": "Number Theory",
+        "group": "",
+        "prof": [
+            "김완수"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS510"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20012",
+        "title": "Linear Algebra",
+        "group": "B",
+        "prof": [
+            "홈슨"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS212"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20050",
+        "title": "Probability and Statistics",
+        "group": "A",
+        "prof": [
+            "박철우"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS250"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.40041",
+        "title": "Lebesgue Integral Theory",
+        "group": "",
+        "prof": [
+            "남경식"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS441"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.50012",
+        "title": "Algebra II",
+        "group": "",
+        "prof": [
+            "백상훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS512"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "G",
+        "prof": [
+            "박지원"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "H",
+        "prof": [
+            "박지원"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "I",
+        "prof": [
+            "이민주"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "J",
+        "prof": [
+            "이민주"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "K",
+        "prof": [
+            "임민규"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "L",
+        "prof": [
+            "임민규"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "M",
+        "prof": [
+            "이재훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10002",
+        "title": "Calculus II",
+        "group": "N",
+        "prof": [
+            "이재훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS102"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20002",
+        "title": "Applied Mathematical Analysis",
+        "group": "A",
+        "prof": [
+            "최건호"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS202"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20002",
+        "title": "Applied Mathematical Analysis",
+        "group": "B",
+        "prof": [
+            "최건호"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS202"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20070",
+        "title": "Logic and Set Theory",
+        "group": "",
+        "prof": [
+            "최서영"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS270"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.30065",
+        "title": "Introduction to Numerical Analysis",
+        "group": "",
+        "prof": [
+            "김동찬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS365"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.50032",
+        "title": "Algebraic Topology II",
+        "group": "",
+        "prof": [
+            "김우진"
+        ],
+        "time": [
+            {
+                "date": 0,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS532"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20001",
+        "title": "Differential Equations and Applications",
+        "group": "C",
+        "prof": [
+            "이창욱"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS201"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20001",
+        "title": "Differential Equations and Applications",
+        "group": "D",
+        "prof": [
+            "이창욱"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS201"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.30021",
+        "title": "Introduction to Differential Geometry",
+        "group": "",
+        "prof": [
+            "박지원"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS321"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.40043",
+        "title": "Ordinary Differential Equations and Dynamical Systems",
+        "group": "",
+        "prof": [
+            "최범준"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS443"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10009",
+        "title": "Introduction to Linear Algebra",
+        "group": "A",
+        "prof": [
+            "백상훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS109"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10009",
+        "title": "Introduction to Linear Algebra",
+        "group": "B",
+        "prof": [
+            "백상훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS109"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.50020",
+        "title": "Differential Geometry",
+        "group": "",
+        "prof": [
+            "최서영"
+        ],
+        "time": [
+            {
+                "date": 0,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 2,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS520"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.40030",
+        "title": "Combinatorial Topology",
+        "group": "",
+        "prof": [
+            "박정환"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS430"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.60046",
+        "title": "Nonlinear Differential Equations",
+        "group": "",
+        "prof": [
+            "강문진"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 0,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            },
+            {
+                "date": 2,
+                "sh": 16,
+                "sm": 0,
+                "eh": 17,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS646"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20042",
+        "title": "Analysis II",
+        "group": "",
+        "prof": [
+            "배명진"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS242"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.40067",
+        "title": "Introduction to Mathematical Biology",
+        "group": "",
+        "prof": [
+            "김재경"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS467"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.50050",
+        "title": "Probability Theory",
+        "group": "",
+        "prof": [
+            "김동한"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 9,
+                "sm": 0,
+                "eh": 10,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS550"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20001",
+        "title": "Differential Equations and Applications",
+        "group": "A",
+        "prof": [
+            "박진현"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS201"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20001",
+        "title": "Differential Equations and Applications",
+        "group": "B",
+        "prof": [
+            "박진현"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS201"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20050",
+        "title": "Probability and Statistics",
+        "group": "B",
+        "prof": [
+            "임미경"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS250"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.40073",
+        "title": "Introduction to Artificial Intelligence with Mathematics",
+        "group": "",
+        "prof": [
+            "하우석"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS473"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.60041",
+        "title": "Functional Analysis",
+        "group": "",
+        "prof": [
+            "이지운"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 10,
+                "sm": 30,
+                "eh": 12,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS641"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10009",
+        "title": "Introduction to Linear Algebra",
+        "group": "E",
+        "prof": [
+            "한상근"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS109"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.10009",
+        "title": "Introduction to Linear Algebra",
+        "group": "F",
+        "prof": [
+            "한상근"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS109"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.30012",
+        "title": "Modern Algebra II",
+        "group": "",
+        "prof": [
+            "박진현"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS312"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.40077",
+        "title": "Introduction to Graph Theory",
+        "group": "",
+        "prof": [
+            "김재훈"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS477"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.50041",
+        "title": "Complex Function Theory",
+        "group": "",
+        "prof": [
+            "임미경"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            },
+            {
+                "date": 3,
+                "sh": 13,
+                "sm": 0,
+                "eh": 14,
+                "em": 30
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS541"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.20012",
+        "title": "Linear Algebra",
+        "group": "A",
+        "prof": [
+            "박진형"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS212"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.30055",
+        "title": "Mathematical Statistics",
+        "group": "",
+        "prof": [
+            "김일문"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS355"
+    },
+    {
+        "dept": 151,
+        "type": "",
+        "code": "MAS.59901",
+        "title": "Topics in Mathematics I< Introduction to optimal transport.>",
+        "group": "",
+        "prof": [
+            "라메쉬"
+        ],
+        "where": "",
+        "time": [
+            {
+                "date": 1,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            },
+            {
+                "date": 3,
+                "sh": 14,
+                "sm": 30,
+                "eh": 16,
+                "em": 0
+            }
+        ],
+        "exam": [],
+        "credit": 3,
+        "kcode": "",
+        "au": 0,
+        "cap": 0,
+        "reg": 0,
+        "old": "MAS581"
+    }
+]
