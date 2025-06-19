@@ -1,6 +1,6 @@
 [
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10000",
         "title": "College Mathematics",
@@ -34,7 +34,7 @@
         "old": "MAS100"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10001",
         "title": "Calculus 1",
@@ -68,7 +68,7 @@
         "old": "MAS101"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10001",
         "title": "Calculus 1",
@@ -102,7 +102,7 @@
         "old": "MAS101"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -136,7 +136,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -170,7 +170,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -204,7 +204,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -238,7 +238,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -272,7 +272,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -306,7 +306,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10009",
         "title": "Introduction to Linear Algebra",
@@ -340,7 +340,7 @@
         "old": "MAS109"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10009",
         "title": "Introduction to Linear Algebra",
@@ -374,7 +374,7 @@
         "old": "MAS109"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.50010",
         "title": "Number Theory",
@@ -408,7 +408,7 @@
         "old": "MAS510"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20012",
         "title": "Linear Algebra",
@@ -442,7 +442,7 @@
         "old": "MAS212"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20050",
         "title": "Probability and Statistics",
@@ -476,7 +476,7 @@
         "old": "MAS250"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.40041",
         "title": "Lebesgue Integral Theory",
@@ -510,7 +510,7 @@
         "old": "MAS441"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.50012",
         "title": "Algebra II",
@@ -544,7 +544,7 @@
         "old": "MAS512"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -578,7 +578,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -612,7 +612,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -646,7 +646,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -680,7 +680,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -714,7 +714,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -748,7 +748,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -782,7 +782,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10002",
         "title": "Calculus II",
@@ -816,7 +816,7 @@
         "old": "MAS102"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20002",
         "title": "Applied Mathematical Analysis",
@@ -850,7 +850,7 @@
         "old": "MAS202"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20002",
         "title": "Applied Mathematical Analysis",
@@ -884,7 +884,7 @@
         "old": "MAS202"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20070",
         "title": "Logic and Set Theory",
@@ -918,7 +918,7 @@
         "old": "MAS270"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.30065",
         "title": "Introduction to Numerical Analysis",
@@ -952,7 +952,7 @@
         "old": "MAS365"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.50032",
         "title": "Algebraic Topology II",
@@ -985,7 +985,7 @@
         "old": "MAS532"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20001",
         "title": "Differential Equations and Applications",
@@ -1019,7 +1019,7 @@
         "old": "MAS201"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20001",
         "title": "Differential Equations and Applications",
@@ -1053,7 +1053,7 @@
         "old": "MAS201"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.30021",
         "title": "Introduction to Differential Geometry",
@@ -1087,7 +1087,7 @@
         "old": "MAS321"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.40043",
         "title": "Ordinary Differential Equations and Dynamical Systems",
@@ -1121,7 +1121,7 @@
         "old": "MAS443"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10009",
         "title": "Introduction to Linear Algebra",
@@ -1155,7 +1155,7 @@
         "old": "MAS109"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10009",
         "title": "Introduction to Linear Algebra",
@@ -1189,7 +1189,7 @@
         "old": "MAS109"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.50020",
         "title": "Differential Geometry",
@@ -1222,7 +1222,7 @@
         "old": "MAS520"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.40030",
         "title": "Combinatorial Topology",
@@ -1256,7 +1256,7 @@
         "old": "MAS430"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.60046",
         "title": "Nonlinear Differential Equations",
@@ -1290,7 +1290,7 @@
         "old": "MAS646"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20042",
         "title": "Analysis II",
@@ -1324,7 +1324,7 @@
         "old": "MAS242"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.40067",
         "title": "Introduction to Mathematical Biology",
@@ -1358,7 +1358,7 @@
         "old": "MAS467"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.50050",
         "title": "Probability Theory",
@@ -1392,7 +1392,7 @@
         "old": "MAS550"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20001",
         "title": "Differential Equations and Applications",
@@ -1426,7 +1426,7 @@
         "old": "MAS201"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20001",
         "title": "Differential Equations and Applications",
@@ -1460,7 +1460,7 @@
         "old": "MAS201"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20050",
         "title": "Probability and Statistics",
@@ -1494,7 +1494,7 @@
         "old": "MAS250"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.40073",
         "title": "Introduction to Artificial Intelligence with Mathematics",
@@ -1528,7 +1528,7 @@
         "old": "MAS473"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.60041",
         "title": "Functional Analysis",
@@ -1562,7 +1562,7 @@
         "old": "MAS641"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10009",
         "title": "Introduction to Linear Algebra",
@@ -1596,7 +1596,7 @@
         "old": "MAS109"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.10009",
         "title": "Introduction to Linear Algebra",
@@ -1630,7 +1630,7 @@
         "old": "MAS109"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.30012",
         "title": "Modern Algebra II",
@@ -1664,7 +1664,7 @@
         "old": "MAS312"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.40077",
         "title": "Introduction to Graph Theory",
@@ -1698,7 +1698,7 @@
         "old": "MAS477"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.50041",
         "title": "Complex Function Theory",
@@ -1732,7 +1732,7 @@
         "old": "MAS541"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.20012",
         "title": "Linear Algebra",
@@ -1766,7 +1766,7 @@
         "old": "MAS212"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.30055",
         "title": "Mathematical Statistics",
@@ -1800,7 +1800,7 @@
         "old": "MAS355"
     },
     {
-        "dept": 151,
+        "dept": 833,
         "type": "",
         "code": "MAS.59901",
         "title": "Topics in Mathematics I< Introduction to optimal transport.>",

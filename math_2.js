@@ -57,7 +57,7 @@ function run(lang = 'ko') {
     for(let i=0;i<res.length;i++) {
         for(const l of res[i]) {
             const r = l.split(',');
-            const dept = 151;
+            const dept = 833;
             const type = '';
             const old = 'MAS' + r[0].slice(0, 3);
             const code = oldmap[old];
