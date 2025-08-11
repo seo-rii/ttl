@@ -1,4 +1,4 @@
-export const compete = false;
+export const compete = true;
 export const selectable = ['2025_1', '2025_2', '2025_3']
 export const def = '2025_2'
 
