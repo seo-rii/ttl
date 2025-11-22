@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import {writeFileSync} from 'fs';
 import {sort} from "fast-sort";
 
-let work = ['2025_1', '2025_2', '2025_3']
+let work = ['2025_3', '2025_4', '2026_1']
 
 if (false) {
     work = []
@@ -90,6 +90,7 @@ function other(lang = 'ko') {
         const data = fs.readFileSync(`static/${lang}/${name}`)
         const json = JSON.parse(data)
         json.data.forEach(subject => {
+            if (!subject.code) console.log(subject)
             if (subject.code.includes('URP')) return
             if (!subjects[subject.code]) {
                 subjects[subject.code] = ['', {}]
