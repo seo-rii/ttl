@@ -10,13 +10,13 @@ function run(lang = 'ko') {
         [{date: 0, sh: 10, sm: 30, eh: 12, em: 0}, {date: 2, sh: 10, sm: 30, eh: 12, em: 0}],
         [{date: 0, sh: 13, sm: 0, eh: 14, em: 30}, {date: 2, sh: 13, sm: 0, eh: 14, em: 30}],
         [{date: 0, sh: 14, sm: 30, eh: 16, em: 0}, {date: 2, sh: 14, sm: 30, eh: 16, em: 0}],
-        [{date: 0, sh: 16, sm: 0, eh: 17, em: 30}, {date: 2, sh: 16, sm: 0, eh: 17, em: 30}],
+        //[{date: 0, sh: 16, sm: 0, eh: 17, em: 30}, {date: 2, sh: 16, sm: 0, eh: 17, em: 30}],
 
         [{date: 1, sh: 9, sm: 0, eh: 10, em: 30}, {date: 3, sh: 9, sm: 0, eh: 10, em: 30}],
         [{date: 1, sh: 10, sm: 30, eh: 12, em: 0}, {date: 3, sh: 10, sm: 30, eh: 12, em: 0}],
         [{date: 1, sh: 13, sm: 0, eh: 14, em: 30}, {date: 3, sh: 13, sm: 0, eh: 14, em: 30}],
         [{date: 1, sh: 14, sm: 30, eh: 16, em: 0}, {date: 3, sh: 14, sm: 30, eh: 16, em: 0}],
-        [{date: 1, sh: 16, sm: 0, eh: 17, em: 30}, {date: 3, sh: 16, sm: 0, eh: 17, em: 30}],
+        //[{date: 1, sh: 16, sm: 0, eh: 17, em: 30}, {date: 3, sh: 16, sm: 0, eh: 17, em: 30}],
     ]
 
     const addTimes = [
@@ -40,7 +40,7 @@ function run(lang = 'ko') {
         }
     }
 
-    const nm = fs.readFileSync('2025fmath.txt').toString().split('\n').map(i => i.trim());
+    const nm = fs.readFileSync('2026smath.txt').toString().split('\n').map(i => i.trim());
     const res = [];
     let curr = [];
     for(const i of nm) {
@@ -85,7 +85,7 @@ function run(lang = 'ko') {
 
     }
 
-    fs.writeFileSync(`static/${lang}/add_2025_3.json`, JSON.stringify(dump, null, 4));
+    fs.writeFileSync(`static/${lang}/add_2026_1.json`, JSON.stringify(dump, null, 4));
 }
 //return {dept, type, code, title, group, prof, where, time, exam, credit, kcode};
 
