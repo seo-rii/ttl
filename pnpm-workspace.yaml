@@ -1,4 +1,6 @@
 onlyBuiltDependencies:
   - '@sveltejs/kit'
   - esbuild
+  - sharp
   - svelte-preprocess
+  - workerd

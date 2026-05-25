@@ -24,6 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"fast-sort": "^3.4.0",
 		"html-to-image": "^1.11.11",
 		"node-fetch": "^3.3.2",
