@@ -2,15 +2,12 @@ import * as fs from 'fs';
 import {writeFileSync} from 'fs';
 import {sort} from "fast-sort";
 
-let work = ['2025_3', '2025_4', '2026_1']
+const config = fs.readFileSync(new URL('./src/lib/config.ts', import.meta.url), 'utf8')
+const selectable = config.match(/export const selectable = \[([^\]]*)\]/)?.[1]
+const work = selectable?.match(/['"]\d{4}_[1-4]['"]/g)?.map(value => value.slice(1, -1)) || []
 
-if (false) {
-    work = []
-    for(let year = 2012;year<=2025;year++) {
-        for(let term = 1;term<=4;term++) {
-            work.push(`${year}_${term}`)
-        }
-    }
+if (!work.length) {
+    throw new Error('No selectable semesters found in src/lib/config.ts')
 }
 
 function parseTime(times) {
@@ -40,6 +37,15 @@ async function main(year = 2024, term = 4, lang = 'ko', file = `static/${lang}/r
             'Cookie': `locale=${lang}`
         }
     }).then(r => r.json()))[0]
+
+    if (!Array.isArray(raw)) {
+        throw new Error(`Unexpected response for ${year}_${term} ${lang}`)
+    }
+
+    const wrongTerm = raw.find(r => +r.syy !== year || +r.smtDivCd !== term)
+    if (wrongTerm) {
+        throw new Error(`Crawler settings were ignored for ${year}_${term} ${lang}: got ${wrongTerm.syy}_${wrongTerm.smtDivCd}`)
+    }
 
     const data = raw.map(r => {
         const dept = +r.deprtCd
