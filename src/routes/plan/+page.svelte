@@ -5,6 +5,7 @@
     import {Button, IconButton} from "nunui";
     import {darkMode, locale} from "$lib";
     import Planner from "$lib/Planner.svelte";
+    import {resolveLectures, toggleLecture} from "$lib/lectures.js";
 
     const ignoreSets = [];
     let year = 2024, term = 3, menu = 0;
@@ -16,7 +17,7 @@
         data.data = data.data.filter(i => !ignoreSets.some(x => i.title.includes(x)))
 
         const key = `${year}-${month}`;
-        plan[key] = (plan[key] || []).map(i => data.data.find(x => x.code === i.code && x.group === i.group)).filter(i => i)
+        plan[key] = resolveLectures(plan[key] || [], data.data)
         list = data.data;
         deptMap = data.deptMap;
     }
@@ -30,9 +31,7 @@
     })
 
     function toggle(e) {
-        const lect = e.detail;
-        if (selected.includes(lect)) selected = selected.filter(i => i !== lect)
-        else selected = [...selected, lect]
+        selected = toggleLecture(selected, e.detail);
         plan = {...plan, [key]: selected}
     }
 

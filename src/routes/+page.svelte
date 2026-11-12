@@ -9,6 +9,7 @@
     import {page} from "$app/stores";
     import {goto} from "$app/navigation";
     import {year as _year, term as _term, compete as _compete, selectable} from "$lib/config";
+    import {resolveLectures, toggleLecture} from "$lib/lectures.js";
 
 
     let year = _year, term = _term, compete = _compete;
@@ -17,7 +18,7 @@
     let data: any = {}, selected = [], hover, innerWidth, loaded = false, timeSegments = [], selTime, favorites = [],
         shared = null, detail = null;
 
-    $: filter = (li) => li.map(i => i.custom ? i : data.data.find(x => (x.code === i.code || x.old === i.code) && x.group === i.group)).filter(i => i);
+    $: filter = (li) => resolveLectures(li, data.data);
     $: {
         if ($page.url.hash?.length > 1 && data.data) {
             shared = JSON.parse(atob($page.url.hash.slice(1)))
@@ -59,9 +60,7 @@
 
     function toggle(e) {
         selTime = null;
-        const lect = e.detail;
-        if (selected.includes(lect)) selected = selected.filter(i => i !== lect)
-        else selected = [...selected, lect]
+        selected = toggleLecture(selected, e.detail);
     }
 
     $: mobile = innerWidth < (shared ? 1300 : 1100);

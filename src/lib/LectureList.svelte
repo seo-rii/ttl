@@ -7,6 +7,7 @@
     import Scrolling from "$lib/Scrolling.svelte";
     import Other from "$lib/Other.svelte";
     import {locale, str} from "$lib";
+    import {lectureKey, sameLecture, toggleLecture, uniqueLectures} from "$lib/lectures.js";
 
     export let list = [], favorites = [], deptMap = {}, hover, selected, mobile, year, term, timeSegments, selTime,
         detail, hideTerm, compete;
@@ -32,15 +33,15 @@
     ]
     let page = 1, search = '', dept, deptList = [], type = null;
 
-    $: _list = sort(list.map(i => ({
-        ...i, vs: i.cap ? (i.reg / i.cap) : 0
-    })).filter(i => {
+    $: _list = sort(uniqueLectures(list).filter(i => {
         const l = (search || '').toLowerCase();
         return (!l || [i.title, ...i.prof, deptMap[i.dept]].map(i => (i || '').toLowerCase()).some(x => l.split('').every(i => x.includes(i))) || [i.code, i.old].map(i => (i || '').toLowerCase()).some(x => x.includes(l)))
             && (i.dept === +dept || !dept)
             && (!type || (i.type || '').startsWith(type))
             && (!selTime || i.time.some(tt => tt.date === +selTime.split('-')[0] && tt.sh * 60 + tt.sm <= +selTime.split('-')[1] && tt.eh * 60 + tt.em > +selTime.split('-')[1]))
-    }))[way % 2 ? 'desc' : 'asc'](i => i[['code', 'code', 'vs', 'vs'][way % 4] || 'code']);
+    }))[way % 2 ? 'desc' : 'asc'](i => way % 4 < 2 ? i.code : (i.cap ? i.reg / i.cap : 0));
+
+    $: displayedList = uniqueLectures([...favorites, ...selected, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage)]);
 
     $: maxPage = Math.ceil(_list.length / itemPerPage);
     $: {
@@ -171,8 +172,10 @@
             <Th width="2.7">{l['TYPE']}</Th>
             <Th width="3.8">{l['SYLLABUS']}/OTL</Th>
         </tr>
-        {#each [...favorites, ...selected, ..._list.slice((page - 1) * itemPerPage, page * itemPerPage).filter(i => !selected.includes(i))] as lect, i}
-            {@const background = i < favorites.length ? 'var(--primary-light6)' : (selected.includes(lect) ? 'var(--secondary-light6)' : '')}
+        {#each displayedList as lect (lectureKey(lect))}
+            {@const favorite = favorites.some(item => sameLecture(item, lect))}
+            {@const chosen = selected.some(item => sameLecture(item, lect))}
+            {@const background = favorite ? 'var(--primary-light6)' : (chosen ? 'var(--secondary-light6)' : '')}
             {@const vsRaw = lect.cap ? (lect.reg / lect.cap) : 0}
             {@const vs = lect.cap && lect.reg ? (vsRaw < 0.1 ? '<0.1' : vsRaw.toFixed(1)) : ' - '}
             {@const color = vscolor(vsRaw || 0)}
@@ -180,9 +183,8 @@
                 <TableTd data={lect} bind:hover on:choose {background}>
                     <IconButton favorite size="18" on:click={(e) => {
                     e.stopPropagation();
-                    if(favorites.includes(lect)) favorites = favorites.filter(i => i !== lect)
-                    else favorites = [...favorites, lect]
-                }} active={favorites.includes(lect)}/>
+                    favorites = toggleLecture(favorites, lect)
+                }} active={favorite}/>
                     {deptMap[lect.dept]}
                 </TableTd>
 
