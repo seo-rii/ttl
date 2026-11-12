@@ -7,6 +7,7 @@
     import {goto} from "$app/navigation";
     import {darkMode, str, locale} from "$lib/index";
     import AddCustom from "./AddCustom.svelte";
+    import {sameLecture} from "$lib/lectures.js";
 
     const dispatch = createEventDispatcher();
 
@@ -38,7 +39,7 @@
         return levels;
     }
 
-    $: _hover = selected.some(i => i === hover) ? null : hover;
+    $: _hover = selected.some(i => sameLecture(i, hover)) ? null : hover;
     $: levels = getLevels(_hover ? [...selected, _hover] : selected);
     $: overlapExist = getLevels(selected).some(i => i[1] > 1);
 
@@ -54,7 +55,8 @@
 
         shareUrl = 'https://ttl.seorii.page#' + btoa(JSON.stringify(selected.map(i => ({
             code: i.code,
-            group: i.group
+            group: i.group,
+            dept: i.dept
         }))));
 
         qrcode.toDataURL(shareUrl, {
@@ -78,7 +80,8 @@
     async function openShare() {
         shareUrl = 'https://ttl.seorii.page#' + btoa(JSON.stringify(selected.map(i => ({
             code: i.code,
-            group: i.group
+            group: i.group,
+            dept: i.dept
         }))));
         qrcode.toDataURL(shareUrl, {
             color: {dark: $darkMode ? '#fff' : '#000', light: '#00000000'},
@@ -200,7 +203,7 @@
             {/if}
 
             {#each selected as data, i}
-                <TableItem {mobile} {data} on:remove={() => !shared && (selected = selected.filter(x => x !== data))}
+                <TableItem {mobile} {data} on:remove={() => !shared && (selected = selected.filter(x => !sameLecture(x, data)))}
                            {selected} {capturing} {maxHour} bind:detail {year} {term} {compete}
                            {levels} offset={selected.slice(0, i).map(i => i.time).flat().length}/>
             {/each}

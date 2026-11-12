@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"test": "node --test tests/*.test.js",
 		"dev": "vite dev",
 		"build": "node crawler_new.js && vite build",
 		"preview": "vite preview",
