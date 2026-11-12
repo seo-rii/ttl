@@ -4,3 +4,6 @@ onlyBuiltDependencies:
   - sharp
   - svelte-preprocess
   - workerd
+
+overrides:
+  rollup: 4.64.5
