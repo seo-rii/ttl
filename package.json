@@ -24,6 +24,14 @@
 		"vite": "^5.0.3"
 	},
 	"type": "module",
+	"overrides": {
+		"rollup": "4.64.5"
+	},
+	"pnpm": {
+		"overrides": {
+			"rollup": "4.64.5"
+		}
+	},
 	"dependencies": {
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"fast-sort": "^3.4.0",
